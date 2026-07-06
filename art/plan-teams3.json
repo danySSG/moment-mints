@@ -1,0 +1,10 @@
+[
+  { "slug": "prod-norway-goal", "quantity": 4, "negative": "adidas, nike, puma, badge, crest, patch, furry, animal",
+    "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player shouting in triumph, fists clenched, crimson red jersey with navy blue and white trim, close-up upper body, dynamic angle, golden confetti, sunset gold sky, stadium silhouette" },
+  { "slug": "prod-england-goal", "quantity": 4, "negative": "adidas, nike, puma, badge, crest, patch, furry, animal",
+    "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player shouting in triumph, fists clenched, clean white jersey with navy blue trim, close-up upper body, dynamic angle, golden confetti, sunset gold sky, stadium silhouette" },
+  { "slug": "prod-brazil-goal", "quantity": 4, "negative": "adidas, nike, puma, badge, crest, patch, furry, animal",
+    "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player shouting in triumph, fists clenched, bright yellow jersey with green trim, close-up upper body, dynamic angle, golden confetti, sunset gold sky, stadium silhouette" },
+  { "slug": "prod-mexico-goal", "quantity": 4, "negative": "adidas, nike, puma, badge, crest, patch, furry, animal",
+    "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player shouting in triumph, fists clenched, deep green jersey with white and red trim, close-up upper body, dynamic angle, golden confetti, sunset gold sky, stadium silhouette" }
+]

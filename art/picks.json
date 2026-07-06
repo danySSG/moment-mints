@@ -30,5 +30,20 @@
   "GOAL:Colombia": [
     "art/picks/prod-colombia-goal-02.jpeg",
     "art/picks/prod-colombia-goal-01.jpeg"
+  ],
+  "GOAL:Norway": [
+    "art/picks/prod-norway-goal-02.jpeg",
+    "art/picks/prod-norway-goal-01.jpeg"
+  ],
+  "GOAL:England": [
+    "art/picks/prod-england-goal-01.jpeg",
+    "art/picks/prod-england-goal-02.jpeg"
+  ],
+  "GOAL:Brazil": [
+    "art/picks/prod-brazil-goal-01.jpeg"
+  ],
+  "GOAL:Mexico": [
+    "art/picks/prod-mexico-goal-01.jpeg",
+    "art/picks/prod-mexico-goal-02.jpeg"
   ]
 }
