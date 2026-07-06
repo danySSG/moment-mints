@@ -43,17 +43,24 @@ export function momentCardArt(event, ctx = {}) {
   const title = ctx.participant1 && ctx.participant2
     ? `${ctx.participant1} vs ${ctx.participant2}` : `Fixture ${event.fixtureId}`;
   const when = event.ts ? new Date(Number(event.ts)).toISOString().replace('T', ' ').slice(0, 16) + ' UTC' : '';
+  // скругление — свойство самой карты (как у физических TCG), а не CSS витрины:
+  // углы прозрачны, арт и скримы обрезаны clipPath'ом, рамка тира скруглена
   return `<svg xmlns="http://www.w3.org/2000/svg" width="832" height="1216" viewBox="0 0 832 1216">
-  <image href="data:image/jpeg;base64,${b64}" x="0" y="0" width="832" height="1216" preserveAspectRatio="xMidYMid slice"/>
-  <linearGradient id="top" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#000" stop-opacity="0.82"/><stop offset="1" stop-color="#000" stop-opacity="0"/>
-  </linearGradient>
-  <linearGradient id="bot" x1="0" y1="1" x2="0" y2="0">
-    <stop offset="0" stop-color="#000" stop-opacity="0.88"/><stop offset="1" stop-color="#000" stop-opacity="0"/>
-  </linearGradient>
-  <rect x="0" y="0" width="832" height="170" fill="url(#top)"/>
-  <rect x="0" y="986" width="832" height="230" fill="url(#bot)"/>
-  <rect x="0" y="0" width="832" height="1216" fill="none" stroke="${t.accent}" stroke-width="10"/>
+  <defs>
+    <clipPath id="rc"><rect x="0" y="0" width="832" height="1216" rx="48"/></clipPath>
+    <linearGradient id="top" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0.82"/><stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="bot" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#000" stop-opacity="0.88"/><stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g clip-path="url(#rc)">
+    <image href="data:image/jpeg;base64,${b64}" x="0" y="0" width="832" height="1216" preserveAspectRatio="xMidYMid slice"/>
+    <rect x="0" y="0" width="832" height="170" fill="url(#top)"/>
+    <rect x="0" y="986" width="832" height="230" fill="url(#bot)"/>
+  </g>
+  <rect x="5" y="5" width="822" height="1206" rx="44" fill="none" stroke="${t.accent}" stroke-width="10"/>
   <text x="40" y="76" font-family="Helvetica,Arial" font-weight="900" font-size="44" fill="${t.accent}">${esc(t.label)}</text>
   <text x="40" y="118" font-family="Menlo,monospace" font-size="21" fill="#ffffff" fill-opacity="0.72">${esc(t.tier)}</text>
   <text x="40" y="1074" font-family="Helvetica,Arial" font-weight="700" font-size="40" fill="#ffffff">${esc(title)}</text>
