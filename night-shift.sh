@@ -8,6 +8,7 @@ cd "$(dirname "$0")"
 trap 'echo; echo "[night-shift] стоп"; kill 0' INT TERM
 node day1/capture.mjs >> day1/capture.log 2>&1 &
 node mint/minter.mjs >> mint/minter.log 2>&1 &
-echo "[night-shift] захват (capture) и минтер запущены"
+node gallery/publish.mjs >> gallery/publish.log 2>&1 &
+echo "[night-shift] захват + минтер + live-паблишер запущены"
 echo "[night-shift] держу Мак бодрым (caffeinate)… Ctrl+C для остановки"
 caffeinate -is

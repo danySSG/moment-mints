@@ -45,6 +45,13 @@ const card = (m) => {
         ${m.proofExplorer ? `<a href="${esc(m.proofExplorer)}" target="_blank" rel="noopener">proof tx ↗</a>` : ''}
         <a href="${esc(gw(m.metadata))}" target="_blank" rel="noopener">json ↗</a>
       </div>
+      <details class="prf"><summary>how is this verified?</summary>
+        <p>The stat behind this card (fixture ${esc(m.fixtureId)} · seq ${esc(m.seq)} · key ${esc(m.statKey)})
+        is a leaf in a Merkle tree whose daily root the TxODDS oracle publishes on Solana.
+        The proof transaction replays that Merkle path inside the TxLINE program
+        (<code>validate_stat</code>) — the chain itself confirms the moment happened.</p>
+        ${m.proofExplorer ? `<p><a href="${esc(m.proofExplorer)}" target="_blank" rel="noopener">watch the proof run on-chain ↗</a></p>` : ''}
+      </details>
     </div>
   </article>`;
 };
@@ -107,6 +114,15 @@ const html = `<!doctype html>
   .showcase { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; }
   .showcase img { width: 100%; border-radius: 14px; border: 1px solid var(--line); transition: transform .18s ease; }
   .showcase img:hover { transform: translateY(-4px) scale(1.015); }
+  .latest { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 22px; }
+  .latestbox { display: flex; gap: 26px; align-items: flex-start; flex-wrap: wrap; }
+  .latestbox img { width: 280px; max-width: 100%; border-radius: 14px; border: 1px solid var(--line); }
+  .linfo { flex: 1; min-width: 260px; }
+  .linfo h3 { font: 700 24px "Space Grotesk", sans-serif; margin: 12px 0 4px; }
+  .prf { margin-top: 9px; }
+  .prf summary { color: var(--mut); font-size: 12.5px; cursor: pointer; }
+  .prf p { color: var(--mut); font-size: 12.5px; margin-top: 7px; line-height: 1.55; }
+  .prf code { color: #c6cfdb; }
   .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; transition: transform .18s ease, box-shadow .18s ease; }
   .card:hover { transform: translateY(-4px); }
   .card.t-base:hover { box-shadow: 0 10px 34px #f5a62322; }
@@ -148,6 +164,28 @@ const html = `<!doctype html>
   </div>
   <p style="margin-top:20px"><a href="https://github.com/danySSG/moment-mints">github.com/danySSG/moment-mints ↗</a></p>
 </header>
+${(() => {
+  const l = moments[moments.length - 1];
+  if (!l) return '';
+  const ev = EVENTS[l.type] ?? { label: l.type, tier: 'base' };
+  const tier = TIERS[ev.tier];
+  return `<section class="latest">
+  <h2>Latest verified moment</h2>
+  <div class="latestbox">
+    <a href="${esc(l.assetExplorer)}" target="_blank" rel="noopener"><img src="${esc(gw(l.image))}" alt="latest moment card"></a>
+    <div class="linfo">
+      <span class="type" style="color:${tier.color};border-color:${tier.color}44">${esc(ev.label)}</span>
+      <h3>${esc(l.match)} <b>${esc(l.score)}</b></h3>
+      <p class="sub">${esc(l.competition)} · ${esc(fmtTs(l.ts))}</p>
+      <p>${l.verified ? '<span class="ok">✓ proven on-chain</span> — the oracle anchored this stat, the program verified it, the card minted itself.' : 'proof pending'}</p>
+      <p class="links">
+        <a href="${esc(l.assetExplorer)}" target="_blank" rel="noopener">NFT ↗</a>
+        ${l.proofExplorer ? `<a href="${esc(l.proofExplorer)}" target="_blank" rel="noopener">proof tx ↗</a>` : ''}
+      </p>
+    </div>
+  </div>
+</section>`;
+})()}
 <section>
   <h2>The cards <span class="comp">art tiers · live-minted cards join below as matches happen</span></h2>
   <div class="showcase">

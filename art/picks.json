@@ -1,6 +1,34 @@
 {
-  "GOAL:Argentina": ["art/picks/prod-argentina-goal-02.jpeg", "art/picks/prod-argentina-goal-04.jpeg"],
-  "GOAL:Egypt": ["art/picks/prod-egypt-goal-01.jpeg", "art/picks/prod-egypt-goal-02.jpeg"],
-  "GOAL_REVOKED:*": ["art/picks/prod-drama-var-03.jpeg", "art/picks/prod-drama-var-02.jpeg"],
-  "RED_CARD:*": ["art/picks/prod-drama-red-03.jpeg", "art/picks/prod-drama-red-04.jpeg"]
+  "GOAL:Argentina": [
+    "art/picks/prod-argentina-goal-02.jpeg",
+    "art/picks/prod-argentina-goal-04.jpeg"
+  ],
+  "GOAL:Egypt": [
+    "art/picks/prod-egypt-goal-01.jpeg",
+    "art/picks/prod-egypt-goal-02.jpeg"
+  ],
+  "GOAL_REVOKED:*": [
+    "art/picks/prod-drama-var-03.jpeg",
+    "art/picks/prod-drama-var-02.jpeg"
+  ],
+  "RED_CARD:*": [
+    "art/picks/prod-drama-red-03.jpeg",
+    "art/picks/prod-drama-red-04.jpeg"
+  ],
+  "GOAL:Portugal": [
+    "art/picks/prod-portugal-goal-02.jpeg",
+    "art/picks/prod-portugal-goal-03.jpeg"
+  ],
+  "GOAL:Spain": [
+    "art/picks/prod-spain-goal-01.jpeg",
+    "art/picks/prod-spain-goal-02.jpeg"
+  ],
+  "GOAL:Switzerland": [
+    "art/picks/prod-switzerland-goal-01.jpeg",
+    "art/picks/prod-switzerland-goal-02.jpeg"
+  ],
+  "GOAL:Colombia": [
+    "art/picks/prod-colombia-goal-02.jpeg",
+    "art/picks/prod-colombia-goal-01.jpeg"
+  ]
 }
