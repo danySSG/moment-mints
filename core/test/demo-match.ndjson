@@ -1,0 +1,6 @@
+{"fixtureId":"fx-demo","seq":1,"ts":0,"gameState":1,"stats":{}}
+{"fixtureId":"fx-demo","seq":2,"ts":10,"gameState":2,"stats":{}}
+{"fixtureId":"fx-demo","seq":3,"ts":540,"gameState":2,"stats":{"1":1}}
+{"fixtureId":"fx-demo","seq":4,"ts":2700,"gameState":3,"stats":{}}
+{"fixtureId":"fx-demo","seq":5,"ts":3100,"gameState":4,"stats":[{"key":2,"value":1}]}
+{"fixtureId":"fx-demo","seq":6,"ts":3400,"gameState":4,"stats":{"2":0}}

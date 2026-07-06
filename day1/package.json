@@ -1,0 +1,9 @@
+{
+  "name": "day1",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@solana/web3.js": "^1.95.0",
+    "tweetnacl": "^1.0.3"
+  }
+}

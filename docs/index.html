@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moment Mints — World Cup moments, born on-chain</title>
+<meta name="description" content="Collectible cards minted automatically from cryptographically verified World Cup moments. TxLINE × Solana.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { color-scheme: dark; --bg:#0b0e13; --panel:#12161f; --line:#222836; --mut:#8b96a8; --acc:#3ddc84; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: #e9eef5; font: 15.5px/1.6 Inter, -apple-system, sans-serif; }
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 22px 80px; }
+  header.hero { padding: 64px 0 34px; }
+  .brand { font: 700 42px/1.1 "Space Grotesk", sans-serif; letter-spacing: -0.5px; }
+  .brand em { font-style: normal; color: var(--acc); }
+  .tag { color: #c6cfdb; font-size: 18px; margin-top: 12px; max-width: 640px; }
+  .tag b { color: #fff; }
+  .stats { display: flex; gap: 28px; margin-top: 22px; flex-wrap: wrap; }
+  .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 18px; }
+  .stat b { display: block; font: 700 22px "Space Grotesk", sans-serif; color: var(--acc); }
+  .stat span { color: var(--mut); font-size: 13px; }
+  .how { display: flex; gap: 10px; align-items: center; margin-top: 26px; color: var(--mut); font-size: 13.5px; flex-wrap: wrap; }
+  .how .step { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 5px 12px; color: #c6cfdb; }
+  .how .arr { color: #4a5568; }
+  .tiers { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; font-size: 13.5px; }
+  .tiers span { border: 1px solid; border-radius: 20px; padding: 5px 12px; }
+  section { margin-top: 44px; }
+  h2 { font: 700 22px "Space Grotesk", sans-serif; margin-bottom: 16px; display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+  h2 .score { color: var(--acc); }
+  h2 .comp { color: var(--mut); font: 400 13.5px Inter; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(236px, 1fr)); gap: 18px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; transition: transform .18s ease, box-shadow .18s ease; }
+  .card:hover { transform: translateY(-4px); }
+  .card.t-base:hover { box-shadow: 0 10px 34px #f5a62322; }
+  .card.t-drama:hover { box-shadow: 0 10px 34px #e5484d2b; }
+  .card.t-legendary:hover { box-shadow: 0 10px 34px #d9b64e2b; }
+  .imgwrap { display: block; aspect-ratio: 5/7; background: #0a0d12; }
+  .imgwrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .meta { padding: 12px 14px 14px; }
+  .row1 { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 7px; }
+  .type { font-size: 11.5px; font-weight: 600; letter-spacing: .04em; padding: 3px 9px; border-radius: 20px; border: 1px solid; white-space: nowrap; }
+  .ok { color: var(--acc); font-size: 11.5px; white-space: nowrap; }
+  .pending { color: #d29922; font-size: 11.5px; }
+  .match { font-size: 14.5px; }
+  .sub { color: var(--mut); font-size: 12px; margin-top: 3px; }
+  .links { margin-top: 9px; display: flex; gap: 13px; font-size: 13px; }
+  a { color: #6cb6ff; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  footer { margin-top: 60px; color: var(--mut); font-size: 13.5px; border-top: 1px solid var(--line); padding-top: 18px; max-width: 820px; }
+</style></head><body><div class="wrap">
+<header class="hero">
+  <div class="brand">MOMENT <em>MINTS</em></div>
+  <p class="tag">Collectible cards born on-chain from <b>cryptographically verified</b> World Cup moments.
+  A goal happens → the TxODDS oracle anchors it on Solana → the card mints itself. <b>No moment, no card.</b></p>
+  <div class="stats">
+    <div class="stat"><b>12</b><span>moments minted</span></div>
+    <div class="stat"><b>12/12</b><span>proven on-chain</span></div>
+    <div class="stat"><b>3</b><span>matches covered</span></div>
+  </div>
+  <div class="how">
+    <span class="step">TxLINE live feed</span><span class="arr">→</span>
+    <span class="step">stat-diff detector</span><span class="arr">→</span>
+    <span class="step">Merkle proof · validate_stat</span><span class="arr">→</span>
+    <span class="step">mint on Solana</span>
+  </div>
+  <div class="tiers">
+    <span style="color:#f5a623;border-color:#f5a62344">base · '90s cel anime</span>
+    <span style="color:#e5484d;border-color:#e5484d44">drama · spot-color manga (VAR, reds)</span>
+    <span style="color:#d9b64e;border-color:#d9b64e44">legendary · ukiyo-e gold (finals)</span>
+  </div>
+</header>
+<section>
+      <h2><span class="score">2–3</span> Mexico vs England <span class="comp">World Cup 2026 · Round of 16</span></h2>
+      <div class="grid">
+  <article class="card t-base">
+    <a class="imgwrap" href="https://explorer.solana.com/address/HUVVDAo7ziBMzfJGooMdb8wkk2ZwTE4WbKSwqqYHPzP7?cluster=devnet" target="_blank" rel="noopener">
+      <img src="https://devnet.irys.xyz/pCDUQd6PoSE3E1a4m58pohBV6vgy3bBoToUsuBe5ASw" alt="GOAL — Mexico vs England" loading="lazy">
+    </a>
+    <div class="meta">
+      <div class="row1">
+        <span class="type" style="color:#f5a623;border-color:#f5a62344">GOAL</span>
+        <span class="ok" title="Stat proven on-chain via validate_stat">✓ verified on-chain</span>
+      </div>
+      <div class="match">Mexico vs England <b>0–1</b></div>
+      <div class="sub">2026-07-06 01:37 UTC · tier: '90s cel</div>
+      <div class="links">
+        <a href="https://explorer.solana.com/address/HUVVDAo7ziBMzfJGooMdb8wkk2ZwTE4WbKSwqqYHPzP7?cluster=devnet" target="_blank" rel="noopener">NFT ↗</a>
+        <a href="https://explorer.solana.com/tx/ukWpqyJT1PEw6SCb2qrp2ey9vJbWL5Qyu3P23A8V5MmQdYAcNWtmTptMnitPVvGrKbpK15fVRVQvv3e3wMNoi8g?cluster=devnet" target="_blank" rel="noopener">proof tx ↗</a>
+        <a href="https://devnet.irys.xyz/BbiVHraLiQkYF1SaLeBJpYUsxCAAAEDGSW1829bF5q6n" target="_blank" rel="noopener">json ↗</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card t-base">
+    <a class="imgwrap" href="https://explorer.solana.com/address/B3dVq2ZtXfhk2phPFvoYQwbTGDUTFuwFCeZWMNfeqWwu?cluster=devnet" target="_blank" rel="noopener">
+      <img src="https://devnet.irys.xyz/BUenM8bNdGJueW65VGEErdVGpaxbkjhy3RKxtzJag33Y" alt="GOAL — Mexico vs England" loading="lazy">
+    </a>
+    <div class="meta">
+      <div class="row1">
+        <span class="type" style="color:#f5a623;border-color:#f5a62344">GOAL</span>
+        <span class="ok" title="Stat proven on-chain via validate_stat">✓ verified on-chain</span>
+      </div>
+      <div class="match">Mexico vs England <b>0–2</b></div>
+      <div class="sub">2026-07-06 01:39 UTC · tier: '90s cel</div>
+      <div class="links">
+        <a href="https://explorer.solana.com/address/B3dVq2ZtXfhk2phPFvoYQwbTGDUTFuwFCeZWMNfeqWwu?cluster=devnet" target="_blank" rel="noopener">NFT ↗</a>
+        <a href="https://explorer.solana.com/tx/2MPMVwR8UYNq5xjy12WXCwjtFMoZZ71o1EhMXuwfVdK1TGWYkLzKdcZ8nqwuQDCf6Cu9nviaWjssRQvBwqMmZnoC?cluster=devnet" target="_blank" rel="noopener">proof tx ↗</a>
+        <a href="https://devnet.irys.xyz/3UBqK2xY37DkK9RmdiSkFtwcM9txLyRjrcPyDwJku4A8" target="_blank" rel="noopener">json ↗</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card t-base">
+    <a class="imgwrap" href="https://explorer.solana.com/address/huz4VgEb7cEqwJ8bf9E2er4eZ78BLP2r2MUXmfKfwzL?cluster=devnet" target="_blank" rel="noopener">
+      <img src="https://devnet.irys.xyz/4MWQpPv7oggzqPn3n4DM4esZMW7jW7uF6dvptJoDDnpo" alt="GOAL — Mexico vs England" loading="lazy">
+    </a>
+    <div class="meta">
+      <div class="row1">
+        <span class="type" style="color:#f5a623;border-color:#f5a62344">GOAL</span>
+        <span class="ok" title="Stat proven on-chain via validate_stat">✓ verified on-chain</span>
+      </div>
+      <div class="match">Mexico vs England <b>1–2</b></div>
+      <div class="sub">2026-07-06 01:42 UTC · tier: '90s cel</div>
+      <div class="links">
+        <a href="https://explorer.solana.com/address/huz4VgEb7cEqwJ8bf9E2er4eZ78BLP2r2MUXmfKfwzL?cluster=devnet" target="_blank" rel="noopener">NFT ↗</a>
+        <a href="https://explorer.solana.com/tx/Z2dKF2jhACpBaK8MCmPgzBh2FRLGW1D5yLUFmveAM4cRJxdYkNmPJ2EFkPAS85GnYMv3HGGzbQQFj5gmKEvq1on?cluster=devnet" target="_blank" rel="noopener">proof tx ↗</a>
+        <a href="https://devnet.irys.xyz/EfR9vamUS5x583rbua8ax7bFmp9SMsHHfAqKymZeAqSq" target="_blank" rel="noopener">json ↗</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card t-drama">
+    <a class="imgwrap" href="https://explorer.solana.com/address/BzNyknVxYGR68yxvXQTTRvw4twzyqM498AedhwwMN5CN?cluster=devnet" target="_blank" rel="noopener">
+      <img src="https://devnet.irys.xyz/FYPGgzxeSzLkv7k7NygPX1heVX6oskpE7PExXRWVbQNY" alt="RED CARD — Mexico vs England" loading="lazy">
+    </a>
+    <div class="meta">
+      <div class="row1">
+        <span class="type" style="color:#e5484d;border-color:#e5484d44">RED CARD</span>
+        <span class="ok" title="Stat proven on-chain via validate_stat">✓ verified on-chain</span>
+      </div>
+      <div class="match">Mexico vs England <b>1–2</b></div>
+      <div class="sub">2026-07-06 02:15 UTC · tier: ink drama</div>
+      <div class="links">
+        <a href="https://explorer.solana.com/address/BzNyknVxYGR68yxvXQTTRvw4twzyqM498AedhwwMN5CN?cluster=devnet" target="_blank" rel="noopener">NFT ↗</a>
+        <a href="https://explorer.solana.com/tx/dLb9TDFcGwpzervm4BhnQmJ1Ru8y97Z9fiJpSMrJNB6qkFLR6vaWrywzprfa9GxYe6rdazF6e8mszVijtB21Ecq?cluster=devnet" target="_blank" rel="noopener">proof tx ↗</a>
+        <a href="https://devnet.irys.xyz/3sVEQAd5xpRJdFBMnbUJqGenZGnT7GiijGR4B7eyotRC" target="_blank" rel="noopener">json ↗</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card t-base">
+    <a class="imgwrap" href="https://explorer.solana.com/address/75vXJPgsRfTip6CiDRWBgL2iKtL2VXQ5NnZKrVvgYVxY?cluster=devnet" target="_blank" rel="noopener">
+      <img src="https://devnet.irys.xyz/9LbmvSjvSRTTjPKR5G9S1KgKhdRPzWcdaUaLX5UCN4cD" alt="GOAL — Mexico vs England" loading="lazy">
+    </a>
+    <div class="meta">
+      <div class="row1">
+        <span class="type" style="color:#f5a623;border-color:#f5a62344">GOAL</span>
+        <span class="ok" title="Stat proven on-chain via validate_stat">✓ verified on-chain</span>
+      </div>
+      <div class="match">Mexico vs England <b>1–3</b></div>
+      <div class="sub">2026-07-06 02:22 UTC · tier: '90s cel</div>
+      <div class="links">
+        <a href="https://explorer.solana.com/address/75vXJPgsRfTip6CiDRWBgL2iKtL2VXQ5NnZKrVvgYVxY?cluster=devnet" target="_blank" rel="noopener">NFT ↗</a>
+        <a href="https://explorer.solana.com/tx/5oWvt4zarYnaihRdwBfdPF93evJKQu2hA7tMQ73ugsize2tUs8juju5k6a4iqAVu1cWVC9jWr72AE5T8dMrpdsyT?cluster=devnet" target="_blank" rel="noopener">proof tx ↗</a>
+        <a href="https://devnet.irys.xyz/F47qWJfu4TQMXSqCAfCDXLfH9s1WdDKK9dVV5N1amMek" target="_blank" rel="noopener">json ↗</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card t-base">
+    <a class="imgwrap" href="https://explorer.solana.com/address/F6LFJ2kESD2rQGRipe3vQVwsmC6SvEUDyuFjjkYQ1jXB?cluster=devnet" target="_blank" rel="noopener">
+      <img src="https://devnet.irys.xyz/2TMNuPjzkHfnRsZbViXEaUQe9799K2685tfjJbPNH4yJ" alt="GOAL — Mexico vs England" loading="lazy">
+    </a>
+    <div class="meta">
+      <div class="row1">
+        <span class="type" style="color:#f5a623;border-color:#f5a62344">GOAL</span>
+        <span class="ok" title="Stat proven on-chain via validate_stat">✓ verified on-chain</span>
+      </div>
+      <div class="match">Mexico vs England <b>2–3</b></div>
+      <div class="sub">2026-07-06 02:31 UTC · tier: '90s cel</div>
+      <div class="links">
+        <a href="https://explorer.solana.com/address/F6LFJ2kESD2rQGRipe3vQVwsmC6SvEUDyuFjjkYQ1jXB?cluster=devnet" target="_blank" rel="noopener">NFT ↗</a>
+        <a href="https://explorer.solana.com/tx/5pRaGgSKvc4MiSpJ7rn1jT6QoMXCHv9pY14q1NQ8X9CdrFoNEK3t8SykW5mVeFRrQxBh4vrUWqc58xwKpeeqFJVw?cluster=devnet" target="_blank" rel="noopener">proof tx ↗</a>
+        <a href="https://devnet.irys.xyz/BTaA1G888cyRti6zY6LwEG87zYKRzxEfDJd8NwgW6jf9" target="_blank" rel="noopener">json ↗</a>
+      </div>
+    </div>
+  </article></div>
+    </section>
+<section>
+      <h2><span class="score">1–2</span> Brazil vs Norway <span class="comp">World Cup 2026 · Round of 16</span></h2>
+      <div class="grid">
+  <article class="card t-base">
+    <a class="imgwrap" href="https://explorer.solana.com/address/qdmsBUhmf6yL8PEfmsmEAVHCU5mw9RETAd4Wvp8oWtW?cluster=devnet" target="_blank" rel="noopener">
+      <img src="https://devnet.irys.xyz/3VYFCvnoCx5kLXnp4fy4szRD2JwoQ7QV5U9jkoJfXtA3" alt="GOAL — Brazil vs Norway" loading="lazy">
+    </a>
+    <div class="meta">
+      <div class="row1">
+        <span class="type" style="color:#f5a623;border-color:#f5a62344">GOAL</span>
+        <span class="ok" title="Stat proven on-chain via validate_stat">✓ verified on-chain</span>
+      </div>
+      <div class="match">Brazil vs Norway <b>0–1</b></div>
+      <div class="sub">2026-07-05 20:03 UTC · tier: '90s cel</div>
+      <div class="links">
+        <a href="https://explorer.solana.com/address/qdmsBUhmf6yL8PEfmsmEAVHCU5mw9RETAd4Wvp8oWtW?cluster=devnet" target="_blank" rel="noopener">NFT ↗</a>
+        <a href="https://explorer.solana.com/tx/XtjcnYiFf2qyP9E7UEL527icpa3L2QRJm2cFsVrqKDBA15nn3fTjaAKL1QpQZVx2q58YxUxPEbWWrL7muCSzGW2?cluster=devnet" target="_blank" rel="noopener">proof tx ↗</a>
+        <a href="https://devnet.irys.xyz/9sn7saFMDFoKEgX5AXfgcacrB684to8GxoKmexCNNmVC" target="_blank" rel="noopener">json ↗</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card t-drama">
+    <a class="imgwrap" href="https://explorer.solana.com/address/8rqd4KjugeQsjzakEM7wTSLT2Vuip7rjAoYxkGuVtPKZ?cluster=devnet" target="_blank" rel="noopener">
+      <img src="https://devnet.irys.xyz/GqaMnFA4GUnUngeqj5ST1cUyFzY1cEaEPjwt9uiVySzd" alt="VAR: GOAL DISALLOWED — Brazil vs Norway" loading="lazy">
+    </a>
+    <div class="meta">
+      <div class="row1">
+        <span class="type" style="color:#e5484d;border-color:#e5484d44">VAR: GOAL DISALLOWED</span>
+        <span class="ok" title="Stat proven on-chain via validate_stat">✓ verified on-chain</span>
+      </div>
+      <div class="match">Brazil vs Norway <b>0–0</b></div>
+      <div class="sub">2026-07-05 20:05 UTC · tier: ink drama</div>
+      <div class="links">
+        <a href="https://explorer.solana.com/address/8rqd4KjugeQsjzakEM7wTSLT2Vuip7rjAoYxkGuVtPKZ?cluster=devnet" target="_blank" rel="noopener">NFT ↗</a>
+        <a href="https://explorer.solana.com/tx/2khGhrT9FdvTe9DN3FERRL4EJEhT84L8A5bHTqE47y5gEnFPEnBR3UVEac4WMU4AhB1QfVgcophswJonw8yhkFh7?cluster=devnet" target="_blank" rel="noopener">proof tx ↗</a>
+        <a href="https://devnet.irys.xyz/FSdHyLUMJHfuHZZSUjxjWjYzhdqhu9AJx4XaxdD4rPLw" target="_blank" rel="noopener">json ↗</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card t-base">
+    <a class="imgwrap" href="https://explorer.solana.com/address/2rHiPEuVqTyKz4nRtEWBznQum7mthQCXAxsAtKax87MF?cluster=devnet" target="_blank" rel="noopener">
+      <img src="https://devnet.irys.xyz/9szhcjk1v283VK5DNpa1PTAaoks58KBNtihCQnMj7kru" alt="GOAL — Brazil vs Norway" loading="lazy">
+    </a>
+    <div class="meta">
+      <div class="row1">
+        <span class="type" style="color:#f5a623;border-color:#f5a62344">GOAL</span>
+        <span class="ok" title="Stat proven on-chain via validate_stat">✓ verified on-chain</span>
+      </div>
+      <div class="match">Brazil vs Norway <b>0–1</b></div>
+      <div class="sub">2026-07-05 21:42 UTC · tier: '90s cel</div>
+      <div class="links">
+        <a href="https://explorer.solana.com/address/2rHiPEuVqTyKz4nRtEWBznQum7mthQCXAxsAtKax87MF?cluster=devnet" target="_blank" rel="noopener">NFT ↗</a>
+        <a href="https://explorer.solana.com/tx/2K68D78EAYg8WAbbDatFYTHXiaEfUR58HAZTrTy11tqmA31mNKkD2SzVAMBFHRQkwwbQGsMNcSuf9HK2TcpiN7Q7?cluster=devnet" target="_blank" rel="noopener">proof tx ↗</a>
+        <a href="https://devnet.irys.xyz/BYKWG8NupJmc1jpfT82Foz2d7JumDJkV1K5Cd6v6vUuB" target="_blank" rel="noopener">json ↗</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card t-base">
+    <a class="imgwrap" href="https://explorer.solana.com/address/ExXsQfwSio7v9mn2Bw9BfftBVWFLBMNkduicbGvDvsBW?cluster=devnet" target="_blank" rel="noopener">
+      <img src="https://devnet.irys.xyz/H4qFXNdoz9ALsCcBW8M75VQHxPDisf8n4JWQrceX7sXW" alt="GOAL — Brazil vs Norway" loading="lazy">
+    </a>
+    <div class="meta">
+      <div class="row1">
+        <span class="type" style="color:#f5a623;border-color:#f5a62344">GOAL</span>
+        <span class="ok" title="Stat proven on-chain via validate_stat">✓ verified on-chain</span>
+      </div>
+      <div class="match">Brazil vs Norway <b>0–2</b></div>
+      <div class="sub">2026-07-05 21:52 UTC · tier: '90s cel</div>
+      <div class="links">
+        <a href="https://explorer.solana.com/address/ExXsQfwSio7v9mn2Bw9BfftBVWFLBMNkduicbGvDvsBW?cluster=devnet" target="_blank" rel="noopener">NFT ↗</a>
+        <a href="https://explorer.solana.com/tx/2F1goozAE4NW7eUM1EcJAQFn9Z25CLj1MxRXcxJ1UfjNqG97gmywNcQ2VaWz3eb4tjcKyFHrYYgWq3atWqYy2dLV?cluster=devnet" target="_blank" rel="noopener">proof tx ↗</a>
+        <a href="https://devnet.irys.xyz/HvMDDCCzajobf8Vorm9anh3Q9VQUDA1ibPkDdPNJjPjg" target="_blank" rel="noopener">json ↗</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card t-base">
+    <a class="imgwrap" href="https://explorer.solana.com/address/CDtHAELeWAwrs5qukZWjt3umDuJ9zEqXF6oQuDtGCRD8?cluster=devnet" target="_blank" rel="noopener">
+      <img src="https://devnet.irys.xyz/no65G91tLUvYPdAiJDDD35dkqPk7P627bCHAFhGR3x9" alt="GOAL — Brazil vs Norway" loading="lazy">
+    </a>
+    <div class="meta">
+      <div class="row1">
+        <span class="type" style="color:#f5a623;border-color:#f5a62344">GOAL</span>
+        <span class="ok" title="Stat proven on-chain via validate_stat">✓ verified on-chain</span>
+      </div>
+      <div class="match">Brazil vs Norway <b>1–2</b></div>
+      <div class="sub">2026-07-05 22:02 UTC · tier: '90s cel</div>
+      <div class="links">
+        <a href="https://explorer.solana.com/address/CDtHAELeWAwrs5qukZWjt3umDuJ9zEqXF6oQuDtGCRD8?cluster=devnet" target="_blank" rel="noopener">NFT ↗</a>
+        <a href="https://explorer.solana.com/tx/auvpfUwtQ9e1HGoi8EPqGMAXq9E6WFnR5LZnN1mi7uAz6wvyyRuyMQZVy1zwPKMr5nTj4KjZqvXpNjKKdA5tMBc?cluster=devnet" target="_blank" rel="noopener">proof tx ↗</a>
+        <a href="https://devnet.irys.xyz/6avTRRJRFzr2BBAJayoSbi5j5Y2W6FUNaG8DKAoPwzs5" target="_blank" rel="noopener">json ↗</a>
+      </div>
+    </div>
+  </article></div>
+    </section>
+<section>
+      <h2><span class="score">1–0</span> Argentina vs Cape Verde <span class="comp">World Cup 2026 · Group stage</span></h2>
+      <div class="grid">
+  <article class="card t-base">
+    <a class="imgwrap" href="https://explorer.solana.com/address/4fuar55aCMZgvxMZM1sboXcCwr6jLMuANwNtC69sbCzx?cluster=devnet" target="_blank" rel="noopener">
+      <img src="https://devnet.irys.xyz/DcZj8NyV7k764XJjmCnmEzecEZWkvNwQjmemWiPjHNUA" alt="GOAL — Argentina vs Cape Verde" loading="lazy">
+    </a>
+    <div class="meta">
+      <div class="row1">
+        <span class="type" style="color:#f5a623;border-color:#f5a62344">GOAL</span>
+        <span class="ok" title="Stat proven on-chain via validate_stat">✓ verified on-chain</span>
+      </div>
+      <div class="match">Argentina vs Cape Verde <b>1–0</b></div>
+      <div class="sub">2026-07-03 22:30 UTC · tier: '90s cel</div>
+      <div class="links">
+        <a href="https://explorer.solana.com/address/4fuar55aCMZgvxMZM1sboXcCwr6jLMuANwNtC69sbCzx?cluster=devnet" target="_blank" rel="noopener">NFT ↗</a>
+        <a href="https://explorer.solana.com/tx/3jdjouck3uf3rnE1ktcYa4BwminXVF62in959xqcxpfKyNYMDuamhdGpTPpb5bz79zfmSvZRw3pQTfJAwnKwXPBZ?cluster=devnet" target="_blank" rel="noopener">proof tx ↗</a>
+        <a href="https://devnet.irys.xyz/8fvcy66fikbhreKinccQFKnjYiqiuruKaDpivD3dS881" target="_blank" rel="noopener">json ↗</a>
+      </div>
+    </div>
+  </article></div>
+    </section>
+<footer>Every stat on a card is provable: its fixture/seq/statKey address a Merkle leaf published daily
+on-chain by the TxODDS oracle; the "proof tx" link runs <code>validate_stat</code> in the TxLINE Solana
+program against that root. Art: three "print era" tiers — rarity you can see from across the room.
+Currently on devnet with placeholder card fronts; generative art tiers land with the quarter-finals.</footer>
+</div></body></html>

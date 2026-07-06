@@ -1,0 +1,12 @@
+[
+  { "slug": "st-spotcolor", "quantity": 2,
+    "prompt": "masterpiece, monochrome manga style, dramatic screentone, ink drawing, impact frame, radiating speed lines, greyscale, partially colored, sky blue accents on jersey, male soccer player mid-celebration roaring, fists clenched, close-up upper body, dynamic angle, white burst background" },
+  { "slug": "st-retro90s", "quantity": 2,
+    "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, male soccer player mid-celebration roaring, fists clenched, sky blue and white striped jersey, close-up upper body, dynamic angle, sunset gold sky, stadium silhouette" },
+  { "slug": "st-ukiyoe", "quantity": 2,
+    "prompt": "masterpiece, ukiyo-e style, woodblock print, flat traditional colors, thick outlines, stylized clouds and wave motifs, gold leaf background, male soccer player mid-celebration, arms raised, sky blue and white robe-like jersey, dynamic composition" },
+  { "slug": "st-neon", "quantity": 2,
+    "prompt": "masterpiece, dark background, neon rim lighting, glowing blue outlines, holographic glitch effect, digital hexagonal motifs, male soccer player mid-celebration roaring, fists clenched, sky blue and white jersey, close-up upper body, dynamic angle, night" },
+  { "slug": "st-poster", "quantity": 2,
+    "prompt": "masterpiece, flat graphic poster style, limited palette, bold geometric shapes, negative space composition, art deco sports poster, male soccer player mid-celebration silhouette with detailed face, sky blue and white palette, dramatic diagonal composition" }
+]

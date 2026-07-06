@@ -1,0 +1,19 @@
+# секреты — НИКОГДА не коммитить
+day1/.env
+day1/civitai.env
+day1/wallet-devnet.json
+.debug-jwt
+
+# зависимости и мусор
+node_modules/
+.DS_Store
+
+# крупные данные (восстановимы из /api/scores/historical) и логи
+day1/*.ndjson
+day1/historical-sample.json
+day1/capture.log
+mint/minter.log
+
+# сырые генерации арта (курируются локально)
+art/raw/
+art/generate-log.ndjson

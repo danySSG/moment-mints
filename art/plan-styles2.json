@@ -1,0 +1,14 @@
+[
+  { "slug": "st2-retro-goal", "quantity": 2, "negative": "badge, crest, patch",
+    "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, male soccer player mid-celebration roaring, fists clenched, sky blue and white striped jersey, close-up upper body, dynamic angle, golden confetti, sunset gold sky, stadium silhouette" },
+  { "slug": "st2-retro-var", "quantity": 2, "negative": "badge, crest, patch",
+    "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, male soccer player frozen in disbelief, hands on head, crimson and white jersey, close-up upper body, low angle, cold blue floodlight, light rain, giant stadium screen glow behind" },
+  { "slug": "st2-retro-red", "quantity": 2, "negative": "badge, crest, patch",
+    "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, male soccer player walking off with head down, yellow and green jersey, close-up, dramatic shadows, harsh red rim light, night stadium, tense atmosphere" },
+  { "slug": "st2-spot-red", "quantity": 2, "negative": "badge, crest, patch, furry, animal",
+    "prompt": "masterpiece, 1boy, solo, human male soccer player, monochrome manga style, dramatic screentone, ink drawing, impact frame, radiating speed lines, spot color, red card glowing red as the only colored object, player looking down in despair, close-up upper body, white burst background" },
+  { "slug": "st2-spot-goal", "quantity": 2, "negative": "badge, crest, patch, furry, animal",
+    "prompt": "masterpiece, 1boy, solo, human male soccer player, monochrome manga style, dramatic screentone, ink drawing, impact frame, radiating speed lines, spot color, sky blue jersey as the only colored object, roaring celebration, fists clenched, close-up upper body, white burst background" },
+  { "slug": "st2-ukiyoe-gold", "quantity": 2, "negative": "badge, crest, patch",
+    "prompt": "masterpiece, ukiyo-e style, woodblock print, thick outlines, flat traditional colors, male soccer player roaring in triumph, arms raised, close-up upper body, sky blue and white jersey, stylized great wave and lightning motifs behind, gold leaf background, red hanko stamp, dramatic diagonal composition" }
+]

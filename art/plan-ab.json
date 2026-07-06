@@ -1,0 +1,38 @@
+[
+ {
+  "slug": "ab-wai17-goal",
+  "model": "urn:air:sdxl:checkpoint:civitai:827184@2883731",
+  "prompt": "masterpiece, best quality, anime illustration, male soccer player mid-celebration roaring, fists clenched, sky blue and white striped jersey, close-up upper body, dynamic angle, night stadium floodlights bokeh background, golden confetti, warm triumphant glow, cinematic rim lighting, sfw",
+  "quantity": 2
+ },
+ {
+  "slug": "ab-wai17-var",
+  "model": "urn:air:sdxl:checkpoint:civitai:827184@2883731",
+  "prompt": "masterpiece, best quality, anime illustration, male soccer player frozen in disbelief, hands on head, crimson and white jersey, close-up upper body, dynamic angle, night stadium floodlights bokeh background, cold blue light, rain mist, giant screen glow behind, cinematic rim lighting, sfw",
+  "quantity": 2
+ },
+ {
+  "slug": "ab-wai17-red",
+  "model": "urn:air:sdxl:checkpoint:civitai:827184@2883731",
+  "prompt": "masterpiece, best quality, anime illustration, male soccer player walking off looking down, dramatic silhouette, yellow and green jersey, close-up upper body, dynamic angle, night stadium floodlights bokeh background, harsh red rim light, high contrast shadows, cinematic rim lighting, sfw",
+  "quantity": 2
+ },
+ {
+  "slug": "ab-nova19-goal",
+  "model": "urn:air:sdxl:checkpoint:civitai:376130@2940478",
+  "prompt": "masterpiece, best quality, anime illustration, male soccer player mid-celebration roaring, fists clenched, sky blue and white striped jersey, close-up upper body, dynamic angle, night stadium floodlights bokeh background, golden confetti, warm triumphant glow, cinematic rim lighting, sfw",
+  "quantity": 2
+ },
+ {
+  "slug": "ab-nova19-var",
+  "model": "urn:air:sdxl:checkpoint:civitai:376130@2940478",
+  "prompt": "masterpiece, best quality, anime illustration, male soccer player frozen in disbelief, hands on head, crimson and white jersey, close-up upper body, dynamic angle, night stadium floodlights bokeh background, cold blue light, rain mist, giant screen glow behind, cinematic rim lighting, sfw",
+  "quantity": 2
+ },
+ {
+  "slug": "ab-nova19-red",
+  "model": "urn:air:sdxl:checkpoint:civitai:376130@2940478",
+  "prompt": "masterpiece, best quality, anime illustration, male soccer player walking off looking down, dramatic silhouette, yellow and green jersey, close-up upper body, dynamic angle, night stadium floodlights bokeh background, harsh red rim light, high contrast shadows, cinematic rim lighting, sfw",
+  "quantity": 2
+ }
+]
