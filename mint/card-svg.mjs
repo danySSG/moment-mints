@@ -15,6 +15,8 @@ const TIER_BY_EVENT = {
   RED_CARD: { tier: 'INK DRAMA', accent: '#e5484d', label: 'RED CARD' },
   YELLOW_CARD: { tier: "'90s CEL · BASE", accent: '#dcc93d', label: 'YELLOW CARD' },
 };
+// event.legendary === true → укиё-э тир (финал, хет-трики, исторические моменты)
+const LEGENDARY_TIER = { tier: 'UKIYO-E · LEGENDARY', accent: '#d9b64e' };
 
 let PICKS = null;
 function resolveArt(event, team) {
@@ -22,7 +24,9 @@ function resolveArt(event, team) {
     const p = join(ROOT, 'art', 'picks.json');
     PICKS = existsSync(p) ? JSON.parse(readFileSync(p, 'utf8')) : {};
   }
-  const paths = PICKS[`${event.type}:${team}`] ?? PICKS[`${event.type}:*`];
+  const type = event.legendary ? `${event.type}_LEGENDARY` : event.type;
+  const paths = PICKS[`${type}:${team}`] ?? PICKS[`${type}:*`]
+    ?? (event.legendary ? PICKS[`${event.type}:${team}`] ?? PICKS[`${event.type}:*`] : undefined);
   if (!paths?.length) return null;
   const file = join(ROOT, paths[event.seq % paths.length]);
   return existsSync(file) ? file : null;
@@ -33,7 +37,8 @@ export function momentCardArt(event, ctx = {}) {
   const team = event.participant === 1 ? ctx.participant1 : ctx.participant2;
   const artPath = resolveArt(event, team);
   if (!artPath) return null;
-  const t = TIER_BY_EVENT[event.type] ?? TIER_BY_EVENT.GOAL;
+  const base = TIER_BY_EVENT[event.type] ?? TIER_BY_EVENT.GOAL;
+  const t = event.legendary ? { ...base, ...LEGENDARY_TIER } : base;
   const b64 = readFileSync(artPath).toString('base64');
   const title = ctx.participant1 && ctx.participant2
     ? `${ctx.participant1} vs ${ctx.participant2}` : `Fixture ${event.fixtureId}`;

@@ -45,5 +45,9 @@
   "GOAL:Mexico": [
     "art/picks/prod-mexico-goal-01.jpeg",
     "art/picks/prod-mexico-goal-02.jpeg"
+  ],
+  "GOAL_LEGENDARY:*": [
+    "art/picks/st2-ukiyoe-gold-01.jpeg",
+    "art/picks/st2-ukiyoe-gold-02.jpeg"
   ]
 }
