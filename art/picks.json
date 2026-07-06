@@ -1,0 +1,6 @@
+{
+  "GOAL:Argentina": ["art/picks/prod-argentina-goal-02.jpeg", "art/picks/prod-argentina-goal-04.jpeg"],
+  "GOAL:Egypt": ["art/picks/prod-egypt-goal-01.jpeg", "art/picks/prod-egypt-goal-02.jpeg"],
+  "GOAL_REVOKED:*": ["art/picks/prod-drama-var-03.jpeg", "art/picks/prod-drama-var-02.jpeg"],
+  "RED_CARD:*": ["art/picks/prod-drama-red-03.jpeg", "art/picks/prod-drama-red-04.jpeg"]
+}

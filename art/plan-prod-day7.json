@@ -1,0 +1,10 @@
+[
+  { "slug": "prod-argentina-goal", "quantity": 4, "negative": "adidas, nike, puma, badge, crest, patch",
+    "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, male soccer player mid-celebration roaring, fists clenched, sky blue and white striped jersey, close-up upper body, dynamic angle, golden confetti, sunset gold sky, stadium silhouette" },
+  { "slug": "prod-egypt-goal", "quantity": 4, "negative": "adidas, nike, puma, badge, crest, patch",
+    "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, male soccer player mid-celebration roaring, fists clenched, red jersey with white trim, close-up upper body, dynamic angle, golden confetti, sunset gold sky, stadium silhouette" },
+  { "slug": "prod-drama-var", "quantity": 4, "negative": "adidas, nike, puma, badge, crest, patch",
+    "prompt": "masterpiece, 1boy, solo, human male soccer player, monochrome manga style, dramatic screentone, ink drawing, impact frame, radiating speed lines, spot color, giant stadium screen glowing cold blue behind him as the only colored element, player frozen in disbelief, hands on head, close-up upper body" },
+  { "slug": "prod-drama-red", "quantity": 4, "negative": "adidas, nike, puma, badge, crest, patch",
+    "prompt": "masterpiece, 1boy, solo, human male soccer player, monochrome manga style, dramatic screentone, ink drawing, impact frame, radiating speed lines, spot color, red card held up in referee hand glowing red as the only colored object, player looking down in despair beside it, close-up upper body, white burst background" }
+]

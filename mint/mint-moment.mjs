@@ -18,7 +18,7 @@ import { createUmi } from '@metaplex-foundation/umi-bundle-defaults';
 import { irysUploader } from '@metaplex-foundation/umi-uploader-irys';
 import { keypairIdentity, generateSigner, createGenericFile } from '@metaplex-foundation/umi';
 import { create } from '@metaplex-foundation/mpl-core';
-import { momentCardSvg } from './card-svg.mjs';
+import { momentCardSvg, momentCardArt } from './card-svg.mjs';
 
 const DIR = dirname(fileURLToPath(import.meta.url));
 const RPC = process.env.SOLANA_RPC ?? 'https://api.devnet.solana.com';
@@ -49,7 +49,14 @@ const team = event.participant === 1 ? ctx.participant1 : ctx.participant2;
 const name = `${event.type}${team ? ` · ${team}` : ''} · seq ${event.seq}`.slice(0, 32);
 
 console.error('[mint] карточка…');
-const svg = momentCardSvg(event, ctx);
+// арт-композиция, если на (событие, команда) отобран арт; иначе заглушка
+const svg = momentCardArt(event, ctx) ?? momentCardSvg(event, ctx);
+if (process.argv.includes('--preview')) {
+  const { writeFileSync: wf } = await import('node:fs');
+  wf(join(DIR, 'card-preview.svg'), svg);
+  console.error('[mint] --preview: карточка в mint/card-preview.svg, минта не будет');
+  process.exit(0);
+}
 const file = createGenericFile(new TextEncoder().encode(svg), `moment-${event.fixtureId}-${event.seq}.svg`,
   { contentType: 'image/svg+xml' });
 
