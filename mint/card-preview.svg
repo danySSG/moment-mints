@@ -10,9 +10,9 @@
   <rect x="0" y="986" width="832" height="230" fill="url(#bot)"/>
   <rect x="0" y="0" width="832" height="1216" fill="none" stroke="#f5a623" stroke-width="10"/>
   <text x="40" y="76" font-family="Helvetica,Arial" font-weight="900" font-size="44" fill="#f5a623">GOAL</text>
-  <text x="40" y="118" font-family="Menlo,monospace" font-size="21" fill="#ffffffb0">'90s CEL · BASE</text>
+  <text x="40" y="118" font-family="Menlo,monospace" font-size="21" fill="#ffffff" fill-opacity="0.72">'90s CEL · BASE</text>
   <text x="40" y="1074" font-family="Helvetica,Arial" font-weight="700" font-size="40" fill="#ffffff">Argentina vs Cape Verde</text>
   <text x="40" y="1124" font-family="Helvetica,Arial" font-weight="900" font-size="46" fill="#f5a623">2-1</text>
-  <text x="332" y="1124" font-family="Menlo,monospace" font-size="21" fill="#ffffff90">2026-07-04 00:08 UTC</text>
-  <text x="40" y="1172" font-family="Menlo,monospace" font-size="19" fill="#ffffff80">verified on-chain · fixture 18175918 · seq 915 · stat 1</text>
+  <text x="332" y="1124" font-family="Menlo,monospace" font-size="21" fill="#ffffff" fill-opacity="0.62">2026-07-04 00:08 UTC</text>
+  <text x="40" y="1172" font-family="Menlo,monospace" font-size="19" fill="#ffffff" fill-opacity="0.55">verified on-chain · fixture 18175918 · seq 915 · stat 1</text>
 </svg>

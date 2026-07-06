@@ -50,11 +50,11 @@ export function momentCardArt(event, ctx = {}) {
   <rect x="0" y="986" width="832" height="230" fill="url(#bot)"/>
   <rect x="0" y="0" width="832" height="1216" fill="none" stroke="${t.accent}" stroke-width="10"/>
   <text x="40" y="76" font-family="Helvetica,Arial" font-weight="900" font-size="44" fill="${t.accent}">${esc(t.label)}</text>
-  <text x="40" y="118" font-family="Menlo,monospace" font-size="21" fill="#ffffffb0">${esc(t.tier)}</text>
+  <text x="40" y="118" font-family="Menlo,monospace" font-size="21" fill="#ffffff" fill-opacity="0.72">${esc(t.tier)}</text>
   <text x="40" y="1074" font-family="Helvetica,Arial" font-weight="700" font-size="40" fill="#ffffff">${esc(title)}</text>
   <text x="40" y="1124" font-family="Helvetica,Arial" font-weight="900" font-size="46" fill="${t.accent}">${esc(ctx.score ?? '')}</text>
-  <text x="332" y="1124" font-family="Menlo,monospace" font-size="21" fill="#ffffff90">${esc(when)}</text>
-  <text x="40" y="1172" font-family="Menlo,monospace" font-size="19" fill="#ffffff80">verified on-chain · fixture ${esc(event.fixtureId)} · seq ${esc(event.seq)} · stat ${esc(event.statKey ?? '-')}</text>
+  <text x="332" y="1124" font-family="Menlo,monospace" font-size="21" fill="#ffffff" fill-opacity="0.62">${esc(when)}</text>
+  <text x="40" y="1172" font-family="Menlo,monospace" font-size="19" fill="#ffffff" fill-opacity="0.55">verified on-chain · fixture ${esc(event.fixtureId)} · seq ${esc(event.seq)} · stat ${esc(event.statKey ?? '-')}</text>
 </svg>`;
 }
 
@@ -80,13 +80,13 @@ export function momentCardSvg(event, ctx = {}) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1120" viewBox="0 0 800 1120">
   <rect width="800" height="1120" fill="${p.bg}"/>
   <rect x="24" y="24" width="752" height="1072" fill="none" stroke="${p.accent}" stroke-width="3" rx="24"/>
-  <text x="400" y="140" text-anchor="middle" font-family="Menlo,monospace" font-size="30" fill="#ffffff88">${esc(ctx.competition ?? 'TxLINE Verified Moment')}</text>
+  <text x="400" y="140" text-anchor="middle" font-family="Menlo,monospace" font-size="30" fill="#ffffff" fill-opacity="0.55">${esc(ctx.competition ?? 'TxLINE Verified Moment')}</text>
   <text x="400" y="480" text-anchor="middle" font-family="Helvetica,Arial" font-weight="900" font-size="88" fill="${p.accent}">${esc(p.label)}</text>
   ${team ? `<text x="400" y="580" text-anchor="middle" font-family="Helvetica,Arial" font-weight="700" font-size="52" fill="#ffffff">${esc(team)}</text>` : ''}
   ${ctx.score ? `<text x="400" y="680" text-anchor="middle" font-family="Menlo,monospace" font-size="64" fill="#ffffff">${esc(ctx.score)}</text>` : ''}
-  <text x="400" y="800" text-anchor="middle" font-family="Helvetica,Arial" font-size="34" fill="#ffffffcc">${esc(title)}</text>
-  <text x="400" y="850" text-anchor="middle" font-family="Menlo,monospace" font-size="24" fill="#ffffff88">${esc(when)}</text>
+  <text x="400" y="800" text-anchor="middle" font-family="Helvetica,Arial" font-size="34" fill="#ffffff" fill-opacity="0.8">${esc(title)}</text>
+  <text x="400" y="850" text-anchor="middle" font-family="Menlo,monospace" font-size="24" fill="#ffffff" fill-opacity="0.55">${esc(when)}</text>
   <text x="400" y="1010" text-anchor="middle" font-family="Menlo,monospace" font-size="20" fill="${p.accent}">fixture ${esc(event.fixtureId)} · seq ${esc(event.seq)} · stat ${esc(event.statKey ?? '-')} ${esc(event.from ?? '')}→${esc(event.to ?? '')}</text>
-  <text x="400" y="1050" text-anchor="middle" font-family="Menlo,monospace" font-size="20" fill="#ffffff66">born on-chain · verified by TxLINE feed</text>
+  <text x="400" y="1050" text-anchor="middle" font-family="Menlo,monospace" font-size="20" fill="#ffffff" fill-opacity="0.4">born on-chain · verified by TxLINE feed</text>
 </svg>`;
 }

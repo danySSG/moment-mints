@@ -73,6 +73,11 @@ const html = `<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Moment Mints — World Cup moments, born on-chain</title>
 <meta name="description" content="Collectible cards minted automatically from cryptographically verified World Cup moments. TxLINE × Solana.">
+<meta property="og:title" content="Moment Mints — no moment, no card">
+<meta property="og:description" content="Cards born on-chain from cryptographically verified World Cup moments. TxLINE × Solana.">
+<meta property="og:image" content="https://danyssg.github.io/moment-mints/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚽️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <style>
@@ -99,6 +104,9 @@ const html = `<!doctype html>
   h2 .score { color: var(--acc); }
   h2 .comp { color: var(--mut); font: 400 13.5px Inter; }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(236px, 1fr)); gap: 18px; }
+  .showcase { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; }
+  .showcase img { width: 100%; border-radius: 14px; border: 1px solid var(--line); transition: transform .18s ease; }
+  .showcase img:hover { transform: translateY(-4px) scale(1.015); }
   .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; transition: transform .18s ease, box-shadow .18s ease; }
   .card:hover { transform: translateY(-4px); }
   .card.t-base:hover { box-shadow: 0 10px 34px #f5a62322; }
@@ -138,7 +146,17 @@ const html = `<!doctype html>
     <span style="color:#e5484d;border-color:#e5484d44">drama · spot-color manga (VAR, reds)</span>
     <span style="color:#d9b64e;border-color:#d9b64e44">legendary · ukiyo-e gold (finals)</span>
   </div>
+  <p style="margin-top:20px"><a href="https://github.com/danySSG/moment-mints">github.com/danySSG/moment-mints ↗</a></p>
 </header>
+<section>
+  <h2>The cards <span class="comp">art tiers · live-minted cards join below as matches happen</span></h2>
+  <div class="showcase">
+    <img src="assets/tier-goal-argentina.svg" alt="GOAL card, Argentina, '90s cel tier" loading="lazy">
+    <img src="assets/tier-goal-egypt.svg" alt="GOAL card, Egypt, '90s cel tier" loading="lazy">
+    <img src="assets/tier-var.svg" alt="VAR goal disallowed card, ink drama tier" loading="lazy">
+    <img src="assets/tier-red.svg" alt="Red card moment, ink drama tier" loading="lazy">
+  </div>
+</section>
 ${sections}
 <footer>Every stat on a card is provable: its fixture/seq/statKey address a Merkle leaf published daily
 on-chain by the TxODDS oracle; the "proof tx" link runs <code>validate_stat</code> in the TxLINE Solana
