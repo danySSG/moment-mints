@@ -226,5 +226,23 @@
     "proofTx": "5pRaGgSKvc4MiSpJ7rn1jT6QoMXCHv9pY14q1NQ8X9CdrFoNEK3t8SykW5mVeFRrQxBh4vrUWqc58xwKpeeqFJVw",
     "proofExplorer": "https://explorer.solana.com/tx/5pRaGgSKvc4MiSpJ7rn1jT6QoMXCHv9pY14q1NQ8X9CdrFoNEK3t8SykW5mVeFRrQxBh4vrUWqc58xwKpeeqFJVw?cluster=devnet",
     "verified": true
+  },
+  {
+    "asset": "Cv2bqwj15wRZsVb9yoyjRkK8TXcStoWMzmxF8Au8fEyS",
+    "image": "https://devnet.irys.xyz/egwUeSVShqULYbTncwKatB7YRKfE22niuG6dWVKDDtY",
+    "metadata": "https://devnet.irys.xyz/CHuDhQSNi4pPXSBnMS9goD6FQd9HPn6yVLT26VzzBKPB",
+    "assetExplorer": "https://explorer.solana.com/address/Cv2bqwj15wRZsVb9yoyjRkK8TXcStoWMzmxF8Au8fEyS?cluster=devnet",
+    "type": "GOAL",
+    "fixtureId": "18198205",
+    "seq": 904,
+    "statKey": 2,
+    "match": "? vs ?",
+    "competition": "",
+    "score": "0-1",
+    "action": "goal",
+    "ts": 1783371237591,
+    "proofTx": null,
+    "proofExplorer": null,
+    "verified": false
   }
 ]
