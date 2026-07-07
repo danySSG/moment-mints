@@ -277,9 +277,9 @@
     "score": "1-1",
     "action": "goal",
     "ts": 1783384328575,
-    "proofTx": null,
-    "proofExplorer": null,
-    "verified": false
+    "proofTx": "31tL87UYcovjQ1e7nqcRt3ByTQZmHk6PCG6G4u69PNGpsifCGY6hFuSjNf3BAyhzNVfbK6vsbHTQSQcYQZeKk22q",
+    "proofExplorer": "https://explorer.solana.com/tx/31tL87UYcovjQ1e7nqcRt3ByTQZmHk6PCG6G4u69PNGpsifCGY6hFuSjNf3BAyhzNVfbK6vsbHTQSQcYQZeKk22q?cluster=devnet",
+    "verified": true
   },
   {
     "asset": "9BnSVxPE8wdYhAzhkj2prz7rgtZHbUiv7G4p6tATwsTo",
@@ -295,6 +295,24 @@
     "score": "1-2",
     "action": "goal",
     "ts": 1783384455272,
+    "proofTx": "3pyjN98ax34zRJAUmZ2NzqV6bRHminARPZB9Mmf3BktrKVhpgPv5SF4uNaQ33YmFnaBYj2Zmy6o4QbKKtuqnDHt4",
+    "proofExplorer": "https://explorer.solana.com/tx/3pyjN98ax34zRJAUmZ2NzqV6bRHminARPZB9Mmf3BktrKVhpgPv5SF4uNaQ33YmFnaBYj2Zmy6o4QbKKtuqnDHt4?cluster=devnet",
+    "verified": true
+  },
+  {
+    "asset": "Gwn1UL8LuaxxqLYFd3PUVpx2e7gwmxVNxYwxkWeAjLPo",
+    "image": "https://devnet.irys.xyz/3WaqYHqhgR8XZxUNmqaJZqjC5bsQ3QoWwqrn5oBtqeYJ",
+    "metadata": "https://devnet.irys.xyz/9rUZuoPu6GLsDLQi3MTP9jKehPDcSms78rqUNQ4GDGW7",
+    "assetExplorer": "https://explorer.solana.com/address/Gwn1UL8LuaxxqLYFd3PUVpx2e7gwmxVNxYwxkWeAjLPo?cluster=devnet",
+    "type": "GOAL",
+    "fixtureId": "18193785",
+    "seq": 703,
+    "statKey": 2,
+    "match": "? vs ?",
+    "competition": "",
+    "score": "1-3",
+    "action": "goal",
+    "ts": 1783387325109,
     "proofTx": null,
     "proofExplorer": null,
     "verified": false
