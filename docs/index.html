@@ -120,8 +120,8 @@
     World Cup moments. A goal happens → the TxODDS oracle anchors it on Solana →
     the card mints itself. <b>No moment, no card.</b></p>
     <div class="stats rise" style="--d:.28s">
-      <div class="stat"><b data-count="19">19</b><span>moments minted</span></div>
-      <div class="stat"><b><span data-count="18">18</span>/19</b><span>proven on-chain</span></div>
+      <div class="stat"><b data-count="20">20</b><span>moments minted</span></div>
+      <div class="stat"><b><span data-count="18">18</span>/20</b><span>proven on-chain</span></div>
       <div class="stat"><b data-count="6">6</b><span>matches covered</span></div>
     </div>
     <div class="cta rise" style="--d:.36s">
@@ -151,14 +151,14 @@
 <section class="latest reveal" id="latest">
   <div class="live"><span class="dot"></span><span class="eyebrow" style="color:#c6cfdb">Latest verified moment</span><span class="sub" style="font-size:12px">· page auto-updates during live matches</span></div>
   <div class="latestbox">
-    <a href="https://explorer.solana.com/address/C2F4axZbTtcX3dsNwubeSksjJranxFLccSamXJW9545B?cluster=devnet" target="_blank" rel="noopener"><img src="https://devnet.irys.xyz/56qWp2SHzM2i23L6phcGFtqnAmCA4pE7vRA7XNnhjLzM" alt="latest moment card"></a>
+    <a href="https://explorer.solana.com/address/CUfAT29tnZtHuLPnTQwZEgNg74Zqe5t2vACzXVGnRAzu?cluster=devnet" target="_blank" rel="noopener"><img src="https://devnet.irys.xyz/9jPHqgfspYdV7DyxmmkLGfsDTRYPBzrMkGW9LcnEweB8" alt="latest moment card"></a>
     <div class="linfo">
-      <span class="type" style="color:#f5a623;border-color:#f5a62344">GOAL</span>
-      <h3>Argentina vs Egypt <b>0-2</b></h3>
-      <p class="sub">World Cup 2026 · 2026-07-07 17:23 UTC</p>
+      <span class="type" style="color:#e5484d;border-color:#e5484d44">VAR · GOAL DISALLOWED</span>
+      <h3>Argentina vs Egypt <b>0-1</b></h3>
+      <p class="sub">World Cup 2026 · 2026-07-07 17:25 UTC</p>
       <p style="margin-top:8px">proof pending</p>
       <p class="links" style="margin-top:10px">
-        <a href="https://explorer.solana.com/address/C2F4axZbTtcX3dsNwubeSksjJranxFLccSamXJW9545B?cluster=devnet" target="_blank" rel="noopener">NFT ↗</a>
+        <a href="https://explorer.solana.com/address/CUfAT29tnZtHuLPnTQwZEgNg74Zqe5t2vACzXVGnRAzu?cluster=devnet" target="_blank" rel="noopener">NFT ↗</a>
         
       </p>
     </div>
@@ -175,7 +175,7 @@
   </div>
 </section>
 <section class="reveal">
-      <h2><span class="score">0-2</span> Argentina vs Egypt <span class="comp">World Cup 2026</span></h2>
+      <h2><span class="score">0-1</span> Argentina vs Egypt <span class="comp">World Cup 2026</span></h2>
       <div class="grid">
   <article class="card t-base" data-tilt>
     <a class="imgwrap" href="https://explorer.solana.com/address/C2F4axZbTtcX3dsNwubeSksjJranxFLccSamXJW9545B?cluster=devnet" target="_blank" rel="noopener">
@@ -195,6 +195,32 @@
       </div>
       <details class="prf"><summary>how is this verified?</summary>
         <p>The stat behind this card (fixture 18202701 · seq 646 · key 2)
+        is a leaf in a Merkle tree whose daily root the TxODDS oracle publishes on Solana.
+        The proof transaction replays that Merkle path inside the TxLINE program
+        (<code>validate_stat</code>) — the chain itself confirms the moment happened.</p>
+        
+      </details>
+    </div>
+  </article>
+
+  <article class="card t-drama" data-tilt>
+    <a class="imgwrap" href="https://explorer.solana.com/address/CUfAT29tnZtHuLPnTQwZEgNg74Zqe5t2vACzXVGnRAzu?cluster=devnet" target="_blank" rel="noopener">
+      <img src="https://devnet.irys.xyz/9jPHqgfspYdV7DyxmmkLGfsDTRYPBzrMkGW9LcnEweB8" alt="VAR · GOAL DISALLOWED — Argentina vs Egypt" loading="lazy">
+    </a>
+    <div class="meta">
+      <div class="row1">
+        <span class="type" style="color:#e5484d;border-color:#e5484d44">VAR · GOAL DISALLOWED</span>
+        <span class="pending">pending proof</span>
+      </div>
+      <div class="match">Argentina vs Egypt <b>0-1</b></div>
+      <div class="sub">2026-07-07 17:25 UTC · tier: ink drama</div>
+      <div class="links">
+        <a href="https://explorer.solana.com/address/CUfAT29tnZtHuLPnTQwZEgNg74Zqe5t2vACzXVGnRAzu?cluster=devnet" target="_blank" rel="noopener">NFT ↗</a>
+        
+        <a href="https://devnet.irys.xyz/HrX96FE1M38qpRaMc2ZR6GsKcHgWcRoe9oc8e1nk8diF" target="_blank" rel="noopener">json ↗</a>
+      </div>
+      <details class="prf"><summary>how is this verified?</summary>
+        <p>The stat behind this card (fixture 18202701 · seq 653 · key 2)
         is a leaf in a Merkle tree whose daily root the TxODDS oracle publishes on Solana.
         The proof transaction replays that Merkle path inside the TxLINE program
         (<code>validate_stat</code>) — the chain itself confirms the moment happened.</p>

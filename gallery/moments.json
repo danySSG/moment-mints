@@ -359,5 +359,24 @@
     "proofTx": null,
     "proofExplorer": null,
     "verified": false
+  },
+  {
+    "asset": "CUfAT29tnZtHuLPnTQwZEgNg74Zqe5t2vACzXVGnRAzu",
+    "image": "https://devnet.irys.xyz/9jPHqgfspYdV7DyxmmkLGfsDTRYPBzrMkGW9LcnEweB8",
+    "metadata": "https://devnet.irys.xyz/HrX96FE1M38qpRaMc2ZR6GsKcHgWcRoe9oc8e1nk8diF",
+    "assetExplorer": "https://explorer.solana.com/address/CUfAT29tnZtHuLPnTQwZEgNg74Zqe5t2vACzXVGnRAzu?cluster=devnet",
+    "type": "GOAL_REVOKED",
+    "fixtureId": "18202701",
+    "seq": 653,
+    "statKey": 2,
+    "team": "Egypt",
+    "match": "Argentina vs Egypt",
+    "competition": "World Cup 2026",
+    "score": "0-1",
+    "action": "corner",
+    "ts": 1783445102784,
+    "proofTx": null,
+    "proofExplorer": null,
+    "verified": false
   }
 ]
