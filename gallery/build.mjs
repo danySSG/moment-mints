@@ -230,7 +230,7 @@ const html = `<!doctype html>
   <span style="color:#d9b64e;border-color:#d9b64e44">legendary · ukiyo-e gold (finals)</span>
 </div>
 ${latest ? `<section class="latest reveal" id="latest">
-  <div class="live"><span class="dot"></span><span class="eyebrow" style="color:#c6cfdb">Latest verified moment</span></div>
+  <div class="live"><span class="dot"></span><span class="eyebrow" style="color:#c6cfdb">Latest verified moment</span><span class="sub" style="font-size:12px">· page auto-updates during live matches</span></div>
   <div class="latestbox">
     <a href="${esc(latest.assetExplorer)}" target="_blank" rel="noopener"><img src="${esc(gw(latest.image))}" alt="latest moment card"></a>
     <div class="linfo">
@@ -282,6 +282,19 @@ Devnet build for the TxODDS × Solana World Cup Hackathon · <a href="https://gi
       if (p < 1) requestAnimationFrame(tick); };
     requestAnimationFrame(tick);
   });
+})();
+// во время live-матча страница подтягивает новые карточки сама:
+// раз в 45с HEAD-запрос к себе; сменился ETag (новый деплой) → reload
+(() => {
+  let tag = null;
+  setInterval(async () => {
+    try {
+      const r = await fetch(location.pathname, { method: 'HEAD', cache: 'no-store' });
+      const e = r.headers.get('etag') ?? r.headers.get('last-modified');
+      if (tag && e && e !== tag) location.reload();
+      tag = e ?? tag;
+    } catch {}
+  }, 45000);
 })();
 </script>
 </body></html>`;
