@@ -61,7 +61,10 @@ for (const line of lines) {
     participant1: fx.p1 ?? m.ctx?.participant1, participant2: fx.p2 ?? m.ctx?.participant2,
     score: detail.get(key)?.score ?? m.ctx?.score, competition: fx.comp ?? m.ctx?.competition,
   };
-  if (m.artApplied && !process.argv.includes('--force')) { out.push(line); skipped++; continue; }
+  // --fixture <id>: обновить только карточки одного матча (точечный ретрофит)
+  const fxArg = process.argv.indexOf('--fixture');
+  if (fxArg !== -1 && String(m.event.fixtureId) !== process.argv[fxArg + 1]) { out.push(line); skipped++; continue; }
+  if (m.artApplied && !process.argv.includes('--force') && fxArg === -1) { out.push(line); skipped++; continue; }
   const svg = momentCardArt(e, ctx);
   if (!svg) { out.push(line); skipped++; console.error(`- нет арта: ${key}`); continue; }
 

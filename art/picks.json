@@ -1,11 +1,15 @@
 {
   "GOAL:Argentina": [
     "art/picks/prod-argentina-goal-02.jpeg",
-    "art/picks/prod-argentina-goal-04.jpeg"
+    "art/picks/prod-argentina-goal-04.jpeg",
+    "art/picks/pose-argentina-slide-01.jpeg",
+    "art/picks/pose-argentina-sky-01.jpeg"
   ],
   "GOAL:Egypt": [
     "art/picks/prod-egypt-goal-01.jpeg",
-    "art/picks/prod-egypt-goal-02.jpeg"
+    "art/picks/prod-egypt-goal-02.jpeg",
+    "art/picks/pose-egypt-sky-01.jpeg",
+    "art/picks/pose-egypt-slide-01.jpeg"
   ],
   "GOAL_REVOKED:*": [
     "art/picks/prod-drama-var-03.jpeg",
@@ -56,6 +60,8 @@
   ],
   "GOAL:Belgium": [
     "art/picks/prod-belgium-goal-02.jpeg",
-    "art/picks/prod-belgium-goal-01.jpeg"
+    "art/picks/prod-belgium-goal-01.jpeg",
+    "art/picks/pose-belgium-slide-01.jpeg",
+    "art/picks/pose-belgium-sky-01.jpeg"
   ]
 }

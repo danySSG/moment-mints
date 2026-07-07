@@ -1,0 +1,56 @@
+[
+ {
+  "slug": "pose-belgium-slide",
+  "quantity": 2,
+  "negative": "adidas, nike, puma, badge, crest, patch, furry, animal",
+  "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player, sliding on knees in celebration, arms spread wide, low angle from grass level, shouting with joy, red jersey with black and yellow trim, dynamic angle, golden confetti, sunset gold sky, stadium silhouette"
+ },
+ {
+  "slug": "pose-belgium-sky",
+  "quantity": 2,
+  "negative": "adidas, nike, puma, badge, crest, patch, furry, animal",
+  "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player, arms raised high to the sky, head tilted back, triumphant scream, rim light, red jersey with black and yellow trim, dynamic angle, golden confetti, sunset gold sky, stadium silhouette"
+ },
+ {
+  "slug": "pose-belgium-run",
+  "quantity": 2,
+  "negative": "adidas, nike, puma, badge, crest, patch, furry, animal",
+  "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player, sprinting toward camera screaming with joy, jersey flying, motion blur background, red jersey with black and yellow trim, dynamic angle, golden confetti, sunset gold sky, stadium silhouette"
+ },
+ {
+  "slug": "pose-argentina-slide",
+  "quantity": 2,
+  "negative": "adidas, nike, puma, badge, crest, patch, furry, animal",
+  "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player, sliding on knees in celebration, arms spread wide, low angle from grass level, shouting with joy, sky blue and white striped jersey, dynamic angle, golden confetti, sunset gold sky, stadium silhouette"
+ },
+ {
+  "slug": "pose-argentina-sky",
+  "quantity": 2,
+  "negative": "adidas, nike, puma, badge, crest, patch, furry, animal",
+  "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player, arms raised high to the sky, head tilted back, triumphant scream, rim light, sky blue and white striped jersey, dynamic angle, golden confetti, sunset gold sky, stadium silhouette"
+ },
+ {
+  "slug": "pose-argentina-run",
+  "quantity": 2,
+  "negative": "adidas, nike, puma, badge, crest, patch, furry, animal",
+  "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player, sprinting toward camera screaming with joy, jersey flying, motion blur background, sky blue and white striped jersey, dynamic angle, golden confetti, sunset gold sky, stadium silhouette"
+ },
+ {
+  "slug": "pose-egypt-slide",
+  "quantity": 2,
+  "negative": "adidas, nike, puma, badge, crest, patch, furry, animal",
+  "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player, sliding on knees in celebration, arms spread wide, low angle from grass level, shouting with joy, red jersey with white trim, dynamic angle, golden confetti, sunset gold sky, stadium silhouette"
+ },
+ {
+  "slug": "pose-egypt-sky",
+  "quantity": 2,
+  "negative": "adidas, nike, puma, badge, crest, patch, furry, animal",
+  "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player, arms raised high to the sky, head tilted back, triumphant scream, rim light, red jersey with white trim, dynamic angle, golden confetti, sunset gold sky, stadium silhouette"
+ },
+ {
+  "slug": "pose-egypt-run",
+  "quantity": 2,
+  "negative": "adidas, nike, puma, badge, crest, patch, furry, animal",
+  "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player, sprinting toward camera screaming with joy, jersey flying, motion blur background, red jersey with white trim, dynamic angle, golden confetti, sunset gold sky, stadium silhouette"
+ }
+]

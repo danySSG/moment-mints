@@ -28,7 +28,10 @@ function resolveArt(event, team) {
   const paths = PICKS[`${type}:${team}`] ?? PICKS[`${type}:*`]
     ?? (event.legendary ? PICKS[`${event.type}:${team}`] ?? PICKS[`${event.type}:*`] : undefined);
   if (!paths?.length) return null;
-  const file = join(ROOT, paths[event.seq % paths.length]);
+  // ротация по НОМЕРУ гола (event.to: 1-й гол команды → вариант 1, 2-й → 2, …) —
+  // ротация по чётности seq дала три одинаковых карточки подряд (Бельгия 07.07)
+  const idx = (Number.isFinite(event.to) && event.to > 0 ? event.to - 1 : event.seq) % paths.length;
+  const file = join(ROOT, paths[idx]);
   return existsSync(file) ? file : null;
 }
 
