@@ -294,7 +294,7 @@ Devnet build for the TxODDS × Solana World Cup Hackathon · <a href="https://gi
       if (tag && e && e !== tag) location.reload();
       tag = e ?? tag;
     } catch {}
-  }, 45000);
+  }, 20000);
 })();
 </script>
 </body></html>`;
