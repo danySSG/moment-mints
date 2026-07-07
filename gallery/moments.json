@@ -340,5 +340,24 @@
     "proofTx": "4EkeD3nLj8oXkaUtQcuA2Hhud2eaCbnYuqGh8TwqKCWhc1hb4fzxvY7zX9TCkDZrxjJiDYSAbs67h9HhdPJp9mxS",
     "proofExplorer": "https://explorer.solana.com/tx/4EkeD3nLj8oXkaUtQcuA2Hhud2eaCbnYuqGh8TwqKCWhc1hb4fzxvY7zX9TCkDZrxjJiDYSAbs67h9HhdPJp9mxS?cluster=devnet",
     "verified": true
+  },
+  {
+    "asset": "C2F4axZbTtcX3dsNwubeSksjJranxFLccSamXJW9545B",
+    "image": "https://devnet.irys.xyz/56qWp2SHzM2i23L6phcGFtqnAmCA4pE7vRA7XNnhjLzM",
+    "metadata": "https://devnet.irys.xyz/3Z381cx1E48tE731xfdzvzkehpBnYCPc6ZbH5gey3vp5",
+    "assetExplorer": "https://explorer.solana.com/address/C2F4axZbTtcX3dsNwubeSksjJranxFLccSamXJW9545B?cluster=devnet",
+    "type": "GOAL",
+    "fixtureId": "18202701",
+    "seq": 646,
+    "statKey": 2,
+    "team": "Egypt",
+    "match": "Argentina vs Egypt",
+    "competition": "World Cup 2026",
+    "score": "0-2",
+    "action": "var_end",
+    "ts": 1783445037296,
+    "proofTx": null,
+    "proofExplorer": null,
+    "verified": false
   }
 ]
