@@ -280,5 +280,23 @@
     "proofTx": null,
     "proofExplorer": null,
     "verified": false
+  },
+  {
+    "asset": "9BnSVxPE8wdYhAzhkj2prz7rgtZHbUiv7G4p6tATwsTo",
+    "image": "https://devnet.irys.xyz/7Z1J7R8uwfyy7LqYdDF9Vf5jPhx9V1Rr86rm5Y6CCyuW",
+    "metadata": "https://devnet.irys.xyz/CkQSxvFMMibuLmkPtRX5DUJVJ7vyWvw9XXgAo7eJdf2R",
+    "assetExplorer": "https://explorer.solana.com/address/9BnSVxPE8wdYhAzhkj2prz7rgtZHbUiv7G4p6tATwsTo?cluster=devnet",
+    "type": "GOAL",
+    "fixtureId": "18193785",
+    "seq": 335,
+    "statKey": 2,
+    "match": "? vs ?",
+    "competition": "",
+    "score": "1-2",
+    "action": "goal",
+    "ts": 1783384455272,
+    "proofTx": null,
+    "proofExplorer": null,
+    "verified": false
   }
 ]

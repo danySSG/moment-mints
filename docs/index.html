@@ -120,8 +120,8 @@
     World Cup moments. A goal happens → the TxODDS oracle anchors it on Solana →
     the card mints itself. <b>No moment, no card.</b></p>
     <div class="stats rise" style="--d:.28s">
-      <div class="stat"><b data-count="15">15</b><span>moments minted</span></div>
-      <div class="stat"><b><span data-count="14">14</span>/15</b><span>proven on-chain</span></div>
+      <div class="stat"><b data-count="16">16</b><span>moments minted</span></div>
+      <div class="stat"><b><span data-count="14">14</span>/16</b><span>proven on-chain</span></div>
       <div class="stat"><b data-count="4">4</b><span>matches covered</span></div>
     </div>
     <div class="cta rise" style="--d:.36s">
@@ -151,14 +151,14 @@
 <section class="latest reveal" id="latest">
   <div class="live"><span class="dot"></span><span class="eyebrow" style="color:#c6cfdb">Latest verified moment</span></div>
   <div class="latestbox">
-    <a href="https://explorer.solana.com/address/DexpoT2emg9sMPErKmEYz8UDHmvH4BzCnqwTgBuqEsLB?cluster=devnet" target="_blank" rel="noopener"><img src="https://devnet.irys.xyz/9ikHSyAkkVJU8AKk2HCwGRUhNgiTkYKYNrzdxhAjYtRw" alt="latest moment card"></a>
+    <a href="https://explorer.solana.com/address/9BnSVxPE8wdYhAzhkj2prz7rgtZHbUiv7G4p6tATwsTo?cluster=devnet" target="_blank" rel="noopener"><img src="https://devnet.irys.xyz/7Z1J7R8uwfyy7LqYdDF9Vf5jPhx9V1Rr86rm5Y6CCyuW" alt="latest moment card"></a>
     <div class="linfo">
       <span class="type" style="color:#f5a623;border-color:#f5a62344">GOAL</span>
-      <h3>? vs ? <b>1-1</b></h3>
-      <p class="sub"> · 2026-07-07 00:32 UTC</p>
+      <h3>? vs ? <b>1-2</b></h3>
+      <p class="sub"> · 2026-07-07 00:34 UTC</p>
       <p style="margin-top:8px">proof pending</p>
       <p class="links" style="margin-top:10px">
-        <a href="https://explorer.solana.com/address/DexpoT2emg9sMPErKmEYz8UDHmvH4BzCnqwTgBuqEsLB?cluster=devnet" target="_blank" rel="noopener">NFT ↗</a>
+        <a href="https://explorer.solana.com/address/9BnSVxPE8wdYhAzhkj2prz7rgtZHbUiv7G4p6tATwsTo?cluster=devnet" target="_blank" rel="noopener">NFT ↗</a>
         
       </p>
     </div>
@@ -175,7 +175,7 @@
   </div>
 </section>
 <section class="reveal">
-      <h2><span class="score">1-1</span> ? vs ? <span class="comp"></span></h2>
+      <h2><span class="score">1-2</span> ? vs ? <span class="comp"></span></h2>
       <div class="grid">
   <article class="card t-base" data-tilt>
     <a class="imgwrap" href="https://explorer.solana.com/address/Cv2bqwj15wRZsVb9yoyjRkK8TXcStoWMzmxF8Au8fEyS?cluster=devnet" target="_blank" rel="noopener">
@@ -247,6 +247,32 @@
       </div>
       <details class="prf"><summary>how is this verified?</summary>
         <p>The stat behind this card (fixture 18193785 · seq 316 · key 1)
+        is a leaf in a Merkle tree whose daily root the TxODDS oracle publishes on Solana.
+        The proof transaction replays that Merkle path inside the TxLINE program
+        (<code>validate_stat</code>) — the chain itself confirms the moment happened.</p>
+        
+      </details>
+    </div>
+  </article>
+
+  <article class="card t-base" data-tilt>
+    <a class="imgwrap" href="https://explorer.solana.com/address/9BnSVxPE8wdYhAzhkj2prz7rgtZHbUiv7G4p6tATwsTo?cluster=devnet" target="_blank" rel="noopener">
+      <img src="https://devnet.irys.xyz/7Z1J7R8uwfyy7LqYdDF9Vf5jPhx9V1Rr86rm5Y6CCyuW" alt="GOAL — ? vs ?" loading="lazy">
+    </a>
+    <div class="meta">
+      <div class="row1">
+        <span class="type" style="color:#f5a623;border-color:#f5a62344">GOAL</span>
+        <span class="pending">pending proof</span>
+      </div>
+      <div class="match">? vs ? <b>1-2</b></div>
+      <div class="sub">2026-07-07 00:34 UTC · tier: '90s cel</div>
+      <div class="links">
+        <a href="https://explorer.solana.com/address/9BnSVxPE8wdYhAzhkj2prz7rgtZHbUiv7G4p6tATwsTo?cluster=devnet" target="_blank" rel="noopener">NFT ↗</a>
+        
+        <a href="https://devnet.irys.xyz/CkQSxvFMMibuLmkPtRX5DUJVJ7vyWvw9XXgAo7eJdf2R" target="_blank" rel="noopener">json ↗</a>
+      </div>
+      <details class="prf"><summary>how is this verified?</summary>
+        <p>The stat behind this card (fixture 18193785 · seq 335 · key 2)
         is a leaf in a Merkle tree whose daily root the TxODDS oracle publishes on Solana.
         The proof transaction replays that Merkle path inside the TxLINE program
         (<code>validate_stat</code>) — the chain itself confirms the moment happened.</p>
