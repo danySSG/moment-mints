@@ -76,11 +76,14 @@ for (const line of readFileSync(join(MINT, 'mint-log.ndjson'), 'utf8').split('\n
       proof = null;
     }
   }
+  // имена команд: карта FIXTURES для старых записей, ctx из mint-log для новых
+  const p1 = fx.p1 ?? m.ctx?.participant1;
+  const p2 = fx.p2 ?? m.ctx?.participant2;
   moments.push({
     asset: m.asset, image: m.imageUri, metadata: m.metadataUri, assetExplorer: m.explorer,
     type: e.type, fixtureId: e.fixtureId, seq: e.seq, statKey: e.statKey,
-    team: e.participant === 1 ? fx.p1 : fx.p2,
-    match: `${fx.p1 ?? '?'} vs ${fx.p2 ?? '?'}`, competition: fx.comp ?? '',
+    team: e.participant === 1 ? p1 : p2,
+    match: `${p1 ?? '?'} vs ${p2 ?? '?'}`, competition: fx.comp ?? m.ctx?.competition ?? '',
     score: detail.get(key)?.score ?? m.ctx?.score ?? '',
     action: e.action ?? null, ts: e.ts ?? null,
     proofTx: proof?.txSig ?? null,

@@ -1,0 +1,6 @@
+[
+  { "slug": "prod-usa-goal", "quantity": 4, "negative": "adidas, nike, puma, badge, crest, patch, furry, animal",
+    "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player shouting in triumph, fists clenched, white jersey with navy blue and red trim, close-up upper body, dynamic angle, golden confetti, sunset gold sky, stadium silhouette" },
+  { "slug": "prod-belgium-goal", "quantity": 4, "negative": "adidas, nike, puma, badge, crest, patch, furry, animal",
+    "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player shouting in triumph, fists clenched, red jersey with black and yellow trim, close-up upper body, dynamic angle, golden confetti, sunset gold sky, stadium silhouette" }
+]

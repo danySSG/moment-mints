@@ -49,5 +49,13 @@
   "GOAL_LEGENDARY:*": [
     "art/picks/st2-ukiyoe-gold-01.jpeg",
     "art/picks/st2-ukiyoe-gold-02.jpeg"
+  ],
+  "GOAL:USA": [
+    "art/picks/prod-usa-goal-02.jpeg",
+    "art/picks/prod-usa-goal-01.jpeg"
+  ],
+  "GOAL:Belgium": [
+    "art/picks/prod-belgium-goal-02.jpeg",
+    "art/picks/prod-belgium-goal-01.jpeg"
   ]
 }
