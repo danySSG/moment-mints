@@ -2,6 +2,9 @@
 day1/.env
 day1/civitai.env
 day1/wallet-devnet.json
+day1/wallet-*.json
+**/wallet-*.json
+**/.dev.vars
 .debug-jwt
 
 # зависимости и мусор

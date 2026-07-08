@@ -1141,16 +1141,41 @@ async function realClaim(email, btn){
       return fail(m);
     }
     const claims = getClaims();
-    claims.push({ id:data.mintHash||data.crossmintId, email, team:selTeam, label:data.label, match:data.match, score:data.score, image:data.image, edition:data.edition, supply:data.supply, assetExplorer:data.explorer, proofExplorer:data.proofExplorer, owner:data.owner, at: Date.now() });
+    claims.push({ id:data.mintHash||data.crossmintId, crossmintId:data.crossmintId, email, team:selTeam, label:data.label, match:data.match, score:data.score, image:data.image, edition:data.edition, supply:data.supply, assetExplorer:data.explorer, proofExplorer:data.proofExplorer, owner:data.owner, at: Date.now() });
     setClaims(claims);
     showWon(data);
   } catch (e) { btn.disabled=false; btn.textContent=t0; fail('Network error — please retry. Your email was not charged.'); }
+}
+function collGridHTML(claims){
+  return '<div class="collgrid">'+claims.slice().reverse().map(c=>{
+    const inner = `<img src="${c.image}"><div class="cc"><b>${c.label}</b> #${c.edition}<br><span style="color:var(--mut)">${c.match} ${c.score}${c.assetExplorer?'':' · minting…'}</span></div>`;
+    // pending mint (no explorer yet) → non-link tile, never a dead href="null"
+    return c.assetExplorer
+      ? `<a class="c" href="${c.assetExplorer}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">${inner}</a>`
+      : `<div class="c">${inner}</div>`;
+  }).join('')+'</div>';
+}
+async function backfillPending(){
+  if (!CLAIM_API) return;
+  const claims = getClaims(); let changed=false;
+  for (const c of claims){
+    if (c.assetExplorer || !c.crossmintId) continue;
+    try {
+      const r = await fetch(CLAIM_API + '/api/status?id=' + encodeURIComponent(c.crossmintId));
+      const d = await r.json();
+      if (d && d.explorer){ c.assetExplorer=d.explorer; c.owner=d.owner||c.owner; c.id=d.mintHash||c.id; changed=true; }
+    } catch {}
+  }
+  if (changed){ setClaims(claims);
+    const b=document.getElementById('collBody');
+    if (b && document.getElementById('collModal').classList.contains('on')) b.innerHTML=collGridHTML(getClaims());
+  }
 }
 function openCollection(){
   const claims = getClaims();
   const body = document.getElementById('collBody');
   if (!claims.length) body.innerHTML='<div class="empty">No moments yet — claim your team\'s first one.</div>';
-  else body.innerHTML='<div class="collgrid">'+claims.slice().reverse().map(c=>`<a class="c" href="${c.assetExplorer}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit"><img src="${c.image}"><div class="cc"><b>${c.label}</b> #${c.edition}<br><span style="color:var(--mut)">${c.match} ${c.score}</span></div></a>`).join('')+'</div>';
+  else { body.innerHTML=collGridHTML(claims); backfillPending(); }
   // лидерборд: посев по командам + мои клеймы
   const seed = { Argentina:altSeed('Argentina'), England:altSeed('England'), Brazil:altSeed('Brazil'), Portugal:altSeed('Portugal'), Spain:altSeed('Spain'), Belgium:altSeed('Belgium') };
   claims.forEach(c => seed[c.team]=(seed[c.team]||0)+1);

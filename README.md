@@ -71,10 +71,11 @@ TxLINE SSE feed ──► core/       stat-diff event detector (zero deps, 12 te
 - [x] All card art + metadata migrated to permanent Arweave (off ephemeral devnet Irys);
       5-card hero set productionized on Solana mainnet
 - [x] Live vs replayed clearly tagged on every card (12 live / 13 replayed)
-- [~] Fan claim loop — Cloudflare Worker (server-side Turnstile → Crossmint mint-and-deliver
-      to an email custodial wallet, compressed editions) is **built** (`claim-worker/`);
-      deploys with a Crossmint key. Gallery shows the flow; a labelled prototype stands in
-      until it's pointed at.
+- [x] Fan claim loop **live** — Cloudflare Worker (server-side Turnstile → Crossmint
+      mint-and-deliver to an email custodial wallet, compressed editions) deployed at
+      `https://moment-claim.danyfomin003.workers.dev` (`claim-worker/`); the live gallery does
+      the real claim on devnet — 2 compressed NFTs already minted to an email custodial wallet,
+      finalized on the devnet Solana explorer.
 - [ ] Demo video
 
 ## Run it

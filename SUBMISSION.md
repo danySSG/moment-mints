@@ -80,11 +80,15 @@ The collectible only matters if a fan can hold it. The fan loop:
   bot check (the secret never touches the browser), with optional presence-gating as a
   retention flex.
 
-**Honest status of the claim:** the claim Worker — server-side Turnstile siteverify →
-Crossmint mint-and-deliver to the fan's email wallet → server-allocated edition numbers —
-is built and one command from live (it deploys with our Crossmint key). The live gallery
-shows the full claim UX today, with real cards and real on-chain proof links; the custodial
-email delivery switches on the moment the Worker is pointed at. Nothing a fan sees is faked.
+**Honest status of the claim — it's live.** The claim Worker (server-side Turnstile
+siteverify → Crossmint mint-and-deliver to the fan's email wallet → server-allocated edition
+numbers) is **deployed and running** at `https://moment-claim.danyfomin003.workers.dev`, and
+the live gallery is wired to it: a fan who claims gets a **real compressed NFT** minted to a
+custodial Solana wallet auto-created for their email — on devnet (staging Crossmint), matching
+the devnet 25-card strand. We've already minted two to our own inbox, finalized on the devnet
+Solana explorer and owned by the email's custodial wallet (not ours). The same Worker flips to
+a tradeable mainnet asset by swapping the Crossmint key. Real cards, real on-chain proof links,
+real custodial delivery — nothing a fan sees is faked.
 
 ### See it in three art tiers, across the room
 Three deterministic "print-era" art tiers, generated per team (WAI-illustrious-SDXL,
@@ -232,8 +236,8 @@ smoothing.
   production path).
 - **Backend:** Node.js ≥18, zero-dependency detector core (12 tests), autonomous
   mint/proof daemons.
-- **Fan loop:** Cloudflare Worker → server-side Turnstile siteverify → Crossmint
-  mint-and-deliver (compressed edition) to an email-linked custodial Solana wallet.
+- **Fan loop:** Cloudflare Worker (deployed, live) → server-side Turnstile siteverify →
+  Crossmint mint-and-deliver (compressed edition) to an email-linked custodial Solana wallet.
 - **Art:** WAI-illustrious-SDXL three-tier generative system, deterministic mint-time
   compositing.
 - **Frontend:** static gallery on GitHub Pages, auto-published live during matches
@@ -241,6 +245,7 @@ smoothing.
 
 **Links:**
 - **Live gallery (public MVP):** https://danyssg.github.io/moment-mints/
+- **Live claim endpoint (Cloudflare Worker):** https://moment-claim.danyfomin003.workers.dev/api/health
 - **Code (public repo):** https://github.com/danySSG/moment-mints
 - **Demo video:** _(paste public YouTube/Loom link — set to Public/Unlisted, verify it
   plays signed-out)_

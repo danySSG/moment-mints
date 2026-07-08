@@ -26,7 +26,9 @@ const cfg = (env, k) => (env[k] && String(env[k])) || DEFAULTS[k];
 function corsHeaders(env, origin) {
   const allowed = cfg(env, 'ALLOWED_ORIGIN');
   return {
-    'Access-Control-Allow-Origin': origin === allowed ? allowed : allowed,
+    // single trusted origin (the GitHub Pages site); a mismatched Origin gets an ACAO its
+    // browser will reject, so cross-origin reads stay blocked.
+    'Access-Control-Allow-Origin': allowed,
     'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Access-Control-Max-Age': '86400',
@@ -110,8 +112,11 @@ async function handleClaim(env, origin, request) {
 
   const base = cfg(env, 'CROSSMINT_BASE');
   const collection = cfg(env, 'CROSSMINT_COLLECTION_ID');
-  // idempotent PUT: deterministic id so a client retry never double-mints the same edition
-  const idemId = `mm-${pick.id}-${edition}`;
+  // idempotent PUT: deterministic id so a client retry never double-mints the same edition.
+  // Includes an email hash so that even if the (eventually-consistent) KV counter hands two
+  // different fans the same edition number, they get SEPARATE Crossmint NFTs — never the
+  // same one (which would silently deliver fan A's mint to fan B).
+  const idemId = `mm-${pick.id}-${edition}-${hashStr(email)}`;
   let mintRes, mint;
   try {
     mintRes = await fetch(`${base}/api/2022-06-09/collections/${collection}/nfts/${idemId}`, {
@@ -171,11 +176,12 @@ async function verifyTurnstile(secret, token, ip) {
 }
 
 async function pickMoment(env, team, momentId) {
+  const t = team.toLowerCase();
   if (momentId) {
-    const m = POOL.find(p => p.id === momentId);
+    // only honor an explicit momentId if it actually belongs to the requested team
+    const m = POOL.find(p => p.id === momentId && (p.teams || []).some(x => String(x).toLowerCase() === t));
     if (m) return m;
   }
-  const t = team.toLowerCase();
   const ms = POOL.filter(p => (p.teams || []).some(x => String(x).toLowerCase() === t));
   if (!ms.length) return null;
   // rotate across the team's moments so repeat claims spread over different cards
@@ -232,4 +238,11 @@ function byteClip(s, max) {
   let out = '', n = 0;
   for (const ch of s) { const b = ENC.encode(ch).length; if (n + b > max) break; out += ch; n += b; }
   return out;
+}
+
+// small stable hash (djb2) → short hex, for idempotency keys (not security-sensitive)
+function hashStr(s) {
+  let h = 5381;
+  for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) >>> 0;
+  return h.toString(16);
 }
