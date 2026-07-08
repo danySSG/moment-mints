@@ -83,8 +83,10 @@ async function handleClaim(env, origin, request) {
   if (edition > pick.supply) return json(env, origin, { error: 'sold_out' }, 409);
 
   // 3. mint a real compressed NFT, delivered to the fan's email-linked Solana custodial wallet
-  const name = `${pick.label} · ${team}`.slice(0, 32);
-  const description = `Edition #${edition} · verified World Cup moment`.slice(0, 64);
+  // Crossmint caps name at 32 UTF-8 BYTES / description at 64 — clip by bytes, not JS chars,
+  // and avoid multi-byte separators (· is 2 bytes).
+  const name = byteClip(`${team} ${String(pick.label).replace(/·/g, '-')}`, 32);
+  const description = byteClip(`Edition #${edition} - verified WC moment`, 64);
   const mintBody = {
     recipient: `email:${email}:solana`,
     metadata: {
@@ -216,7 +218,17 @@ async function pollMint(env, collection, id, budgetMs) {
 
 function explorerAddr(env, addr) {
   const cluster = cfg(env, 'SOLANA_CLUSTER');
+  // Compressed NFTs live in a merkle tree — Solana Explorer can't resolve them as an account,
+  // so link the fan's edition to a DAS-aware explorer (Solscan). The master card + proof tx
+  // (which ARE regular accounts) still use explorer.solana.com elsewhere.
   return cluster === 'mainnet'
-    ? `https://explorer.solana.com/address/${addr}`
-    : `https://explorer.solana.com/address/${addr}?cluster=${cluster}`;
+    ? `https://solscan.io/token/${addr}`
+    : `https://solscan.io/token/${addr}?cluster=${cluster}`;
+}
+
+const ENC = new TextEncoder();
+function byteClip(s, max) {
+  let out = '', n = 0;
+  for (const ch of s) { const b = ENC.encode(ch).length; if (n + b > max) break; out += ch; n += b; }
+  return out;
 }

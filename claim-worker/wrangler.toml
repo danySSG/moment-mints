@@ -8,7 +8,8 @@ workers_dev = true
 #   SOLANA_CLUSTER   -> mainnet
 [vars]
 CROSSMINT_BASE = "https://staging.crossmint.com"
-CROSSMINT_COLLECTION_ID = "default-solana"
+# "Moment Mints" Solana collection created on this Crossmint account (staging):
+CROSSMINT_COLLECTION_ID = "00ca281f-0876-40d7-8e76-2c1b5c1ab130"
 SOLANA_CLUSTER = "devnet"
 ALLOWED_ORIGIN = "https://danyssg.github.io"
 

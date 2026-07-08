@@ -25,6 +25,13 @@ import { TurboFactory } from '@ardrive/turbo-sdk';
 import { createUmi } from '@metaplex-foundation/umi-bundle-defaults';
 import { keypairIdentity, publicKey } from '@metaplex-foundation/umi';
 import { update, fetchAsset } from '@metaplex-foundation/mpl-core';
+import { momentCardArt } from './card-svg.mjs';
+
+// запись считается перенесённой только если ОБА URI на arweave и без "undefined"
+const isMigrated = (m) =>
+  String(m.imageUri).startsWith('https://arweave.net/') &&
+  !String(m.imageUri).includes('undefined') &&
+  !String(m.metadataUri).includes('undefined');
 
 const DIR = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(DIR, '..');
@@ -45,13 +52,32 @@ const umi = createUmi(RPC);
 umi.use(keypairIdentity(umi.eddsa.createKeypairFromSecretKey(devnetSecret)));
 
 // залить буфер на настоящий Arweave через Turbo → https://arweave.net/<id>
+// извлечь id из ответа Turbo, устойчиво к дедупу (одинаковые байты → «already uploaded»)
+const DEDUP_RE = /ID\s+(\S+?)\s+has already been uploaded/;
+function idFromTurbo(res) {
+  if (res && res.id) return res.id;
+  // некоторые версии SDK возвращают строку-сообщение (или char-массив) вместо объекта
+  const asStr = typeof res === 'string' ? res : Object.values(res || {}).join('');
+  const m = asStr.match(DEDUP_RE);
+  if (m) return m[1]; // данные уже на Arweave (тот же content-address) — берём существующий id
+  return null;
+}
 async function toArweave(buf, contentType) {
-  const res = await turbo.uploadFile({
-    fileStreamFactory: () => Readable.from(buf),
-    fileSizeFactory: () => buf.length,
-    dataItemOpts: { tags: [{ name: 'Content-Type', value: contentType }] },
-  });
-  return `https://arweave.net/${res.id}`;
+  let res;
+  try {
+    res = await turbo.uploadFile({
+      fileStreamFactory: () => Readable.from(buf),
+      fileSizeFactory: () => buf.length,
+      dataItemOpts: { tags: [{ name: 'Content-Type', value: contentType }] },
+    });
+  } catch (e) {
+    const m = String(e?.message || e).match(DEDUP_RE);
+    if (m) return `https://arweave.net/${m[1]}`;
+    throw e;
+  }
+  const id = idFromTurbo(res);
+  if (!id) throw new Error(`Turbo upload returned no id: ${(typeof res === 'string' ? res : JSON.stringify(res)).slice(0, 200)}`);
+  return `https://arweave.net/${id}`;
 }
 
 async function fetchBytes(url) {
@@ -63,7 +89,7 @@ async function fetchBytes(url) {
 // --- проверка/пополнение Turbo-баланса ---
 const logPath = join(DIR, 'mint-log.ndjson');
 const lines = readFileSync(logPath, 'utf8').split('\n').filter(l => l.trim());
-const pending = lines.map(l => JSON.parse(l)).filter(m => !String(m.imageUri).startsWith('https://arweave.net/'));
+const pending = lines.map(l => JSON.parse(l)).filter(m => !isMigrated(m));
 log(`всего записей: ${lines.length}, к миграции: ${pending.length} (уже на arweave: ${lines.length - pending.length})`);
 
 try {
@@ -83,19 +109,31 @@ try {
 const out = [];
 let migrated = 0, skipped = 0, failed = 0;
 for (const m of lines.map(l => JSON.parse(l))) {
-  if (String(m.imageUri).startsWith('https://arweave.net/')) {
+  if (isMigrated(m)) {
     out.push(JSON.stringify(m)); skipped++; continue;
   }
   if (migrated >= LIMIT) { out.push(JSON.stringify(m)); continue; }
   const tag = `${m.event?.fixtureId}:${m.event?.seq}:${m.event?.type}`;
   try {
     log(`↻ ${tag} · ${m.asset}`);
-    // 1. байты image + metadata (пока devnet.irys отдаёт 200)
-    const imgBuf = await fetchBytes(m.imageUri);
-    const metaRaw = await fetchBytes(m.metadataUri);
-    const meta = JSON.parse(metaRaw.toString('utf8'));
+    // 1. байты image: обычно дотягиваем текущие с devnet.irys; если URI битый
+    // ("undefined" после сбоя загрузки) — регенерируем арт детерминированно из event+ctx.
+    let imgBuf;
+    if (String(m.imageUri).includes('undefined')) {
+      log('  image URI битый — регенерирую арт из event+ctx');
+      const svg = momentCardArt(m.event, m.ctx || {});
+      if (!svg) throw new Error('momentCardArt вернул пусто (нет арта для события)');
+      imgBuf = Buffer.from(svg);
+    } else {
+      imgBuf = await fetchBytes(m.imageUri);
+    }
+    // metadata: дотягиваем текущую (даже битые записи имеют валидный metadata-URI),
+    // если недоступна — начнём с минимальной оболочки.
+    let meta;
+    try { meta = JSON.parse((await fetchBytes(m.metadataUri)).toString('utf8')); }
+    catch { meta = { name: m.event?.type || 'Moment', symbol: 'MOMENT', attributes: [] }; }
 
-    if (DRY) { log(`  [dry] image ${imgBuf.length}B, metadata ${metaRaw.length}B — пропускаю загрузку`); out.push(JSON.stringify(m)); continue; }
+    if (DRY) { log(`  [dry] image ${imgBuf.length}B — пропускаю загрузку`); out.push(JSON.stringify(m)); continue; }
 
     // 2. image → Arweave
     const newImage = await toArweave(imgBuf, 'image/svg+xml');
