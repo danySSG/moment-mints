@@ -31,10 +31,22 @@
   .brand em { font-style: normal; background: linear-gradient(100deg, #3ddc84, #2ab8a0); -webkit-background-clip: text; background-clip: text; color: transparent; }
   .tag { color: #c6cfdb; font-size: 18px; margin-top: 16px; max-width: 560px; }
   .tag b { color: #fff; }
-  .stats { display: flex; gap: 12px; margin-top: 26px; flex-wrap: wrap; }
+  .stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 26px; max-width: 430px; }
   .stat { background: rgba(18,22,31,.7); border: 1px solid var(--line); border-radius: 12px; padding: 10px 16px; backdrop-filter: blur(4px); }
   .stat b { display: block; font: 700 22px "Space Grotesk", sans-serif; color: var(--acc); }
-  .stat > span { color: var(--mut); font-size: 12.5px; }
+  .stat > span { color: var(--mut); font-size: 12.5px; display: flex; align-items: center; gap: 6px; }
+  .stat.hot { border-color: #3ddc8566; box-shadow: 0 0 26px #3ddc851f; }
+  .stat.hot > span { color: var(--acc); }
+  .stat.hot .pin { width: 7px; height: 7px; border-radius: 50%; background: var(--acc); animation: pulse 1.6s ease infinite; flex-shrink: 0; }
+  .claim-note { margin-top: 15px; color: var(--mut); font-size: 13px; line-height: 1.7; max-width: 520px; }
+  .claim-note .lead { color: #c6cfdb; }
+  .claim-note .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--acc); animation: pulse 1.6s ease infinite; vertical-align: middle; margin-right: 3px; }
+  .claim-note b { color: #e9eef5; font-weight: 600; }
+  .trust { display: inline-flex; align-items: center; gap: 10px; margin-top: 16px; padding: 9px 15px;
+    border: 1px solid var(--line); border-radius: 12px; background: rgba(18,22,31,.5); font-size: 13.5px; color: #c6cfdb; }
+  .trust .x { color: #e5484d; font-weight: 700; font-size: 15px; }
+  .trust b { color: #fff; } .trust .mut { color: var(--mut); }
+  .trust code { color: #c6cfdb; font-size: 12px; }
   .cta { display: flex; gap: 12px; margin-top: 26px; flex-wrap: wrap; }
   .btn { display: inline-block; padding: 11px 20px; border-radius: 10px; font-weight: 600; font-size: 14.5px;
     background: var(--acc); color: #06281a; text-decoration: none; transition: transform .15s, box-shadow .15s; }
@@ -162,13 +174,18 @@
     <div class="stats rise" style="--d:.28s">
       <div class="stat"><b data-count="25">25</b><span>moments minted</span></div>
       <div class="stat"><b><span data-count="25">25</span>/25</b><span>proven on-chain</span></div>
-      <div class="stat"><b data-count="12">12</b><span>minted live in-match</span></div>
+      <div class="stat hot"><b data-count="12">12</b><span><i class="pin"></i>minted live in-match</span></div>
       <div class="stat"><b data-count="6">6</b><span>matches covered</span></div>
     </div>
     <div class="cta rise" style="--d:.36s">
       <button class="btn" type="button" onclick="openClaim()">⚡ Claim your team's moment</button>
       <button class="btn ghost" type="button" onclick="openCollection()">My collection</button>
       <a class="btn ghost" href="https://github.com/danySSG/moment-mints">GitHub ↗</a>
+    </div>
+    <div class="claim-note rise" style="--d:.42s">
+      <span class="lead"><span class="dot"></span> Free — a <b>real NFT</b> lands in your inbox. No wallet, no seed phrase.</span><br>
+      Each claim is a <b>numbered edition you own</b> — rarer moments are scarcer.
+      <a href="#" onclick="openCollection();return false">Start your collection →</a>
     </div>
   </div>
   <div class="deck" aria-hidden="true">
@@ -189,6 +206,9 @@
   <span style="color:#f5a623;border-color:#f5a62344">base · '90s cel anime</span>
   <span style="color:#e5484d;border-color:#e5484d44">drama · spot-color manga (VAR, reds)</span>
   <span style="color:#d9b64e;border-color:#d9b64e44">legendary · ukiyo-e gold (finals)</span>
+</div>
+<div class="trust rise" style="--d:.56s">
+  <span class="x">✕</span> <span>bad data → <b>rejected on-chain</b> <span class="mut">(the program throws <code class="mono">6010 TimestampMismatch</code> on a wrong timestamp)</span> — real verification, not a rubber stamp.</span>
 </div>
 <section class="latest reveal" id="latest">
   <div class="live"><span class="dot"></span><span class="eyebrow" style="color:#c6cfdb">Latest verified moment</span><span class="sub" style="font-size:12px">· page auto-updates during live matches</span></div>
