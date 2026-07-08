@@ -50,7 +50,9 @@ const card = (m) => {
         <p>The stat behind this card (fixture ${esc(m.fixtureId)} · seq ${esc(m.seq)} · key ${esc(m.statKey)})
         is a leaf in a Merkle tree whose daily root the TxODDS oracle publishes on Solana.
         The proof transaction replays that Merkle path inside the TxLINE program
-        (<code>validate_stat</code>) — the chain itself confirms the moment happened.</p>
+        (<code>validate_stat</code>) — the chain itself confirms the anchored stat behind this card.</p>
+        <p>The card's own <b>on-chain attributes</b> carry that <code>proof_tx</code> — the binding
+        lives on Solana, not in our database. Open the ${m.assetExplorer ? `<a href="${esc(m.assetExplorer)}" target="_blank" rel="noopener">asset on-chain ↗</a>` : 'asset'} and read its Attributes.</p>
         ${m.proofExplorer ? `<p><a href="${esc(m.proofExplorer)}" target="_blank" rel="noopener">watch the proof run on-chain ↗</a></p>` : ''}
       </details>
     </div>

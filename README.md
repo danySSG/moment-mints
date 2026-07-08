@@ -13,9 +13,11 @@ Built for the [TxODDS × Solana World Cup Hackathon](https://superteam.fun/earn/
 
 ## Why it's interesting
 
-- **Every card is a proof.** Card attributes carry `fixture / seq / statKey` — the
-  exact address of a Merkle leaf in TxLINE's daily on-chain roots. The gallery's
-  "proof tx" link is a real `validate_stat` call in the TxLINE Solana program.
+- **Every card is backed by a real proof.** Each card records `fixture / seq /
+  statKey` — the exact address of a Merkle leaf in TxLINE's daily on-chain roots —
+  and links to a real `validate_stat` transaction in the TxLINE Solana program that
+  verifies the anchored stat behind it. (Binding that proof-tx signature directly
+  into the asset's on-chain attributes is in progress — see Status.)
 - **The detector is the source of truth.** TxLINE has no discrete event feed — we
   diff whole-match stat counters between SSE updates (goals, cards), which makes
   every detected event *provable* (counters are what's anchored on-chain). The
@@ -56,12 +58,17 @@ TxLINE SSE feed ──► core/       stat-diff event detector (zero deps, 12 te
 
 ## Status
 
-- [x] Feed activated (devnet, SL1), detector battle-tested on 3 real matches
-      (incl. a real VAR goal reversal in Brazil–Norway)
-- [x] 12 moments minted, 12/12 proven on-chain
-- [x] Art system designed (three tiers, casting + A/B done)
-- [ ] Generative card fronts (land with the quarter-finals)
-- [ ] Live-mint demo video (next live match)
+- [x] Feed activated (devnet, SL1), detector battle-tested on 6 real Round-of-16
+      matches (incl. a real VAR goal reversal minted live in Argentina–Egypt)
+- [x] 25 moments minted, 25/25 proven on-chain — 12 of them minted **genuinely
+      live** during the match (3 matches), the rest reconstructed from the recorded
+      feed and proven through the same `validate_stat` path
+- [x] Three-tier generative art shipped (WAI-illustrious-SDXL, human-curated),
+      composited on the cards
+- [ ] Bind the real proof-tx signature into each card's Metaplex Core attributes
+      (proof currently lives in the metadata + a linked `validate_stat` tx)
+- [ ] Fan claim loop (email → wallet → collect your team's moments)
+- [ ] Demo video
 
 ## Run it
 

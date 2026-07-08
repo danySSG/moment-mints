@@ -12,7 +12,7 @@ import { fileURLToPath } from 'node:url';
 import { createUmi } from '@metaplex-foundation/umi-bundle-defaults';
 import { irysUploader } from '@metaplex-foundation/umi-uploader-irys';
 import { keypairIdentity, createGenericFile, publicKey } from '@metaplex-foundation/umi';
-import { update, fetchAsset } from '@metaplex-foundation/mpl-core';
+import { update, fetchAsset, addPlugin, updatePlugin } from '@metaplex-foundation/mpl-core';
 import { momentCardArt } from './card-svg.mjs';
 import { normalizeUpdate } from '../core/normalize.mjs';
 import { MatchEventDetector } from '../core/events.mjs';
@@ -47,16 +47,61 @@ const umi = createUmi(RPC).use(irysUploader({ address: 'https://devnet.irys.xyz'
 const secret = Uint8Array.from(JSON.parse(readFileSync(join(ROOT, 'day1', 'wallet-devnet.json'), 'utf8')));
 umi.use(keypairIdentity(umi.eddsa.createKeypairFromSecretKey(secret)));
 
+// proof-log: fixtureId:seq:statKey -> { txSig, value, epochDay } (реальные validate_stat-транзы)
+const proofByKey = new Map();
+try {
+  for (const l of readFileSync(join(DIR, 'proof-log.ndjson'), 'utf8').split('\n').filter(x => x.trim())) {
+    const p = JSON.parse(l);
+    if (p.ok && p.txSig) proofByKey.set(`${p.fixtureId}:${p.seq}:${p.statKey}`, p);
+  }
+} catch { /* нет пруф-лога — плагин просто не пишем */ }
+const CLUSTER = RPC.includes('devnet') ? 'devnet' : 'mainnet';
+const PROGRAM = '6pW64gN1s2uqjHkn1unFeEjAwJkPGHoppGvS715wyP2J';
+const txUrl = (sig) => `https://explorer.solana.com/tx/${sig}?cluster=${CLUSTER}`;
+const pfFor = (e) => proofByKey.get(`${e.fixtureId}:${e.seq}:${e.statKey}`);
+
+// L1 «on-chain правда»: вписать реальную validate_stat-подпись + координаты Merkle-листа
+// в on-chain Attributes plugin ассета — чтобы explorer/программа читали пруф БЕЗ доверия
+// нашим файлам. addPlugin в первый раз, updatePlugin если плагин уже есть.
+async function bindProof(assetPk, e) {
+  const pf = pfFor(e);
+  if (!pf) { console.error(`  · нет пруфа: ${e.fixtureId}:${e.seq}:${e.statKey}`); return false; }
+  const attributeList = [
+    { key: 'proof_tx', value: pf.txSig },
+    { key: 'proof_explorer', value: txUrl(pf.txSig) },
+    { key: 'txline_program', value: PROGRAM },
+    { key: 'validate_ix', value: 'validate_stat' },
+    { key: 'fixture_id', value: String(e.fixtureId) },
+    { key: 'seq', value: String(e.seq) },
+    { key: 'stat_key', value: String(e.statKey ?? '') },
+    { key: 'stat_value', value: String(pf.value ?? '') },
+    { key: 'epoch_day', value: String(pf.epochDay ?? '') },
+  ];
+  const fetched = await fetchAsset(umi, publicKey(assetPk));
+  const plugin = { type: 'Attributes', attributeList };
+  if (fetched.attributes) await updatePlugin(umi, { asset: fetched.publicKey, plugin }).sendAndConfirm(umi);
+  else await addPlugin(umi, { asset: fetched.publicKey, plugin }).sendAndConfirm(umi);
+  return true;
+}
+
 const logPath = join(DIR, 'mint-log.ndjson');
 const lines = readFileSync(logPath, 'utf8').split('\n').filter(l => l.trim());
 const out = [];
-let updated = 0, skipped = 0;
+let updated = 0, skipped = 0, bound = 0;
+// --bind-only: НЕ трогать арт/URI, только вписать пруф в on-chain Attributes (быстро, дёшево)
+const bindOnly = process.argv.includes('--bind-only');
 
 for (const line of lines) {
   const m = JSON.parse(line);
   const key = `${m.event.fixtureId}:${m.event.seq}:${m.event.type}`;
   const e = { ...detail.get(key), ...m.event };
   const fx = FIXTURES[String(e.fixtureId)] ?? {};
+
+  if (bindOnly) {
+    if (await bindProof(m.asset, e)) { bound++; console.error(`  ⛓ пруф вписан: ${m.asset}`); }
+    out.push(line);
+    continue;
+  }
   const ctx = {
     participant1: fx.p1 ?? m.ctx?.participant1, participant2: fx.p2 ?? m.ctx?.participant2,
     score: detail.get(key)?.score ?? m.ctx?.score, competition: fx.comp ?? m.ctx?.competition,
@@ -89,16 +134,19 @@ for (const line of lines) {
       { trait_type: 'transition', value: `${e.from}->${e.to}` },
       { trait_type: 'feed_action', value: String(e.action ?? '') },
       { trait_type: 'feed_ts', value: String(e.ts ?? '') },
-      { trait_type: 'proof', value: `txline:stat-validation:${e.fixtureId}:${e.seq}:${e.statKey ?? ''}` },
+      { trait_type: 'proof_tx', value: pfFor(e)?.txSig ?? 'pending' },
+      { trait_type: 'verify', value: pfFor(e) ? txUrl(pfFor(e).txSig) : '' },
     ],
   }));
 
   const asset = await fetchAsset(umi, publicKey(m.asset));
   await update(umi, { asset, name, uri: metadataUri }).sendAndConfirm(umi);
+  await bindProof(m.asset, e); // вписать пруф в on-chain Attributes plugin
   updated++;
   console.error(`  ✓ ${m.asset}`);
   out.push(JSON.stringify({ ...m, imageUri, metadataUri, event: e, ctx, artApplied: true }));
 }
 
 writeFileSync(logPath, out.join('\n') + '\n');
-console.log(`обновлено ассетов: ${updated}, пропущено: ${skipped}`);
+if (bindOnly) console.log(`пруфов вписано on-chain: ${bound}`);
+else console.log(`обновлено ассетов: ${updated} (+пруфы), пропущено: ${skipped}`);

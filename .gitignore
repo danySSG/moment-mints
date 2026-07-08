@@ -17,3 +17,4 @@ mint/minter.log
 # сырые генерации арта (курируются локально)
 art/raw/
 art/generate-log.ndjson
+day1/wallet-mainnet.json
