@@ -21,6 +21,9 @@ const FIXTURES = {
   '18175918': { p1: 'Argentina', p2: 'Cape Verde', comp: 'World Cup 2026 · Group stage', file: '../day1/argentina-capeverde.ndjson' },
   '18187298': { p1: 'Brazil', p2: 'Norway', comp: 'World Cup 2026 · Round of 16', file: '../day1/brazil-norway.ndjson' },
   '18192996': { p1: 'Mexico', p2: 'England', comp: 'World Cup 2026 · Round of 16', file: '../day1/mexico-england.ndjson' },
+  '18202701': { p1: 'Argentina', p2: 'Egypt', comp: 'World Cup 2026 · Round of 16', file: '../day1/argentina-egypt.ndjson' },
+  '18193785': { p1: 'USA', p2: 'Belgium', comp: 'World Cup 2026 · Round of 16', file: '../day1/usa-belgium.ndjson' },
+  '18198205': { p1: 'Portugal', p2: 'Spain', comp: 'World Cup 2026 · Round of 16', file: '../day1/portugal-spain.ndjson' },
 };
 
 // 1. реплей матчей → полные события с текущим счётом
