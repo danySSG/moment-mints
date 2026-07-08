@@ -17,6 +17,11 @@ day1/historical-sample.json
 day1/capture.log
 mint/minter.log
 
+# внутренние стратегические доки — держим локально, НЕ в публичном репо
+STRATEGY.md
+BATTLE-PLAN.md
+wc2026-hackathon.md
+
 # сырые генерации арта (курируются локально)
 art/raw/
 art/generate-log.ndjson
