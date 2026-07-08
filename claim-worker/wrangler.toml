@@ -1,0 +1,23 @@
+name = "moment-claim"
+main = "src/index.js"
+compatibility_date = "2026-07-08"
+workers_dev = true
+
+# Non-secret config (safe to commit). Flip to production by changing these two:
+#   CROSSMINT_BASE   -> https://www.crossmint.com   (needs a sk_production_ key)
+#   SOLANA_CLUSTER   -> mainnet
+[vars]
+CROSSMINT_BASE = "https://staging.crossmint.com"
+CROSSMINT_COLLECTION_ID = "default-solana"
+SOLANA_CLUSTER = "devnet"
+ALLOWED_ORIGIN = "https://danyssg.github.io"
+
+# Edition counters. Create once and paste the returned id:
+#   npx wrangler kv namespace create EDITIONS
+[[kv_namespaces]]
+binding = "EDITIONS"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
+
+# Secrets (DO NOT put here) — set with:
+#   npx wrangler secret put CROSSMINT_KEY      (your sk_staging_ / sk_test_ server key)
+#   npx wrangler secret put TURNSTILE_SECRET   (your Turnstile widget SECRET key)

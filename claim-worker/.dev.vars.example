@@ -1,0 +1,5 @@
+# Copy to .dev.vars for local `wrangler dev` (git-ignored). NEVER commit real keys.
+# Crossmint server key (staging = Solana devnet). Legacy prefix sk_test_ also works.
+CROSSMINT_KEY = "sk_staging_REPLACE_ME"
+# Turnstile widget SECRET key (real siteverify). CF test 'always-passes' secret shown:
+TURNSTILE_SECRET = "1x0000000000000000000000000000000AA"

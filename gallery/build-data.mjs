@@ -82,13 +82,19 @@ for (const line of readFileSync(join(MINT, 'mint-log.ndjson'), 'utf8').split('\n
   // имена команд: карта FIXTURES для старых записей, ctx из mint-log для новых
   const p1 = fx.p1 ?? m.ctx?.participant1;
   const p2 = fx.p2 ?? m.ctx?.participant2;
+  // live vs replayed: лаг между временем минта (m.at) и ts события фида.
+  // live = сминчено в пределах ~2 мин после события (реальный автономный минт на матче).
+  // Разрыв между группами колоссальный (max live ~26с, min replay ~7ч) — порог не критичен.
+  const mintMs = Date.parse(m.at);
+  const lagMs = Number.isFinite(mintMs) && e.ts != null ? mintMs - e.ts : null;
+  const live = lagMs != null && lagMs >= 0 && lagMs <= 120000;
   moments.push({
     asset: m.asset, image: m.imageUri, metadata: m.metadataUri, assetExplorer: m.explorer,
     type: e.type, fixtureId: e.fixtureId, seq: e.seq, statKey: e.statKey,
     team: e.participant === 1 ? p1 : p2,
     match: `${p1 ?? '?'} vs ${p2 ?? '?'}`, competition: fx.comp ?? m.ctx?.competition ?? '',
     score: detail.get(key)?.score ?? m.ctx?.score ?? '',
-    action: e.action ?? null, ts: e.ts ?? null,
+    action: e.action ?? null, ts: e.ts ?? null, lagMs, live,
     proofTx: proof?.txSig ?? null,
     proofExplorer: proof?.explorer ?? null,
     verified: Boolean(proof?.ok),
@@ -96,4 +102,5 @@ for (const line of readFileSync(join(MINT, 'mint-log.ndjson'), 'utf8').split('\n
 }
 moments.sort((a, b) => (a.ts ?? 0) - (b.ts ?? 0));
 writeFileSync(join(DIR, 'moments.json'), JSON.stringify(moments, null, 2));
-console.log(`moments.json: ${moments.length} моментов, verified: ${moments.filter(m => m.verified).length}`);
+const liveN = moments.filter(m => m.live).length;
+console.log(`moments.json: ${moments.length} моментов, verified: ${moments.filter(m => m.verified).length}, live: ${liveN} / replayed: ${moments.length - liveN}`);

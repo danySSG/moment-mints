@@ -9,7 +9,9 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const DIR = dirname(fileURLToPath(import.meta.url));
-const gw = (u) => (u ?? '').replace('https://arweave.net/', 'https://devnet.irys.xyz/');
+// после миграции арт всех карточек лежит на постоянном Arweave (arweave.net) —
+// никаких переписываний на эфемерный devnet.irys (иначе 404 при судействе). Тождество.
+const gw = (u) => u ?? '';
 const moments = JSON.parse(readFileSync(join(DIR, 'moments.json'), 'utf8'));
 
 // Strand 2: hero-set на Solana MAINNET (настоящий Arweave) — отдельно, не ссылается на devnet
@@ -47,7 +49,9 @@ const card = (m) => {
         ${m.verified ? '<span class="ok" title="Stat proven on-chain via validate_stat">✓ verified on-chain</span>' : '<span class="pending">pending proof</span>'}
       </div>
       <div class="match">${esc(m.match)} <b>${esc(m.score)}</b></div>
-      <div class="sub">${esc(fmtTs(m.ts))} · tier: ${tier.name}</div>
+      <div class="sub">${esc(fmtTs(m.ts))} · tier: ${tier.name} · ${m.live
+        ? '<span class="live-badge" title="Minted autonomously within seconds of the live feed event">● live-minted</span>'
+        : '<span class="replay-badge" title="Back-filled from the historical feed after the match">↻ replayed</span>'}</div>
       <div class="links">
         <a href="${esc(m.assetExplorer)}" target="_blank" rel="noopener">NFT ↗</a>
         ${m.proofExplorer ? `<a href="${esc(m.proofExplorer)}" target="_blank" rel="noopener">proof tx ↗</a>` : ''}
@@ -114,11 +118,16 @@ const mainnetSection = mainnetHeroes.length ? `<section class="reveal">
 </section>` : '';
 
 const verified = moments.filter(m => m.verified).length;
+const liveCount = moments.filter(m => m.live).length;
 const latest = moments[moments.length - 1];
 const latestEv = latest ? (EVENTS[latest.type] ?? { label: latest.type, tier: 'base' }) : null;
 const latestTier = latestEv ? TIERS[latestEv.tier] : null;
 
-// пул для клейма: команды из матчей + компактные моменты для клиентского мока
+// конфиг клейма. CLAIM_API задан → РЕАЛЬНЫЙ путь (Cloudflare Worker → Crossmint
+// mint+deliver на email:<...>:solana). Пусто → честный локальный прототип (помечен).
+const claimApi = process.env.CLAIM_API || '';
+const tsSitekey = process.env.TS_SITEKEY || '1x00000000000000000000AA'; // прод: настоящий site key
+// пул для клейма: команды из матчей + компактные моменты
 const editionSupply = { legendary: 10, drama: 100, base: 1000 };
 const claimPool = moments.map(m => {
   const ev = EVENTS[m.type] ?? { label: m.type, tier: 'base' };
@@ -144,7 +153,7 @@ const html = `<!doctype html>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-<script>window.CLAIM_POOL=${JSON.stringify(claimPool)};window.CLAIM_TEAMS=${JSON.stringify(claimTeams)};</script>
+<script>window.CLAIM_POOL=${JSON.stringify(claimPool)};window.CLAIM_TEAMS=${JSON.stringify(claimTeams)};window.CLAIM_API=${JSON.stringify(claimApi)};window.TS_SITEKEY=${JSON.stringify(tsSitekey)};</script>
 <script>document.documentElement.classList.add('js')</script>
 <style>
   :root { color-scheme: dark; --bg:#0a0d12; --panel:#12161f; --line:#222836; --mut:#8b96a8; --acc:#3ddc84; }
@@ -222,6 +231,8 @@ const html = `<!doctype html>
   .type { font-size: 11px; font-weight: 600; letter-spacing: .04em; padding: 3px 9px; border-radius: 20px; border: 1px solid; white-space: nowrap; }
   .ok { color: var(--acc); font-size: 11.5px; white-space: nowrap; }
   .pending { color: #d29922; font-size: 11.5px; }
+  .live-badge { color: var(--acc); font-size: 11.5px; white-space: nowrap; font-weight: 600; }
+  .replay-badge { color: var(--mut); font-size: 11.5px; white-space: nowrap; }
   .match { font-size: 14.5px; }
   .sub { color: var(--mut); font-size: 12px; margin-top: 3px; }
   .links { margin-top: 9px; display: flex; gap: 13px; font-size: 13px; }
@@ -293,6 +304,7 @@ const html = `<!doctype html>
     <div class="stats rise" style="--d:.28s">
       <div class="stat"><b data-count="${moments.length}">${moments.length}</b><span>moments minted</span></div>
       <div class="stat"><b><span data-count="${verified}">${verified}</span>/${moments.length}</b><span>proven on-chain</span></div>
+      <div class="stat"><b data-count="${liveCount}">${liveCount}</b><span>minted live in-match</span></div>
       <div class="stat"><b data-count="${matches.size}">${matches.size}</b><span>matches covered</span></div>
     </div>
     <div class="cta rise" style="--d:.36s">
@@ -365,7 +377,7 @@ TxODDS × Solana World Cup Hackathon · <a href="https://github.com/danySSG/mome
       <div class="step-lbl">1 · your team</div>
       <div class="teamgrid" id="teamGrid"></div>
       <div class="step-lbl">2 · prove you're human</div>
-      <div id="turnstile" class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-callback="onTurnstile" data-theme="dark"></div>
+      <div id="turnstile" class="cf-turnstile" data-sitekey="${tsSitekey}" data-callback="onTurnstile" data-theme="dark"></div>
       <div class="step-lbl">3 · your email</div>
       <input class="field" id="claimEmail" type="email" placeholder="fan@example.com" autocomplete="email">
       <button class="claim-go" id="claimBtn" disabled onclick="doClaim()">Claim my moment</button>
@@ -390,8 +402,9 @@ const POOL = window.CLAIM_POOL || [], TEAMS = window.CLAIM_TEAMS || [];
 const LS = 'mm_claims_v1';
 const getClaims = () => { try { return JSON.parse(localStorage.getItem(LS)) || []; } catch { return []; } };
 const setClaims = (c) => localStorage.setItem(LS, JSON.stringify(c));
-let selTeam = null, tsOk = false;
-window.onTurnstile = () => { tsOk = true; syncBtn(); };
+let selTeam = null, tsOk = false, tsToken = null;
+const CLAIM_API = window.CLAIM_API || '';
+window.onTurnstile = (token) => { tsToken = token || null; tsOk = true; syncBtn(); };
 function syncBtn(){ const em=document.getElementById('claimEmail').value.trim(); document.getElementById('claimBtn').disabled = !(selTeam && tsOk && /.+@.+\\..+/.test(em)); }
 function openClaim(){
   const g = document.getElementById('teamGrid'); g.innerHTML='';
@@ -399,33 +412,67 @@ function openClaim(){
   document.getElementById('claimForm').style.display='';
   document.getElementById('claimWon').style.display='none';
   document.getElementById('claimModal').classList.add('on');
-  // рендерим настоящий Turnstile (тест-ключ авто-проходит); если скрипт заблокирован — мягкая деградация
-  const cont = document.getElementById('turnstile'); tsOk = false; cont.innerHTML='';
-  if (window.turnstile) { try { turnstile.render(cont, { sitekey:'1x00000000000000000000AA', theme:'dark', callback: window.onTurnstile }); } catch {} }
-  setTimeout(() => { if (!tsOk && !cont.querySelector('iframe')) { tsOk = true; cont.innerHTML='<div class="hint" style="margin-top:0">✓ human verified</div>'; syncBtn(); } }, 1600);
+  // настоящий Turnstile; в РЕАЛЬНОМ режиме без обхода — нет токена, нет клейма (fail-closed)
+  const cont = document.getElementById('turnstile'); tsOk = false; tsToken = null; cont.innerHTML='';
+  if (window.turnstile) { try { turnstile.render(cont, { sitekey: window.TS_SITEKEY, theme:'dark', callback: window.onTurnstile }); } catch {} }
+  if (!CLAIM_API) setTimeout(() => { if (!tsOk && !cont.querySelector('iframe')) { tsOk = true; cont.innerHTML='<div class="hint" style="margin-top:0">✓ human verified</div>'; syncBtn(); } }, 1600);
   syncBtn();
 }
 document.addEventListener('input', e => { if (e.target.id==='claimEmail') syncBtn(); });
+function showWon(d){
+  const w = document.getElementById('claimWon');
+  const pending = d.pending && !d.explorer;
+  const owner = d.owner ? ' · owner <span class="mono" style="font-size:11px">'+d.owner.slice(0,4)+'…'+d.owner.slice(-4)+'</span>' : '';
+  const deliver = d.proto
+    ? '<span style="color:#d29922">prototype — the live minter delivers this to your email wallet</span>'
+    : 'delivered to your email wallet'+owner;
+  const vf = pending
+    ? '<div class="vf" style="color:#d29922">minting to your wallet — appears in ~30s; we emailed you a sign-in link</div>'
+    : (d.proto ? '<div class="vf">✓ the moment behind it is proven on-chain</div>'
+               : '<div class="vf">✓ real NFT · the moment behind it is proven on-chain</div>');
+  w.innerHTML = \`<h3>\${d.proto ? 'Reserved ✓' : "It's yours ✓"}</h3>
+    <img src="\${d.image}" alt="">
+    <div class="edn">\${d.label} · \${d.match} \${d.score}</div>
+    <div>edition <b>#\${d.edition}</b> of \${d.supply} · <span style="color:var(--mut)">\${deliver}</span></div>
+    \${vf}
+    <p style="margin-top:14px">\${d.explorer ? '<a href="'+d.explorer+'" target="_blank" rel="noopener">view your NFT ↗</a>' : ''} \${d.proofExplorer ? '&nbsp; <a href="'+d.proofExplorer+'" target="_blank" rel="noopener">proof tx ↗</a>' : ''}</p>
+    <button class="claim-go" style="margin-top:16px" onclick="openCollection()">See my collection →</button>\`;
+  document.getElementById('claimForm').style.display='none';
+  w.style.display='';
+}
 function doClaim(){
   const email = document.getElementById('claimEmail').value.trim().toLowerCase();
+  const btn = document.getElementById('claimBtn');
+  if (CLAIM_API) return realClaim(email, btn);
+  // ── прототип (воркер не подключён): локальная выдача, ЧЕСТНО помечена ──
   const claims = getClaims();
   const mine = POOL.filter(m => m.teams.includes(selTeam));
   const takenIds = new Set(claims.filter(c=>c.email===email).map(c=>c.id));
   const pick = mine.find(m => !takenIds.has(m.id)) || mine[0];
   if (!pick) return;
-  const edition = 1 + (claims.filter(c=>c.id===pick.id).length) + Math.floor(Math.random()*7);
-  const rec = { ...pick, email, team: selTeam, edition, at: Date.now() };
-  claims.push(rec); setClaims(claims);
-  const w = document.getElementById('claimWon');
-  w.innerHTML = \`<h3>It's yours ✓</h3>
-    <img src="\${pick.image}" alt="">
-    <div class="edn">\${pick.label} · \${pick.match} \${pick.score}</div>
-    <div>edition <b>#\${edition}</b> of \${pick.supply} · <span style="color:var(--mut)">delivered to your Moment Mints wallet</span></div>
-    <div class="vf">✓ verified on-chain — this moment is proven, not minted on a whim</div>
-    <p style="margin-top:14px"><a href="\${pick.assetExplorer}" target="_blank" rel="noopener">view NFT ↗</a> &nbsp; <a href="\${pick.proofExplorer||'#'}" target="_blank" rel="noopener">proof tx ↗</a></p>
-    <button class="claim-go" style="margin-top:16px" onclick="openCollection()">See my collection →</button>\`;
-  document.getElementById('claimForm').style.display='none';
-  w.style.display='';
+  const edition = 1 + (claims.filter(c=>c.id===pick.id).length);
+  claims.push({ id:pick.id, email, team:selTeam, label:pick.label, match:pick.match, score:pick.score, image:pick.image, edition, supply:pick.supply, assetExplorer:pick.assetExplorer, proofExplorer:pick.proofExplorer, at: Date.now(), proto:true });
+  setClaims(claims);
+  showWon({ image:pick.image, label:pick.label, match:pick.match, score:pick.score, edition, supply:pick.supply, explorer:pick.assetExplorer, proofExplorer:pick.proofExplorer, proto:true });
+}
+async function realClaim(email, btn){
+  const t0 = btn.textContent; btn.disabled = true; btn.textContent = 'Minting your NFT…';
+  const fail = (msg) => { const w=document.getElementById('claimWon'); w.innerHTML='<h3>Hmm —</h3><p class="hint" style="margin-top:6px">'+msg+'</p><button class="claim-go" style="margin-top:14px" onclick="location.reload()">Try again</button>'; document.getElementById('claimForm').style.display='none'; w.style.display=''; };
+  try {
+    const res = await fetch(CLAIM_API + '/api/claim', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ team: selTeam, email, turnstileToken: tsToken }) });
+    const data = await res.json().catch(()=>({}));
+    if (!res.ok || !data.ok) {
+      btn.disabled=false; btn.textContent=t0;
+      const m = data.error==='turnstile_failed' ? 'Bot check failed — please retry.'
+        : data.error==='sold_out' ? 'This edition just sold out.'
+        : 'Mint failed'+(data.error ? ' ('+data.error+')' : '')+'. Your email was not charged.';
+      return fail(m);
+    }
+    const claims = getClaims();
+    claims.push({ id:data.mintHash||data.crossmintId, email, team:selTeam, label:data.label, match:data.match, score:data.score, image:data.image, edition:data.edition, supply:data.supply, assetExplorer:data.explorer, proofExplorer:data.proofExplorer, owner:data.owner, at: Date.now() });
+    setClaims(claims);
+    showWon(data);
+  } catch (e) { btn.disabled=false; btn.textContent=t0; fail('Network error — please retry. Your email was not charged.'); }
 }
 function openCollection(){
   const claims = getClaims();
