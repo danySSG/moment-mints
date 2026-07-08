@@ -25,9 +25,12 @@ const DIR = dirname(fileURLToPath(import.meta.url));
 const API = process.env.TXLINE_API_ORIGIN ?? 'https://txline-dev.txodds.com';
 const RPC = process.env.SOLANA_RPC ?? 'https://api.devnet.solana.com';
 
-// Devnet-адреса (documentation/programs/addresses, 2026-07-05)
-const PROGRAM_ID = new PublicKey('6pW64gN1s2uqjHkn1unFeEjAwJkPGHoppGvS715wyP2J');
-const TXL_MINT = new PublicKey('4Zao8ocPhmMgq7PdsYWyxvqySMGx7xb9cMftPMkEokRG');
+// Адреса: devnet по умолчанию, mainnet через env (documentation/programs/addresses).
+const IS_MAINNET = (process.env.SOLANA_RPC ?? '').includes('mainnet');
+const PROGRAM_ID = new PublicKey(process.env.PROGRAM_ID ??
+  (IS_MAINNET ? '9ExbZjAapQww1vfcisDmrngPinHTEfpjYRWMunJgcKaA' : '6pW64gN1s2uqjHkn1unFeEjAwJkPGHoppGvS715wyP2J'));
+const TXL_MINT = new PublicKey(process.env.TXL_MINT ??
+  (IS_MAINNET ? 'Zhw9TVKp68a1QrftncMSd6ELXKDtpVMNuMGr1jNwdeL' : '4Zao8ocPhmMgq7PdsYWyxvqySMGx7xb9cMftPMkEokRG'));
 const TOKEN_2022 = new PublicKey('TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb');
 const ATA_PROGRAM = new PublicKey('ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL');
 const SYSTEM_PROGRAM = new PublicKey('11111111111111111111111111111111');
@@ -45,11 +48,13 @@ const WEEKS = flag('--weeks', 4);                 // кратно 4; фри-ти
 const log = (...a) => console.log('[day1]', ...a);
 
 // ── 1. Кошелёк ────────────────────────────────────────────────────────────────
-const walletPath = join(DIR, 'wallet-devnet.json');
+const walletPath = join(DIR, process.env.WALLET ?? (IS_MAINNET ? 'wallet-mainnet.json' : 'wallet-devnet.json'));
 let keypair;
 if (existsSync(walletPath)) {
   keypair = Keypair.fromSecretKey(Uint8Array.from(JSON.parse(readFileSync(walletPath, 'utf8'))));
-  log('кошелёк загружен:', keypair.publicKey.toBase58());
+  log('кошелёк загружен:', keypair.publicKey.toBase58(), IS_MAINNET ? '(MAINNET)' : '(devnet)');
+} else if (IS_MAINNET) {
+  console.error(`[day1] нет ${walletPath} — на mainnet кошелёк не создаём автоматически`); process.exit(1);
 } else {
   keypair = Keypair.generate();
   writeFileSync(walletPath, JSON.stringify([...keypair.secretKey]), { mode: 0o600 });
@@ -61,6 +66,9 @@ const conn = new Connection(RPC, 'confirmed');
 let balance = await conn.getBalance(keypair.publicKey);
 log('баланс:', balance / LAMPORTS_PER_SOL, 'SOL');
 if (balance < 0.05 * LAMPORTS_PER_SOL) {
+  if (IS_MAINNET) {
+    console.error('[day1] mainnet: баланс мал, пополни', keypair.publicKey.toBase58(), 'вручную'); process.exit(1);
+  }
   log('запрашиваю airdrop 2 SOL…');
   try {
     const sig = await conn.requestAirdrop(keypair.publicKey, 2 * LAMPORTS_PER_SOL);
@@ -165,9 +173,10 @@ if (actBody.startsWith('{') || actBody.startsWith('"')) {
 if (!apiToken) throw new Error('token/activate: нет token в ответе: ' + actBody.slice(0, 200));
 log('apiToken получен');
 
-writeFileSync(join(DIR, '.env'),
+const envFile = process.env.ENV_OUT ?? (IS_MAINNET ? '.env.mainnet' : '.env');
+writeFileSync(join(DIR, envFile),
   `TXLINE_JWT=${jwt}\nTXLINE_API_TOKEN=${apiToken}\n`, { mode: 0o600 });
-log('.env сохранён (TXLINE_JWT, TXLINE_API_TOKEN)');
+log(`${envFile} сохранён (TXLINE_JWT, TXLINE_API_TOKEN)`);
 
 // ── 5. Проверка токена ───────────────────────────────────────────────────────
 const headers = { Authorization: `Bearer ${jwt}`, 'X-Api-Token': apiToken };
