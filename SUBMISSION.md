@@ -87,13 +87,14 @@ through kit colors only.
 
 ### Demonstrability — it already ran, unattended, on real matches
 Fully autonomous on the real Round-of-16: **25 moments minted across 6 matches, 25/25
-proven on-chain.** Three of those were minted **genuinely live, during the match** —
-including the trophy: **Argentina 3–2 Egypt, a comeback thriller with a VAR-disallowed
-goal minted in real time** as a `drama`-tier card while the match was still playing, the
-gallery auto-publishing each new card to GitHub Pages with no human in the loop. The
-remaining cards were reconstructed from the recorded feed and proven through the *same*
-`validate_stat` path — we tag the 3 truly-live cards distinctly from the replayed ones,
-because the live moments are strong enough that we don't need to blur the line.
+proven on-chain.** **12 of them were minted genuinely live, during the match** — across
+three matches (USA–Belgium, Argentina–Egypt, Portugal–Spain) — including the trophy:
+**Argentina 3–2 Egypt, a comeback thriller with a VAR-disallowed goal minted in real
+time** as a `drama`-tier card while the match was still playing, the gallery
+auto-publishing each new card to GitHub Pages with no human in the loop. The remaining
+13 cards were reconstructed from the recorded feed and proven through the *same*
+`validate_stat` path — we tag the live cards distinctly from the replayed ones, because
+the live moments are strong enough that we don't need to blur the line.
 
 ---
 
