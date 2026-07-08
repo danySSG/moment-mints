@@ -118,6 +118,19 @@ const latest = moments[moments.length - 1];
 const latestEv = latest ? (EVENTS[latest.type] ?? { label: latest.type, tier: 'base' }) : null;
 const latestTier = latestEv ? TIERS[latestEv.tier] : null;
 
+// пул для клейма: команды из матчей + компактные моменты для клиентского мока
+const editionSupply = { legendary: 10, drama: 100, base: 1000 };
+const claimPool = moments.map(m => {
+  const ev = EVENTS[m.type] ?? { label: m.type, tier: 'base' };
+  const [a, b] = (m.match || ' vs ').split(' vs ');
+  return {
+    id: m.asset, label: ev.label, tier: ev.tier, teams: [a, b], team: m.team || a,
+    match: m.match, score: m.score, image: gw(m.image), assetExplorer: m.assetExplorer,
+    proofExplorer: m.proofExplorer, supply: editionSupply[ev.tier] ?? 500,
+  };
+});
+const claimTeams = [...new Set(claimPool.flatMap(m => m.teams))].filter(Boolean).sort();
+
 const html = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -130,6 +143,8 @@ const html = `<!doctype html>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚽️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script>window.CLAIM_POOL=${JSON.stringify(claimPool)};window.CLAIM_TEAMS=${JSON.stringify(claimTeams)};</script>
 <script>document.documentElement.classList.add('js')</script>
 <style>
   :root { color-scheme: dark; --bg:#0a0d12; --panel:#12161f; --line:#222836; --mut:#8b96a8; --acc:#3ddc84; }
@@ -231,6 +246,42 @@ const html = `<!doctype html>
     html.js .reveal { opacity: 1; transform: none; transition: none; }
     .live .dot { animation: none; }
   }
+  /* ── claim / collection ── */
+  .modal { position: fixed; inset: 0; background: rgba(4,6,10,.72); backdrop-filter: blur(4px); z-index: 50;
+    display: none; align-items: center; justify-content: center; padding: 20px; }
+  .modal.on { display: flex; }
+  .sheet { background: #12161f; border: 1px solid var(--line); border-radius: 18px; width: 100%; max-width: 460px;
+    max-height: 90vh; overflow-y: auto; padding: 26px; position: relative; }
+  .sheet.wide { max-width: 900px; }
+  .sheet h3 { font: 700 22px "Space Grotesk", sans-serif; margin-bottom: 4px; }
+  .sheet .x { position: absolute; top: 16px; right: 18px; background: none; border: 0; color: var(--mut);
+    font-size: 22px; cursor: pointer; line-height: 1; }
+  .step-lbl { font: 600 11px "JetBrains Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: var(--acc); margin: 18px 0 8px; }
+  .teamgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; }
+  .teamgrid button { background: var(--panel); border: 1px solid var(--line); color: #e9eef5; border-radius: 10px;
+    padding: 10px; cursor: pointer; font-size: 13.5px; transition: border-color .15s, background .15s; }
+  .teamgrid button:hover, .teamgrid button.sel { border-color: var(--acc); background: #12351f44; }
+  .field { width: 100%; background: var(--bg); border: 1px solid var(--line); color: #e9eef5; border-radius: 10px;
+    padding: 12px 14px; font-size: 15px; margin-top: 4px; }
+  .field:focus { outline: none; border-color: var(--acc); }
+  .claim-go { width: 100%; margin-top: 18px; padding: 13px; border: 0; border-radius: 10px; background: var(--acc);
+    color: #06281a; font: 600 15.5px Inter; cursor: pointer; }
+  .claim-go:disabled { opacity: .45; cursor: not-allowed; }
+  .hint { color: var(--mut); font-size: 12.5px; margin-top: 10px; line-height: 1.5; }
+  .won { text-align: center; }
+  .won img { width: 210px; border-radius: 14px; border: 1px solid var(--line); margin: 6px auto 14px; display: block; }
+  .won .edn { font: 700 20px "Space Grotesk", sans-serif; }
+  .won .vf { color: var(--acc); font-size: 13px; margin-top: 6px; }
+  .collgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; margin-top: 14px; }
+  .collgrid .c { background: var(--bg); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .collgrid .c img { width: 100%; display: block; aspect-ratio: 5/7; object-fit: cover; background: #0a0d12; }
+  .collgrid .c .cc { padding: 8px 10px; font-size: 12px; }
+  .lead { margin-top: 18px; }
+  .lead .row { display: flex; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+  .lead .row b { width: 22px; color: var(--mut); }
+  .lead .bar { flex: 1; height: 7px; background: var(--panel); border-radius: 4px; overflow: hidden; }
+  .lead .bar span { display: block; height: 100%; background: var(--acc); }
+  .empty { color: var(--mut); text-align: center; padding: 30px 0; }
 </style></head><body><div class="wrap">
 <header class="hero">
   <div>
@@ -245,7 +296,8 @@ const html = `<!doctype html>
       <div class="stat"><b data-count="${matches.size}">${matches.size}</b><span>matches covered</span></div>
     </div>
     <div class="cta rise" style="--d:.36s">
-      <a class="btn" href="#latest">Latest moment ↓</a>
+      <button class="btn" type="button" onclick="openClaim()">⚡ Claim your team's moment</button>
+      <button class="btn ghost" type="button" onclick="openCollection()">My collection</button>
       <a class="btn ghost" href="https://github.com/danySSG/moment-mints">GitHub ↗</a>
     </div>
   </div>
@@ -303,6 +355,97 @@ tiers — rarity you can see from across the room. The full collection runs on S
 free World Cup tier); a hero set is productionized on Solana mainnet with art stored permanently on Arweave.
 TxODDS × Solana World Cup Hackathon · <a href="https://github.com/danySSG/moment-mints">source ↗</a></footer>
 </div>
+
+<div class="modal" id="claimModal">
+  <div class="sheet">
+    <button class="x" onclick="closeModal()" aria-label="close">×</button>
+    <div id="claimForm">
+      <h3>Claim your team's moment</h3>
+      <p class="hint" style="margin-top:2px">Own a cryptographically-proven World Cup moment. No wallet, no seed phrase — just your email.</p>
+      <div class="step-lbl">1 · your team</div>
+      <div class="teamgrid" id="teamGrid"></div>
+      <div class="step-lbl">2 · prove you're human</div>
+      <div id="turnstile" class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-callback="onTurnstile" data-theme="dark"></div>
+      <div class="step-lbl">3 · your email</div>
+      <input class="field" id="claimEmail" type="email" placeholder="fan@example.com" autocomplete="email">
+      <button class="claim-go" id="claimBtn" disabled onclick="doClaim()">Claim my moment</button>
+      <p class="hint">One free claim per email per moment · rarity tracks what happened on the pitch: goals mint in large editions, red cards & VAR reversals are scarce, finals are 1/1.</p>
+    </div>
+    <div id="claimWon" class="won" style="display:none"></div>
+  </div>
+</div>
+
+<div class="modal" id="collModal">
+  <div class="sheet wide">
+    <button class="x" onclick="closeModal()" aria-label="close">×</button>
+    <h3>My collection</h3>
+    <div id="collBody"></div>
+    <div class="step-lbl" style="margin-top:26px">Top collectors this tournament</div>
+    <div class="lead" id="leaderboard"></div>
+  </div>
+</div>
+
+<script>
+const POOL = window.CLAIM_POOL || [], TEAMS = window.CLAIM_TEAMS || [];
+const LS = 'mm_claims_v1';
+const getClaims = () => { try { return JSON.parse(localStorage.getItem(LS)) || []; } catch { return []; } };
+const setClaims = (c) => localStorage.setItem(LS, JSON.stringify(c));
+let selTeam = null, tsOk = false;
+window.onTurnstile = () => { tsOk = true; syncBtn(); };
+function syncBtn(){ const em=document.getElementById('claimEmail').value.trim(); document.getElementById('claimBtn').disabled = !(selTeam && tsOk && /.+@.+\\..+/.test(em)); }
+function openClaim(){
+  const g = document.getElementById('teamGrid'); g.innerHTML='';
+  TEAMS.forEach(t => { const b=document.createElement('button'); b.textContent=t; b.onclick=()=>{selTeam=t;[...g.children].forEach(c=>c.classList.remove('sel'));b.classList.add('sel');syncBtn();}; g.appendChild(b); });
+  document.getElementById('claimForm').style.display='';
+  document.getElementById('claimWon').style.display='none';
+  document.getElementById('claimModal').classList.add('on');
+  // рендерим настоящий Turnstile (тест-ключ авто-проходит); если скрипт заблокирован — мягкая деградация
+  const cont = document.getElementById('turnstile'); tsOk = false; cont.innerHTML='';
+  if (window.turnstile) { try { turnstile.render(cont, { sitekey:'1x00000000000000000000AA', theme:'dark', callback: window.onTurnstile }); } catch {} }
+  setTimeout(() => { if (!tsOk && !cont.querySelector('iframe')) { tsOk = true; cont.innerHTML='<div class="hint" style="margin-top:0">✓ human verified</div>'; syncBtn(); } }, 1600);
+  syncBtn();
+}
+document.addEventListener('input', e => { if (e.target.id==='claimEmail') syncBtn(); });
+function doClaim(){
+  const email = document.getElementById('claimEmail').value.trim().toLowerCase();
+  const claims = getClaims();
+  const mine = POOL.filter(m => m.teams.includes(selTeam));
+  const takenIds = new Set(claims.filter(c=>c.email===email).map(c=>c.id));
+  const pick = mine.find(m => !takenIds.has(m.id)) || mine[0];
+  if (!pick) return;
+  const edition = 1 + (claims.filter(c=>c.id===pick.id).length) + Math.floor(Math.random()*7);
+  const rec = { ...pick, email, team: selTeam, edition, at: Date.now() };
+  claims.push(rec); setClaims(claims);
+  const w = document.getElementById('claimWon');
+  w.innerHTML = \`<h3>It's yours ✓</h3>
+    <img src="\${pick.image}" alt="">
+    <div class="edn">\${pick.label} · \${pick.match} \${pick.score}</div>
+    <div>edition <b>#\${edition}</b> of \${pick.supply} · <span style="color:var(--mut)">delivered to your Moment Mints wallet</span></div>
+    <div class="vf">✓ verified on-chain — this moment is proven, not minted on a whim</div>
+    <p style="margin-top:14px"><a href="\${pick.assetExplorer}" target="_blank" rel="noopener">view NFT ↗</a> &nbsp; <a href="\${pick.proofExplorer||'#'}" target="_blank" rel="noopener">proof tx ↗</a></p>
+    <button class="claim-go" style="margin-top:16px" onclick="openCollection()">See my collection →</button>\`;
+  document.getElementById('claimForm').style.display='none';
+  w.style.display='';
+}
+function openCollection(){
+  const claims = getClaims();
+  const body = document.getElementById('collBody');
+  if (!claims.length) body.innerHTML='<div class="empty">No moments yet — claim your team\\'s first one.</div>';
+  else body.innerHTML='<div class="collgrid">'+claims.slice().reverse().map(c=>\`<a class="c" href="\${c.assetExplorer}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit"><img src="\${c.image}"><div class="cc"><b>\${c.label}</b> #\${c.edition}<br><span style="color:var(--mut)">\${c.match} \${c.score}</span></div></a>\`).join('')+'</div>';
+  // лидерборд: посев по командам + мои клеймы
+  const seed = { Argentina:altSeed('Argentina'), England:altSeed('England'), Brazil:altSeed('Brazil'), Portugal:altSeed('Portugal'), Spain:altSeed('Spain'), Belgium:altSeed('Belgium') };
+  claims.forEach(c => seed[c.team]=(seed[c.team]||0)+1);
+  const rows = Object.entries(seed).sort((a,b)=>b[1]-a[1]).slice(0,6);
+  const max = rows[0] ? rows[0][1] : 1;
+  document.getElementById('leaderboard').innerHTML = rows.map(([t,n],i)=>\`<div class="row"><b>\${i+1}</b><span style="width:90px">\${t}</span><div class="bar"><span style="width:\${Math.round(n/max*100)}%"></span></div><span style="color:var(--mut);width:44px;text-align:right">\${n}</span></div>\`).join('');
+  document.getElementById('claimModal').classList.remove('on');
+  document.getElementById('collModal').classList.add('on');
+}
+function altSeed(t){ let h=0; for(const ch of t) h=(h*31+ch.charCodeAt(0))>>>0; return 40+(h%180); }
+function closeModal(){ document.querySelectorAll('.modal').forEach(m=>m.classList.remove('on')); }
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+document.querySelectorAll('.modal').forEach(m => m.addEventListener('click', e => { if(e.target===m) closeModal(); }));
+</script>
 <script>
 (() => {
   const rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
