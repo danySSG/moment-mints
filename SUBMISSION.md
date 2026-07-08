@@ -57,26 +57,34 @@ more. The proof does real work — we can show the program **rejecting** a bad r
 (error `6010 TimestampMismatch`) live, which is our best evidence this is verification,
 not a rubber stamp.
 
-Cards are **Metaplex Core** 1/1s (chosen over compressed Bubblegum on purpose: these are
-scarce, premium, independently-verifiable assets, not a million airdrops). We retain
-update authority, so a card's lifecycle — mint → proof-bind → art-resolve — is itself a
-visible on-chain story.
+The **master** card for each moment is a **Metaplex Core** 1/1 — a scarce, premium,
+independently-verifiable asset that carries the proof. Fan **claim editions** are
+**compressed** NFTs (Solana state compression), cheap enough to give every fan a numbered
+copy while the master stays 1/1. We retain update authority on the masters, so a card's
+lifecycle — mint → proof-bind → art-resolve — is itself a visible on-chain story.
 
 ### The fan product — a moment you can own, not just look at
 The collectible only matters if a fan can hold it. The fan loop:
-- **Claim your team's moment with just an email.** An email → embedded/custodial wallet
-  means a mainstream fan never touches a seed phrase, an extension, or gas. Zero crypto
-  friction is a feature, not a compromise.
+- **Claim your team's moment with just an email.** A Cloudflare Worker verifies a
+  Cloudflare Turnstile challenge **server-side**, then mints a real **compressed** NFT and
+  delivers it to a **custodial Solana wallet auto-created for the fan's email** (Crossmint).
+  No seed phrase, no extension, no gas — and the fan can export the key to Phantom later.
+  Zero crypto friction is a feature, not a compromise.
 - **Rarity by event, not by artificial cap.** Ordinary goals mint in larger editions;
   red cards and VAR reversals are scarce; finals, hat-tricks and last-minute winners are
   1/1 legendaries. Scarcity tracks **what actually happened on the pitch**, so it can
   never be faked or inflated.
-- **Your collection.** A personal page — *"your Argentina moments"* — and a holders
-  leaderboard, so following your team across the tournament builds a real, provable
-  season-long set.
-- **Sybil-resistant and fair:** one claim per verified email + a frictionless Cloudflare
-  Turnstile bot check, with optional presence-gating (claiming requires being in the app
-  during the match) as a retention flex.
+- **Your collection + leaderboard.** A personal *"your Argentina moments"* page and a
+  holders leaderboard, so following your team across the tournament builds a season-long set.
+- **Sybil resistance by design:** one claim per email + a **server-verified** Turnstile
+  bot check (the secret never touches the browser), with optional presence-gating as a
+  retention flex.
+
+**Honest status of the claim:** the claim Worker — server-side Turnstile siteverify →
+Crossmint mint-and-deliver to the fan's email wallet → server-allocated edition numbers —
+is built and one command from live (it deploys with our Crossmint key). The live gallery
+shows the full claim UX today, with real cards and real on-chain proof links; the custodial
+email delivery switches on the moment the Worker is pointed at. Nothing a fan sees is faked.
 
 ### See it in three art tiers, across the room
 Three deterministic "print-era" art tiers, generated per team (WAI-illustrious-SDXL,
@@ -109,10 +117,11 @@ Three revenue lines, in order of how soon they turn on:
    per-moment minting carries a genuine margin instead of being subsidised away by fees.
    **Sub-cent minting is *why Solana* — it's the only chain where minting a fresh 1/1 +
    a permanent proof per moment, per match, across 104 games, is economically possible.**
-2. **Metaplex-enforced secondary royalty.** The Core **Royalties plugin** enforces a
-   creator royalty (e.g. **5–7%**) at the protocol/asset level — not a marketplace
-   honor-system. Because rarity is pinned to real events, a live VAR-reversal 1/1 has
-   durable, non-fakeable secondary demand, and every resale pays the creator on-chain.
+2. **Protocol-enforced secondary royalty (roadmap).** Metaplex Core ships a **Royalties
+   plugin** that enforces a creator royalty (e.g. **5–7%**) at the asset level — not a
+   marketplace honor-system. We'll enable it on production mints; because rarity is pinned
+   to real events, a live VAR-reversal 1/1 has durable, non-fakeable secondary demand, so
+   every resale would pay the creator on-chain.
 3. **B2B licensing of the verified-moment feed — the line this sponsor should care about
    most.** The detector + proof layer *is* a product: a clean, **provable event stream**
    (GOAL / RED_CARD / VAR-reversal, each with a `validate_stat` proof) that fantasy apps,
@@ -210,18 +219,21 @@ smoothing.
 
 **Tech stack:**
 - **Chain:** Solana. The full 25-moment collection runs on **devnet** (free World Cup
-  feed tier); a **5-card hero set is live on Solana mainnet**, its art stored
-  **permanently on Arweave** (via ArDrive Turbo, paid in SOL) and its stats proven by a
-  real `validate_stat` transaction against the mainnet TxODDS oracle. The two never
+  feed tier); a **5-card hero set is live on Solana mainnet**, its stats proven by a real
+  `validate_stat` transaction against the mainnet TxODDS oracle. The two strands never
   cross-reference. TxLINE Solana program: `subscribe`, `validate_stat`, daily Merkle roots.
-- **NFT:** Metaplex Core 1/1 assets; each card's real `validate_stat` proof tx is bound
-  into its **on-chain Attributes** (the proof lives on Solana, not in our database).
-  Devnet cards store art on Irys; the mainnet hero set stores art on Arweave.
+- **NFT:** Metaplex Core 1/1 masters; each card's real `validate_stat` proof tx is bound
+  into its **on-chain Attributes** (the proof lives on Solana, not in our database). Fan
+  claim editions are compressed NFTs.
+- **Storage:** all cards' art + metadata are stored **permanently on Arweave** (ArDrive
+  Turbo, paid in SOL) — the mainnet hero set and, after migrating off ephemeral devnet
+  Irys, all 25 devnet cards too. Nothing on a card depends on a gateway that can expire.
 - **Data:** TxLINE World Cup feed over SSE (SL1 free tier; SL12 real-time as the
   production path).
 - **Backend:** Node.js ≥18, zero-dependency detector core (12 tests), autonomous
   mint/proof daemons.
-- **Fan loop:** email → embedded/custodial wallet, Cloudflare Turnstile Sybil check.
+- **Fan loop:** Cloudflare Worker → server-side Turnstile siteverify → Crossmint
+  mint-and-deliver (compressed edition) to an email-linked custodial Solana wallet.
 - **Art:** WAI-illustrious-SDXL three-tier generative system, deterministic mint-time
   compositing.
 - **Frontend:** static gallery on GitHub Pages, auto-published live during matches
