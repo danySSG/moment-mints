@@ -105,6 +105,7 @@ async function handleClaim(env, origin, request) {
     },
     compressed: true,              // real compressed NFT = cheap numbered edition (Solana state compression)
     reuploadLinkedFiles: false,
+    sendNotification: true,        // email the fan a sign-in link to their new NFT
   };
 
   const base = cfg(env, 'CROSSMINT_BASE');
