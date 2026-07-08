@@ -12,6 +12,13 @@ const DIR = dirname(fileURLToPath(import.meta.url));
 const gw = (u) => (u ?? '').replace('https://arweave.net/', 'https://devnet.irys.xyz/');
 const moments = JSON.parse(readFileSync(join(DIR, 'moments.json'), 'utf8'));
 
+// Strand 2: hero-set на Solana MAINNET (настоящий Arweave) — отдельно, не ссылается на devnet
+let mainnetHeroes = [];
+try {
+  mainnetHeroes = readFileSync(join(DIR, '..', 'mint', 'mint-log-mainnet.ndjson'), 'utf8')
+    .trim().split('\n').filter(Boolean).map(JSON.parse);
+} catch { /* ещё нет hero-set */ }
+
 const EVENTS = {
   GOAL: { label: 'GOAL', tier: 'base' },
   GOAL_REVOKED: { label: 'VAR · GOAL DISALLOWED', tier: 'drama' },
@@ -75,6 +82,36 @@ const sections = [...matches.entries()]
       <div class="grid">${ms.map(card).join('\n')}</div>
     </section>`;
   }).join('\n');
+
+// mainnet hero-карточка (Strand 2)
+const mainnetCard = (m) => {
+  const ev = EVENTS[m.event.type] ?? { label: m.event.type, tier: 'base' };
+  const tkey = m.tier ?? ev.tier;
+  const tier = TIERS[tkey] ?? TIERS.base;
+  return `
+  <article class="card t-${tkey}" data-tilt>
+    <a class="imgwrap" href="${esc(m.explorer)}" target="_blank" rel="noopener">
+      <img src="${esc(m.imageUri)}" alt="${esc(ev.label)} — ${esc(m.ctx.participant1)} vs ${esc(m.ctx.participant2)}" loading="lazy">
+    </a>
+    <div class="meta">
+      <div class="row1">
+        <span class="type" style="color:${tier.color};border-color:${tier.color}44">${esc(ev.label)}</span>
+        <span class="ok" title="Minted on Solana mainnet, proven against the live oracle">✓ mainnet</span>
+      </div>
+      <div class="match">${esc(m.ctx.participant1)} vs ${esc(m.ctx.participant2)} <b>${esc(m.ctx.score)}</b></div>
+      <div class="sub">Solana mainnet · art permanently on Arweave · tier: ${tier.name}</div>
+      <div class="links">
+        <a href="${esc(m.explorer)}" target="_blank" rel="noopener">NFT ↗</a>
+        <a href="${esc(m.proofExplorer)}" target="_blank" rel="noopener">proof tx ↗</a>
+        <a href="${esc(m.imageUri)}" target="_blank" rel="noopener">arweave ↗</a>
+      </div>
+    </div>
+  </article>`;
+};
+const mainnetSection = mainnetHeroes.length ? `<section class="reveal">
+  <h2>Productionized on mainnet <span class="comp">${mainnetHeroes.length} hero moments re-minted on Solana mainnet · art stored permanently on Arweave · proven against the live TxODDS oracle</span></h2>
+  <div class="grid">${mainnetHeroes.map(mainnetCard).join('\n')}</div>
+</section>` : '';
 
 const verified = moments.filter(m => m.verified).length;
 const latest = moments[moments.length - 1];
@@ -257,11 +294,14 @@ ${latest ? `<section class="latest reveal" id="latest">
     <img src="assets/tier-legendary.svg" alt="Legendary goal card, ukiyo-e tier" loading="lazy" data-tilt>
   </div>
 </section>
+${mainnetSection}
 ${sections}
 <footer>Every stat on a card is provable: its fixture/seq/statKey address a Merkle leaf published daily
-on-chain by the TxODDS oracle; the "proof tx" link runs <code class="mono">validate_stat</code> in the TxLINE Solana
-program against that root. Art: three "print era" tiers — rarity you can see from across the room.
-Devnet build for the TxODDS × Solana World Cup Hackathon · <a href="https://github.com/danySSG/moment-mints">source ↗</a></footer>
+on-chain by the TxODDS oracle, and each card's on-chain attributes carry the real
+<code class="mono">validate_stat</code> transaction that verifies it against that root. Art: three "print era"
+tiers — rarity you can see from across the room. The full collection runs on Solana devnet (feed on the
+free World Cup tier); a hero set is productionized on Solana mainnet with art stored permanently on Arweave.
+TxODDS × Solana World Cup Hackathon · <a href="https://github.com/danySSG/moment-mints">source ↗</a></footer>
 </div>
 <script>
 (() => {

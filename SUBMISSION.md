@@ -209,11 +209,14 @@ smoothing.
   is in-period and visible in the repo history.)_
 
 **Tech stack:**
-- **Chain:** Solana (devnet for the hackathon; mainnet mint + permanent Arweave storage
-  for the finalized cards). TxLINE Solana program (`subscribe`, `validate_stat`, daily
-  Merkle roots).
-- **NFT:** Metaplex Core 1/1 assets (Royalties plugin for enforced secondary royalty),
-  Irys/Arweave for image + metadata.
+- **Chain:** Solana. The full 25-moment collection runs on **devnet** (free World Cup
+  feed tier); a **5-card hero set is live on Solana mainnet**, its art stored
+  **permanently on Arweave** (via ArDrive Turbo, paid in SOL) and its stats proven by a
+  real `validate_stat` transaction against the mainnet TxODDS oracle. The two never
+  cross-reference. TxLINE Solana program: `subscribe`, `validate_stat`, daily Merkle roots.
+- **NFT:** Metaplex Core 1/1 assets; each card's real `validate_stat` proof tx is bound
+  into its **on-chain Attributes** (the proof lives on Solana, not in our database).
+  Devnet cards store art on Irys; the mainnet hero set stores art on Arweave.
 - **Data:** TxLINE World Cup feed over SSE (SL1 free tier; SL12 real-time as the
   production path).
 - **Backend:** Node.js ≥18, zero-dependency detector core (12 tests), autonomous
