@@ -342,6 +342,25 @@
     "verified": true
   },
   {
+    "asset": "Eie98xmcqZoamSjVEyooSpxCQ273fPaSp5P4WKsBJ1H6",
+    "image": "https://devnet.irys.xyz/6qs3CUEqKzc2ckVC4WkjBgK9WomszCRzSdgBYWwv6Vhm",
+    "metadata": "https://devnet.irys.xyz/4BrzAtaRVewog4bQzNuuEH83F89WxCbpq38rdmr9VuoK",
+    "assetExplorer": "https://explorer.solana.com/address/Eie98xmcqZoamSjVEyooSpxCQ273fPaSp5P4WKsBJ1H6?cluster=devnet",
+    "type": "GOAL",
+    "fixtureId": "18202701",
+    "seq": 486,
+    "statKey": 2,
+    "team": "Egypt",
+    "match": "Argentina vs Egypt",
+    "competition": "World Cup 2026 · Round of 16",
+    "score": "0-1",
+    "action": "status",
+    "ts": 1783444091012,
+    "proofTx": "4ooywPrZizKmgeZBTy7fEkJLY9naakvJ4cRmnWrbdHp5Gdcn4yfVvFqgBGEAo52EbB8cSR47EwXY5J7vZ4yg3xDL",
+    "proofExplorer": "https://explorer.solana.com/tx/4ooywPrZizKmgeZBTy7fEkJLY9naakvJ4cRmnWrbdHp5Gdcn4yfVvFqgBGEAo52EbB8cSR47EwXY5J7vZ4yg3xDL?cluster=devnet",
+    "verified": true
+  },
+  {
     "asset": "C2F4axZbTtcX3dsNwubeSksjJranxFLccSamXJW9545B",
     "image": "https://devnet.irys.xyz/56qWp2SHzM2i23L6phcGFtqnAmCA4pE7vRA7XNnhjLzM",
     "metadata": "https://devnet.irys.xyz/3Z381cx1E48tE731xfdzvzkehpBnYCPc6ZbH5gey3vp5",
@@ -451,8 +470,8 @@
     "score": "3-2",
     "action": "yellow_card",
     "ts": 1783447120218,
-    "proofTx": null,
-    "proofExplorer": null,
-    "verified": false
+    "proofTx": "5S77xNRke5zHqVmV3aCACudEbYWY2EYgApR1wzbRpyyfzLieKgUKAAgZXkXsdj17Km2kUbqa2Ycyma1V72L9eySW",
+    "proofExplorer": "https://explorer.solana.com/tx/5S77xNRke5zHqVmV3aCACudEbYWY2EYgApR1wzbRpyyfzLieKgUKAAgZXkXsdj17Km2kUbqa2Ycyma1V72L9eySW?cluster=devnet",
+    "verified": true
   }
 ]
