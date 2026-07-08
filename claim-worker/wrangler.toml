@@ -17,7 +17,7 @@ ALLOWED_ORIGIN = "https://danyssg.github.io"
 #   npx wrangler kv namespace create EDITIONS
 [[kv_namespaces]]
 binding = "EDITIONS"
-id = "REPLACE_WITH_KV_NAMESPACE_ID"
+id = "344efed2b1ff4beda08c0b07fa0a2b3d"
 
 # Secrets (DO NOT put here) — set with:
 #   npx wrangler secret put CROSSMINT_KEY      (your sk_staging_ / sk_test_ server key)

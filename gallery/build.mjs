@@ -124,9 +124,10 @@ const latestEv = latest ? (EVENTS[latest.type] ?? { label: latest.type, tier: 'b
 const latestTier = latestEv ? TIERS[latestEv.tier] : null;
 
 // конфиг клейма. CLAIM_API задан → РЕАЛЬНЫЙ путь (Cloudflare Worker → Crossmint
-// mint+deliver на email:<...>:solana). Пусто → честный локальный прототип (помечен).
-const claimApi = process.env.CLAIM_API || '';
-const tsSitekey = process.env.TS_SITEKEY || '1x00000000000000000000AA'; // прод: настоящий site key
+// mint+deliver на email:<...>:solana). Публичные URL/site-key вшиты дефолтами, чтобы
+// авто-ребилд (publish.mjs во время матча) НЕ откатывал клейм в прототип.
+const claimApi = process.env.CLAIM_API || 'https://moment-claim.danyfomin003.workers.dev';
+const tsSitekey = process.env.TS_SITEKEY || '0x4AAAAAADx8yH5r3yPfM-yp'; // Turnstile site key (публичный)
 // пул для клейма: команды из матчей + компактные моменты
 const editionSupply = { legendary: 10, drama: 100, base: 1000 };
 const claimPool = moments.map(m => {
