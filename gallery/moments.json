@@ -523,5 +523,26 @@
     "proofTx": "5S77xNRke5zHqVmV3aCACudEbYWY2EYgApR1wzbRpyyfzLieKgUKAAgZXkXsdj17Km2kUbqa2Ycyma1V72L9eySW",
     "proofExplorer": "https://explorer.solana.com/tx/5S77xNRke5zHqVmV3aCACudEbYWY2EYgApR1wzbRpyyfzLieKgUKAAgZXkXsdj17Km2kUbqa2Ycyma1V72L9eySW?cluster=devnet",
     "verified": true
+  },
+  {
+    "asset": "BDvQXouZyfqjHwTZTJ7eE4NgPkW3eupNcX5iRqBD5pJS",
+    "image": "https://devnet.irys.xyz/CtkqFSwkaWTyc1okf6P2kWKLZaYLNMh4ipEdguMBFXit",
+    "metadata": "https://devnet.irys.xyz/8x7CJvQz9Wr6ZVCzpPUfd7zdvuU5MwLoiUpE3n22iKDc",
+    "assetExplorer": "https://explorer.solana.com/address/BDvQXouZyfqjHwTZTJ7eE4NgPkW3eupNcX5iRqBD5pJS?cluster=devnet",
+    "type": "GOAL",
+    "fixtureId": "18218149",
+    "seq": 325,
+    "statKey": 1,
+    "team": "Spain",
+    "match": "Spain vs Belgium",
+    "competition": "World Cup 2026",
+    "score": "1-0",
+    "action": "goal",
+    "ts": 1783711874785,
+    "lagMs": 24125,
+    "live": true,
+    "proofTx": null,
+    "proofExplorer": null,
+    "verified": false
   }
 ]
