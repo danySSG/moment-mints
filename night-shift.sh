@@ -6,6 +6,7 @@
 # Мак: подключи питание; крышку не закрывать (или закрывать только с внешним монитором).
 cd "$(dirname "$0")"
 trap 'echo; echo "[night-shift] стоп"; kill 0' INT TERM
+node day1/save-fixture-ids.mjs   # страховка: id всех будущих матчей — до того, как они исчезнут
 node day1/capture.mjs >> day1/capture.log 2>&1 &
 node mint/minter.mjs >> mint/minter.log 2>&1 &
 node gallery/publish.mjs >> gallery/publish.log 2>&1 &
