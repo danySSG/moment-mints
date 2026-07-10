@@ -99,7 +99,9 @@ through kit colors only.
 
 ### Demonstrability — it already ran, unattended, on real matches
 Fully autonomous on the real Round-of-16: **25 moments minted across 6 matches, 25/25
-proven on-chain.** **12 of them were minted genuinely live, during the match** — across
+proven on-chain** *(counts as of filming the demo — the stack keeps running on live
+matches, so the gallery may show more by the time you read this; every new card goes
+through the same detect → mint → validate_stat path).* **12 of them were minted genuinely live, during the match** — across
 three matches (USA–Belgium, Argentina–Egypt, Portugal–Spain) — including the trophy:
 **Argentina 3–2 Egypt, a comeback thriller with a VAR-disallowed goal minted in real
 time** as a `drama`-tier card while the match was still playing, the gallery
@@ -195,6 +197,12 @@ the data quality is excellent; the friction is all at the integration seams.
   the **batch `minTimestamp`**, not the event's own timestamp — passing the intuitive
   value fails with `6010`. Costly to discover; a one-line note in the docs (or accepting
   the event timestamp) would save every verifier the same afternoon we lost.
+- **Finished fixtures vanish without a trace.** `/api/fixtures/snapshot` only lists
+  *upcoming* fixtures — the moment a match ends it disappears, and there is no endpoint to
+  enumerate finished fixtures or look up their ids. `/api/scores/historical/{fixtureId}` is
+  great, but only if you already know the id: we lost the France–Morocco quarterfinal because
+  we weren't capturing when it kicked off, and its id became unrecoverable. Integrators must
+  persist fixture ids ahead of time; a simple "recent/finished fixtures" endpoint would fix this.
 - **On-chain activation flow is powerful but under-documented.** The guest-JWT →
   on-chain `subscribe` → signed-activation → token path is genuinely nice (activation is
   itself provable), but the sequencing and the SL-tier semantics (SL1 60s vs SL12
