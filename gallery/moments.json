@@ -526,8 +526,8 @@
   },
   {
     "asset": "BDvQXouZyfqjHwTZTJ7eE4NgPkW3eupNcX5iRqBD5pJS",
-    "image": "https://devnet.irys.xyz/CtkqFSwkaWTyc1okf6P2kWKLZaYLNMh4ipEdguMBFXit",
-    "metadata": "https://devnet.irys.xyz/8x7CJvQz9Wr6ZVCzpPUfd7zdvuU5MwLoiUpE3n22iKDc",
+    "image": "https://arweave.net/PW-DwLHqFfPLgrabjaGNlte9TDDmdV4NuPw1glnuLI4",
+    "metadata": "https://arweave.net/qFc9VQntLy7DZe7dpIi8fFTS7DtaRz9ojwC0rBaZn38",
     "assetExplorer": "https://explorer.solana.com/address/BDvQXouZyfqjHwTZTJ7eE4NgPkW3eupNcX5iRqBD5pJS?cluster=devnet",
     "type": "GOAL",
     "fixtureId": "18218149",
@@ -547,8 +547,8 @@
   },
   {
     "asset": "H4g52jqCUBcKVy1L4ahswLzbzYvASFzPK9eeu5NrvyVF",
-    "image": "https://devnet.irys.xyz/BvkaDunAV6abm2pZyrb6UHVe4Qkg8H4sscbeYoPc1QCi",
-    "metadata": "https://devnet.irys.xyz/3yx4foLpYnviHJPzRL74BPNS4wvymQq4FC18mdgtaCwA",
+    "image": "https://arweave.net/9FDOz5beG7LCKeRSVQnr9MffjrRS0evT5Tu9ayASrac",
+    "metadata": "https://arweave.net/97RzJH8LJhZIqIfGavB-wIojbiPoT0BMJIY9F7680mQ",
     "assetExplorer": "https://explorer.solana.com/address/H4g52jqCUBcKVy1L4ahswLzbzYvASFzPK9eeu5NrvyVF?cluster=devnet",
     "type": "GOAL",
     "fixtureId": "18218149",
@@ -568,8 +568,8 @@
   },
   {
     "asset": "4Jfxsv3BBSZshzhYRU3FugjRwNdxZRNM7ZCu55Dwi5GL",
-    "image": "https://devnet.irys.xyz/EjeanVPnZYtF1ReU6cjzUiWsTbX7WMWSgFLsE5x3aq6F",
-    "metadata": "https://devnet.irys.xyz/74aNgkY2Qr1XFDCNuqHoT5FabUi9K9DbNzoGfkEUfwpy",
+    "image": "https://arweave.net/Ko7lFbK-0tx8z5EMedPy1hcxWrp1Qp5EgrDh_u1dz3M",
+    "metadata": "https://arweave.net/EoeC8twXQeFr2xICWHTYqKXMk6MHeyyb819khUTHsik",
     "assetExplorer": "https://explorer.solana.com/address/4Jfxsv3BBSZshzhYRU3FugjRwNdxZRNM7ZCu55Dwi5GL?cluster=devnet",
     "type": "GOAL",
     "fixtureId": "18218149",
@@ -583,8 +583,8 @@
     "ts": 1783716669187,
     "lagMs": 11626,
     "live": true,
-    "proofTx": null,
-    "proofExplorer": null,
-    "verified": false
+    "proofTx": "39YWLFysR9bUzw2D1JY1F7TEHJzC48gGZGfVmk8HT2R2TmLiJ5EvG3vvxXaUYapCw9LTmyLKJG8DeXsvS1ggpJTX",
+    "proofExplorer": "https://explorer.solana.com/tx/39YWLFysR9bUzw2D1JY1F7TEHJzC48gGZGfVmk8HT2R2TmLiJ5EvG3vvxXaUYapCw9LTmyLKJG8DeXsvS1ggpJTX?cluster=devnet",
+    "verified": true
   }
 ]

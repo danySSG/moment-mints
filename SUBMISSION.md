@@ -98,11 +98,11 @@ ukiyo-e gold leaf (finals, hat-tricks). No real player likenesses; teams are exp
 through kit colors only.
 
 ### Demonstrability — it already ran, unattended, on real matches
-Fully autonomous on the real Round-of-16: **25 moments minted across 6 matches, 25/25
+Fully autonomous on real World Cup matches: **28 moments minted across 7 matches, 28/28
 proven on-chain** *(counts as of filming the demo — the stack keeps running on live
 matches, so the gallery may show more by the time you read this; every new card goes
-through the same detect → mint → validate_stat path).* **12 of them were minted genuinely live, during the match** — across
-three matches (USA–Belgium, Argentina–Egypt, Portugal–Spain) — including the trophy:
+through the same detect → mint → validate_stat path).* **15 of them were minted genuinely live, during the match** — across
+four matches (USA–Belgium, Argentina–Egypt, Portugal–Spain, and the Spain–Belgium quarterfinal) — including the trophy:
 **Argentina 3–2 Egypt, a comeback thriller with a VAR-disallowed goal minted in real
 time** as a `drama`-tier card while the match was still playing, the gallery
 auto-publishing each new card to GitHub Pages with no human in the loop. The remaining
@@ -255,8 +255,7 @@ smoothing.
 - **Live gallery (public MVP):** https://danyssg.github.io/moment-mints/
 - **Live claim endpoint (Cloudflare Worker):** https://moment-claim.danyfomin003.workers.dev/api/health
 - **Code (public repo):** https://github.com/danySSG/moment-mints
-- **Demo video:** _(paste public YouTube/Loom link — set to Public/Unlisted, verify it
-  plays signed-out)_
+- **Demo video:** https://youtu.be/YDsjGpkLArg
 - **X / build-in-public thread:** _(paste link if posted)_
 - **Network / data:** Solana · TxLINE World Cup feed
 

@@ -399,5 +399,53 @@ export default [
     "assetExplorer": "https://explorer.solana.com/address/HLANEfwecX3VTtCaKyosVUXstkxUbMcfApinyYE3P1p4?cluster=devnet",
     "proofExplorer": "https://explorer.solana.com/tx/5S77xNRke5zHqVmV3aCACudEbYWY2EYgApR1wzbRpyyfzLieKgUKAAgZXkXsdj17Km2kUbqa2Ycyma1V72L9eySW?cluster=devnet",
     "live": true
+  },
+  {
+    "id": "BDvQXouZyfqjHwTZTJ7eE4NgPkW3eupNcX5iRqBD5pJS",
+    "teams": [
+      "Spain",
+      "Belgium"
+    ],
+    "label": "GOAL",
+    "tier": "base",
+    "supply": 1000,
+    "image": "https://arweave.net/PW-DwLHqFfPLgrabjaGNlte9TDDmdV4NuPw1glnuLI4",
+    "match": "Spain vs Belgium",
+    "score": "1-0",
+    "assetExplorer": "https://explorer.solana.com/address/BDvQXouZyfqjHwTZTJ7eE4NgPkW3eupNcX5iRqBD5pJS?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/2jWx2J6vBk8ajCGsPVAZsep6NcaELbqoY5oFoG7w2s6HzvECy6PHBoELTrDa1wHybggrq9G4EDGvY8PN8BBhKoTR?cluster=devnet",
+    "live": true
+  },
+  {
+    "id": "H4g52jqCUBcKVy1L4ahswLzbzYvASFzPK9eeu5NrvyVF",
+    "teams": [
+      "Spain",
+      "Belgium"
+    ],
+    "label": "GOAL",
+    "tier": "base",
+    "supply": 1000,
+    "image": "https://arweave.net/9FDOz5beG7LCKeRSVQnr9MffjrRS0evT5Tu9ayASrac",
+    "match": "Spain vs Belgium",
+    "score": "1-1",
+    "assetExplorer": "https://explorer.solana.com/address/H4g52jqCUBcKVy1L4ahswLzbzYvASFzPK9eeu5NrvyVF?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/614LK164pALrSi5pGUPxreHcmN2NXqtXWHSkGb9qB8BaimZ8dG9q65hGneGnzfCtFihRcm7XiZFG6LUkjA9KJtkG?cluster=devnet",
+    "live": true
+  },
+  {
+    "id": "4Jfxsv3BBSZshzhYRU3FugjRwNdxZRNM7ZCu55Dwi5GL",
+    "teams": [
+      "Spain",
+      "Belgium"
+    ],
+    "label": "GOAL",
+    "tier": "base",
+    "supply": 1000,
+    "image": "https://arweave.net/Ko7lFbK-0tx8z5EMedPy1hcxWrp1Qp5EgrDh_u1dz3M",
+    "match": "Spain vs Belgium",
+    "score": "2-1",
+    "assetExplorer": "https://explorer.solana.com/address/4Jfxsv3BBSZshzhYRU3FugjRwNdxZRNM7ZCu55Dwi5GL?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/39YWLFysR9bUzw2D1JY1F7TEHJzC48gGZGfVmk8HT2R2TmLiJ5EvG3vvxXaUYapCw9LTmyLKJG8DeXsvS1ggpJTX?cluster=devnet",
+    "live": true
   }
 ];

@@ -1,6 +1,7 @@
 {
   "version": "0.0.1",
   "configurations": [
-    { "name": "gallery", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "8899", "-d", "docs"], "port": 8899 }
+    { "name": "gallery", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "8899", "-d", "docs"], "port": 8899 },
+    { "name": "storyboard", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "8901", "-d", "video"], "port": 8901 }
   ]
 }

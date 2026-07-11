@@ -17,7 +17,7 @@ Built for the [TxODDS × Solana World Cup Hackathon](https://superteam.fun/earn/
   statKey` — the exact address of a Merkle leaf in TxLINE's daily on-chain roots —
   and links to a real `validate_stat` transaction in the TxLINE Solana program that
   verifies the anchored stat behind it. That proof-tx signature is bound directly
-  into every card's **on-chain Metaplex Core attributes** (25/25), so the binding
+  into every card's **on-chain Metaplex Core attributes** (28/28), so the binding
   lives on Solana, not in our database.
 - **The detector is the source of truth.** TxLINE has no discrete event feed — we
   diff whole-match stat counters between SSE updates (goals, cards), which makes
@@ -60,23 +60,23 @@ TxLINE SSE feed ──► core/       stat-diff event detector (zero deps, 12 te
 
 ## Status
 
-- [x] Feed activated (devnet, SL1), detector battle-tested on 6 real Round-of-16
+- [x] Feed activated (devnet, SL1), detector battle-tested on 7 real World Cup
       matches (incl. a real VAR goal reversal minted live in Argentina–Egypt)
-- [x] 25 moments minted, 25/25 proven on-chain — 12 of them minted **genuinely
-      live** during the match (3 matches), the rest reconstructed from the recorded
+- [x] 28 moments minted, 28/28 proven on-chain — 15 of them minted **genuinely
+      live** during the match (4 matches), the rest reconstructed from the recorded
       feed and proven through the same `validate_stat` path
 - [x] Three-tier generative art shipped (WAI-illustrious-SDXL, human-curated),
       composited on the cards
-- [x] Real proof-tx signature bound into each card's on-chain Core attributes (25/25)
+- [x] Real proof-tx signature bound into each card's on-chain Core attributes (28/28)
 - [x] All card art + metadata migrated to permanent Arweave (off ephemeral devnet Irys);
       5-card hero set productionized on Solana mainnet
-- [x] Live vs replayed clearly tagged on every card (12 live / 13 replayed)
+- [x] Live vs replayed clearly tagged on every card (15 live / 13 replayed)
 - [x] Fan claim loop **live** — Cloudflare Worker (server-side Turnstile → Crossmint
       mint-and-deliver to an email custodial wallet, compressed editions) deployed at
       `https://moment-claim.danyfomin003.workers.dev` (`claim-worker/`); the live gallery does
       the real claim on devnet — 2 compressed NFTs already minted to an email custodial wallet,
       finalized on the devnet Solana explorer.
-- [ ] Demo video
+- [x] Demo video: https://youtu.be/YDsjGpkLArg
 
 ## Run it
 
@@ -102,6 +102,6 @@ activation and a devnet wallet.
 
 ---
 
-*Hackathon build, July 2026. 25-card collection on Solana devnet + a 5-card hero set on
+*Hackathon build, July 2026. 28-card collection on Solana devnet + a 5-card hero set on
 Solana mainnet; all art permanently on Arweave. Not affiliated with FIFA; team identities
 are expressed through kit colors only; no real player likenesses.*
