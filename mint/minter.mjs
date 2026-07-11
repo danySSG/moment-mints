@@ -28,6 +28,11 @@ const HEADERS = {
 };
 const MINTABLE = new Set(['GOAL', 'GOAL_REVOKED', 'RED_CARD']);
 const MAX_MINTS = Number(process.env.MAX_MINTS ?? 60);
+// legendary-тир (укиё-э): события этих фикстур (финал и т.п.) минтятся золотыми
+let LEGENDARY = new Set();
+try {
+  LEGENDARY = new Set((JSON.parse(readFileSync(join(DIR, '..', 'day1', 'legendary-fixtures.json'), 'utf8')).fixtures ?? []).map(String));
+} catch { /* конфига нет — ни одна фикстура не legendary */ }
 
 const det = new MatchEventDetector();
 const fixtures = new Map(); // FixtureId -> { p1, p2, competition }
@@ -60,6 +65,7 @@ async function mint(e, score) {
   if (minted >= MAX_MINTS) { log('лимит минтов', MAX_MINTS, '— пропускаю', e.type); return; }
   if (!fixtures.has(e.fixtureId)) await refreshFixtures();
   const fx = fixtures.get(e.fixtureId) ?? {};
+  if (LEGENDARY.has(String(e.fixtureId))) e = { ...e, legendary: true };
   const args = [join(DIR, 'mint-moment.mjs'), JSON.stringify(e)];
   if (fx.p1) args.push('--p1', fx.p1);
   if (fx.p2) args.push('--p2', fx.p2);

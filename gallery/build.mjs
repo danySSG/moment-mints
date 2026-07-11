@@ -37,9 +37,10 @@ const fmtTs = (ts) => ts ? new Date(Number(ts)).toISOString().slice(0, 16).repla
 
 const card = (m) => {
   const ev = EVENTS[m.type] ?? { label: m.type, tier: 'base' };
-  const tier = TIERS[ev.tier];
+  const tkey = m.legendary ? 'legendary' : ev.tier;   // финал/исторические → укиё-э
+  const tier = TIERS[tkey];
   return `
-  <article class="card t-${ev.tier}" data-tilt>
+  <article class="card t-${tkey}" data-tilt>
     <a class="imgwrap" href="${esc(m.assetExplorer)}" target="_blank" rel="noopener">
       <img src="${esc(gw(m.image))}" alt="${esc(ev.label)} — ${esc(m.match)}" loading="lazy">
     </a>
@@ -132,11 +133,12 @@ const tsSitekey = process.env.TS_SITEKEY || '0x4AAAAAADx8yH5r3yPfM-yp'; // Turns
 const editionSupply = { legendary: 10, drama: 100, base: 1000 };
 const claimPool = moments.map(m => {
   const ev = EVENTS[m.type] ?? { label: m.type, tier: 'base' };
+  const tkey = m.legendary ? 'legendary' : ev.tier;
   const [a, b] = (m.match || ' vs ').split(' vs ');
   return {
-    id: m.asset, label: ev.label, tier: ev.tier, teams: [a, b], team: m.team || a,
+    id: m.asset, label: ev.label, tier: tkey, teams: [a, b], team: m.team || a,
     match: m.match, score: m.score, image: gw(m.image), assetExplorer: m.assetExplorer,
-    proofExplorer: m.proofExplorer, supply: editionSupply[ev.tier] ?? 500,
+    proofExplorer: m.proofExplorer, supply: editionSupply[tkey] ?? 500,
   };
 });
 const claimTeams = [...new Set(claimPool.flatMap(m => m.teams))].filter(Boolean).sort();

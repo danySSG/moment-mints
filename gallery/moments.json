@@ -16,6 +16,7 @@
     "ts": 1783117804394,
     "lagMs": 146261612,
     "live": false,
+    "legendary": false,
     "proofTx": "3jdjouck3uf3rnE1ktcYa4BwminXVF62in959xqcxpfKyNYMDuamhdGpTPpb5bz79zfmSvZRw3pQTfJAwnKwXPBZ",
     "proofExplorer": "https://explorer.solana.com/tx/3jdjouck3uf3rnE1ktcYa4BwminXVF62in959xqcxpfKyNYMDuamhdGpTPpb5bz79zfmSvZRw3pQTfJAwnKwXPBZ?cluster=devnet",
     "verified": true
@@ -37,6 +38,7 @@
     "ts": 1783281819336,
     "lagMs": 48979812,
     "live": false,
+    "legendary": false,
     "proofTx": "XtjcnYiFf2qyP9E7UEL527icpa3L2QRJm2cFsVrqKDBA15nn3fTjaAKL1QpQZVx2q58YxUxPEbWWrL7muCSzGW2",
     "proofExplorer": "https://explorer.solana.com/tx/XtjcnYiFf2qyP9E7UEL527icpa3L2QRJm2cFsVrqKDBA15nn3fTjaAKL1QpQZVx2q58YxUxPEbWWrL7muCSzGW2?cluster=devnet",
     "verified": true
@@ -58,6 +60,7 @@
     "ts": 1783281931462,
     "lagMs": 48874411,
     "live": false,
+    "legendary": false,
     "proofTx": "2khGhrT9FdvTe9DN3FERRL4EJEhT84L8A5bHTqE47y5gEnFPEnBR3UVEac4WMU4AhB1QfVgcophswJonw8yhkFh7",
     "proofExplorer": "https://explorer.solana.com/tx/2khGhrT9FdvTe9DN3FERRL4EJEhT84L8A5bHTqE47y5gEnFPEnBR3UVEac4WMU4AhB1QfVgcophswJonw8yhkFh7?cluster=devnet",
     "verified": true
@@ -79,6 +82,7 @@
     "ts": 1783287759254,
     "lagMs": 43052826,
     "live": false,
+    "legendary": false,
     "proofTx": "2K68D78EAYg8WAbbDatFYTHXiaEfUR58HAZTrTy11tqmA31mNKkD2SzVAMBFHRQkwwbQGsMNcSuf9HK2TcpiN7Q7",
     "proofExplorer": "https://explorer.solana.com/tx/2K68D78EAYg8WAbbDatFYTHXiaEfUR58HAZTrTy11tqmA31mNKkD2SzVAMBFHRQkwwbQGsMNcSuf9HK2TcpiN7Q7?cluster=devnet",
     "verified": true
@@ -100,6 +104,7 @@
     "ts": 1783288366263,
     "lagMs": 42452004,
     "live": false,
+    "legendary": false,
     "proofTx": "2F1goozAE4NW7eUM1EcJAQFn9Z25CLj1MxRXcxJ1UfjNqG97gmywNcQ2VaWz3eb4tjcKyFHrYYgWq3atWqYy2dLV",
     "proofExplorer": "https://explorer.solana.com/tx/2F1goozAE4NW7eUM1EcJAQFn9Z25CLj1MxRXcxJ1UfjNqG97gmywNcQ2VaWz3eb4tjcKyFHrYYgWq3atWqYy2dLV?cluster=devnet",
     "verified": true
@@ -121,6 +126,7 @@
     "ts": 1783288953952,
     "lagMs": 41870298,
     "live": false,
+    "legendary": false,
     "proofTx": "auvpfUwtQ9e1HGoi8EPqGMAXq9E6WFnR5LZnN1mi7uAz6wvyyRuyMQZVy1zwPKMr5nTj4KjZqvXpNjKKdA5tMBc",
     "proofExplorer": "https://explorer.solana.com/tx/auvpfUwtQ9e1HGoi8EPqGMAXq9E6WFnR5LZnN1mi7uAz6wvyyRuyMQZVy1zwPKMr5nTj4KjZqvXpNjKKdA5tMBc?cluster=devnet",
     "verified": true
@@ -142,6 +148,7 @@
     "ts": 1783301839848,
     "lagMs": 28990147,
     "live": false,
+    "legendary": false,
     "proofTx": "ukWpqyJT1PEw6SCb2qrp2ey9vJbWL5Qyu3P23A8V5MmQdYAcNWtmTptMnitPVvGrKbpK15fVRVQvv3e3wMNoi8g",
     "proofExplorer": "https://explorer.solana.com/tx/ukWpqyJT1PEw6SCb2qrp2ey9vJbWL5Qyu3P23A8V5MmQdYAcNWtmTptMnitPVvGrKbpK15fVRVQvv3e3wMNoi8g?cluster=devnet",
     "verified": true
@@ -163,6 +170,7 @@
     "ts": 1783301941971,
     "lagMs": 28894265,
     "live": false,
+    "legendary": false,
     "proofTx": "2MPMVwR8UYNq5xjy12WXCwjtFMoZZ71o1EhMXuwfVdK1TGWYkLzKdcZ8nqwuQDCf6Cu9nviaWjssRQvBwqMmZnoC",
     "proofExplorer": "https://explorer.solana.com/tx/2MPMVwR8UYNq5xjy12WXCwjtFMoZZ71o1EhMXuwfVdK1TGWYkLzKdcZ8nqwuQDCf6Cu9nviaWjssRQvBwqMmZnoC?cluster=devnet",
     "verified": true
@@ -184,6 +192,7 @@
     "ts": 1783302173724,
     "lagMs": 28668945,
     "live": false,
+    "legendary": false,
     "proofTx": "Z2dKF2jhACpBaK8MCmPgzBh2FRLGW1D5yLUFmveAM4cRJxdYkNmPJ2EFkPAS85GnYMv3HGGzbQQFj5gmKEvq1on",
     "proofExplorer": "https://explorer.solana.com/tx/Z2dKF2jhACpBaK8MCmPgzBh2FRLGW1D5yLUFmveAM4cRJxdYkNmPJ2EFkPAS85GnYMv3HGGzbQQFj5gmKEvq1on?cluster=devnet",
     "verified": true
@@ -205,6 +214,7 @@
     "ts": 1783304131501,
     "lagMs": 26718235,
     "live": false,
+    "legendary": false,
     "proofTx": "dLb9TDFcGwpzervm4BhnQmJ1Ru8y97Z9fiJpSMrJNB6qkFLR6vaWrywzprfa9GxYe6rdazF6e8mszVijtB21Ecq",
     "proofExplorer": "https://explorer.solana.com/tx/dLb9TDFcGwpzervm4BhnQmJ1Ru8y97Z9fiJpSMrJNB6qkFLR6vaWrywzprfa9GxYe6rdazF6e8mszVijtB21Ecq?cluster=devnet",
     "verified": true
@@ -226,6 +236,7 @@
     "ts": 1783304576158,
     "lagMs": 26280245,
     "live": false,
+    "legendary": false,
     "proofTx": "5oWvt4zarYnaihRdwBfdPF93evJKQu2hA7tMQ73ugsize2tUs8juju5k6a4iqAVu1cWVC9jWr72AE5T8dMrpdsyT",
     "proofExplorer": "https://explorer.solana.com/tx/5oWvt4zarYnaihRdwBfdPF93evJKQu2hA7tMQ73ugsize2tUs8juju5k6a4iqAVu1cWVC9jWr72AE5T8dMrpdsyT?cluster=devnet",
     "verified": true
@@ -247,6 +258,7 @@
     "ts": 1783305091866,
     "lagMs": 25771345,
     "live": false,
+    "legendary": false,
     "proofTx": "5pRaGgSKvc4MiSpJ7rn1jT6QoMXCHv9pY14q1NQ8X9CdrFoNEK3t8SykW5mVeFRrQxBh4vrUWqc58xwKpeeqFJVw",
     "proofExplorer": "https://explorer.solana.com/tx/5pRaGgSKvc4MiSpJ7rn1jT6QoMXCHv9pY14q1NQ8X9CdrFoNEK3t8SykW5mVeFRrQxBh4vrUWqc58xwKpeeqFJVw?cluster=devnet",
     "verified": true
@@ -268,6 +280,7 @@
     "ts": 1783371237591,
     "lagMs": 25669,
     "live": true,
+    "legendary": false,
     "proofTx": "5wEZzKtnoEcXhxNUxLvJvLpLkV7vEhWzwGuyrSTAo4jaNs2WFh8CTdy7LkRMd3nCcZJv7ZSgsSsjMMacz4HAW6Xw",
     "proofExplorer": "https://explorer.solana.com/tx/5wEZzKtnoEcXhxNUxLvJvLpLkV7vEhWzwGuyrSTAo4jaNs2WFh8CTdy7LkRMd3nCcZJv7ZSgsSsjMMacz4HAW6Xw?cluster=devnet",
     "verified": true
@@ -289,6 +302,7 @@
     "ts": 1783383018072,
     "lagMs": 17549,
     "live": true,
+    "legendary": false,
     "proofTx": "kLnvYDy9qBRJaVaJZFyFzqvvJ9Czj86rthRf8rgHNPiKqKVLs2pdk9UbfHWj24qDPFXv7RpAT9Yg9kg3A2JCceL",
     "proofExplorer": "https://explorer.solana.com/tx/kLnvYDy9qBRJaVaJZFyFzqvvJ9Czj86rthRf8rgHNPiKqKVLs2pdk9UbfHWj24qDPFXv7RpAT9Yg9kg3A2JCceL?cluster=devnet",
     "verified": true
@@ -310,6 +324,7 @@
     "ts": 1783384328575,
     "lagMs": 5575,
     "live": true,
+    "legendary": false,
     "proofTx": "31tL87UYcovjQ1e7nqcRt3ByTQZmHk6PCG6G4u69PNGpsifCGY6hFuSjNf3BAyhzNVfbK6vsbHTQSQcYQZeKk22q",
     "proofExplorer": "https://explorer.solana.com/tx/31tL87UYcovjQ1e7nqcRt3ByTQZmHk6PCG6G4u69PNGpsifCGY6hFuSjNf3BAyhzNVfbK6vsbHTQSQcYQZeKk22q?cluster=devnet",
     "verified": true
@@ -331,6 +346,7 @@
     "ts": 1783384455272,
     "lagMs": 17852,
     "live": true,
+    "legendary": false,
     "proofTx": "3pyjN98ax34zRJAUmZ2NzqV6bRHminARPZB9Mmf3BktrKVhpgPv5SF4uNaQ33YmFnaBYj2Zmy6o4QbKKtuqnDHt4",
     "proofExplorer": "https://explorer.solana.com/tx/3pyjN98ax34zRJAUmZ2NzqV6bRHminARPZB9Mmf3BktrKVhpgPv5SF4uNaQ33YmFnaBYj2Zmy6o4QbKKtuqnDHt4?cluster=devnet",
     "verified": true
@@ -352,6 +368,7 @@
     "ts": 1783387325109,
     "lagMs": 6921,
     "live": true,
+    "legendary": false,
     "proofTx": "43TqCueDzkTBiFgETMvtoagHhpUqq2N3ekR2WQwrcy5i6UyMBL69TZ3tC893dr6RomStrsua612YtY9xu1rtXMMm",
     "proofExplorer": "https://explorer.solana.com/tx/43TqCueDzkTBiFgETMvtoagHhpUqq2N3ekR2WQwrcy5i6UyMBL69TZ3tC893dr6RomStrsua612YtY9xu1rtXMMm?cluster=devnet",
     "verified": true
@@ -373,6 +390,7 @@
     "ts": 1783389465772,
     "lagMs": 7007,
     "live": true,
+    "legendary": false,
     "proofTx": "4EkeD3nLj8oXkaUtQcuA2Hhud2eaCbnYuqGh8TwqKCWhc1hb4fzxvY7zX9TCkDZrxjJiDYSAbs67h9HhdPJp9mxS",
     "proofExplorer": "https://explorer.solana.com/tx/4EkeD3nLj8oXkaUtQcuA2Hhud2eaCbnYuqGh8TwqKCWhc1hb4fzxvY7zX9TCkDZrxjJiDYSAbs67h9HhdPJp9mxS?cluster=devnet",
     "verified": true
@@ -394,6 +412,7 @@
     "ts": 1783444091012,
     "lagMs": 37783944,
     "live": false,
+    "legendary": false,
     "proofTx": "4ooywPrZizKmgeZBTy7fEkJLY9naakvJ4cRmnWrbdHp5Gdcn4yfVvFqgBGEAo52EbB8cSR47EwXY5J7vZ4yg3xDL",
     "proofExplorer": "https://explorer.solana.com/tx/4ooywPrZizKmgeZBTy7fEkJLY9naakvJ4cRmnWrbdHp5Gdcn4yfVvFqgBGEAo52EbB8cSR47EwXY5J7vZ4yg3xDL?cluster=devnet",
     "verified": true
@@ -415,6 +434,7 @@
     "ts": 1783445037296,
     "lagMs": 12888,
     "live": true,
+    "legendary": false,
     "proofTx": "3pJgXM17UbLMwjCju1gT6tijrRgEQvwcYYgv1spJZNBEE1SsyhKUdDRa1yQA1oKsTM6BpQp5EHQNZz9PPfmpYDVz",
     "proofExplorer": "https://explorer.solana.com/tx/3pJgXM17UbLMwjCju1gT6tijrRgEQvwcYYgv1spJZNBEE1SsyhKUdDRa1yQA1oKsTM6BpQp5EHQNZz9PPfmpYDVz?cluster=devnet",
     "verified": true
@@ -436,6 +456,7 @@
     "ts": 1783445102784,
     "lagMs": 24848,
     "live": true,
+    "legendary": false,
     "proofTx": "4daPJTuyPZxiq3FDBQi3fzeMLppwk6QaB1oJWtspN1zhkpx6H2zPLDmjeB9TdG5JYfuXp9EBD6nbrPkhXJ7e1B2T",
     "proofExplorer": "https://explorer.solana.com/tx/4daPJTuyPZxiq3FDBQi3fzeMLppwk6QaB1oJWtspN1zhkpx6H2zPLDmjeB9TdG5JYfuXp9EBD6nbrPkhXJ7e1B2T?cluster=devnet",
     "verified": true
@@ -457,6 +478,7 @@
     "ts": 1783445552103,
     "lagMs": 16202,
     "live": true,
+    "legendary": false,
     "proofTx": "5fLv1Qh6ZEAVSuapHapBst7cydHeXZ3rBxQwrnsXf58TtNxGn4ApLzffUWgL6cFJi14bQ3koXtEqhHe25mdF7F4C",
     "proofExplorer": "https://explorer.solana.com/tx/5fLv1Qh6ZEAVSuapHapBst7cydHeXZ3rBxQwrnsXf58TtNxGn4ApLzffUWgL6cFJi14bQ3koXtEqhHe25mdF7F4C?cluster=devnet",
     "verified": true
@@ -478,6 +500,7 @@
     "ts": 1783446226916,
     "lagMs": 24152,
     "live": true,
+    "legendary": false,
     "proofTx": "uAzyhb1NkLfpNXgyw61vvRp2ih8eun614q2XaZxeKBcWBa71xMZoMKgMpJn9M3fNCSDA9yaEfzmrR1Vn3adrBPS",
     "proofExplorer": "https://explorer.solana.com/tx/uAzyhb1NkLfpNXgyw61vvRp2ih8eun614q2XaZxeKBcWBa71xMZoMKgMpJn9M3fNCSDA9yaEfzmrR1Vn3adrBPS?cluster=devnet",
     "verified": true
@@ -499,6 +522,7 @@
     "ts": 1783446511481,
     "lagMs": 24247,
     "live": true,
+    "legendary": false,
     "proofTx": "5yDuwg9p2n7ZJs5cyVBHBGarJkbju2PsFj15WAMpBHHtL347BtsJv6wsaQ5UebUbSTobFMqb63sGZj3iMXJXHAdX",
     "proofExplorer": "https://explorer.solana.com/tx/5yDuwg9p2n7ZJs5cyVBHBGarJkbju2PsFj15WAMpBHHtL347BtsJv6wsaQ5UebUbSTobFMqb63sGZj3iMXJXHAdX?cluster=devnet",
     "verified": true
@@ -520,6 +544,7 @@
     "ts": 1783447120218,
     "lagMs": 12506,
     "live": true,
+    "legendary": false,
     "proofTx": "5S77xNRke5zHqVmV3aCACudEbYWY2EYgApR1wzbRpyyfzLieKgUKAAgZXkXsdj17Km2kUbqa2Ycyma1V72L9eySW",
     "proofExplorer": "https://explorer.solana.com/tx/5S77xNRke5zHqVmV3aCACudEbYWY2EYgApR1wzbRpyyfzLieKgUKAAgZXkXsdj17Km2kUbqa2Ycyma1V72L9eySW?cluster=devnet",
     "verified": true
@@ -541,6 +566,7 @@
     "ts": 1783711874785,
     "lagMs": 24125,
     "live": true,
+    "legendary": false,
     "proofTx": "2jWx2J6vBk8ajCGsPVAZsep6NcaELbqoY5oFoG7w2s6HzvECy6PHBoELTrDa1wHybggrq9G4EDGvY8PN8BBhKoTR",
     "proofExplorer": "https://explorer.solana.com/tx/2jWx2J6vBk8ajCGsPVAZsep6NcaELbqoY5oFoG7w2s6HzvECy6PHBoELTrDa1wHybggrq9G4EDGvY8PN8BBhKoTR?cluster=devnet",
     "verified": true
@@ -562,6 +588,7 @@
     "ts": 1783712526258,
     "lagMs": 23810,
     "live": true,
+    "legendary": false,
     "proofTx": "614LK164pALrSi5pGUPxreHcmN2NXqtXWHSkGb9qB8BaimZ8dG9q65hGneGnzfCtFihRcm7XiZFG6LUkjA9KJtkG",
     "proofExplorer": "https://explorer.solana.com/tx/614LK164pALrSi5pGUPxreHcmN2NXqtXWHSkGb9qB8BaimZ8dG9q65hGneGnzfCtFihRcm7XiZFG6LUkjA9KJtkG?cluster=devnet",
     "verified": true
@@ -583,6 +610,7 @@
     "ts": 1783716669187,
     "lagMs": 11626,
     "live": true,
+    "legendary": false,
     "proofTx": "39YWLFysR9bUzw2D1JY1F7TEHJzC48gGZGfVmk8HT2R2TmLiJ5EvG3vvxXaUYapCw9LTmyLKJG8DeXsvS1ggpJTX",
     "proofExplorer": "https://explorer.solana.com/tx/39YWLFysR9bUzw2D1JY1F7TEHJzC48gGZGfVmk8HT2R2TmLiJ5EvG3vvxXaUYapCw9LTmyLKJG8DeXsvS1ggpJTX?cluster=devnet",
     "verified": true

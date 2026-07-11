@@ -42,7 +42,13 @@ for (const line of readFileSync(file, 'utf8').split('\n')) {
     if (!MINTABLE.has(e.type)) continue;
     const key = `${e.fixtureId}:${e.seq}:${e.type}`;
     if (already.has(key)) { skipped++; continue; }
-    const args = [join(DIR, 'mint-moment.mjs'), JSON.stringify(e),
+    // legendary-тир для фикстур из day1/legendary-fixtures.json (финал и т.п.)
+    let ev = e;
+    try {
+      const lg = new Set((JSON.parse(readFileSync(join(DIR, '..', 'day1', 'legendary-fixtures.json'), 'utf8')).fixtures ?? []).map(String));
+      if (lg.has(String(e.fixtureId))) ev = { ...e, legendary: true };
+    } catch { /* нет конфига — ок */ }
+    const args = [join(DIR, 'mint-moment.mjs'), JSON.stringify(ev),
       '--score', `${score[0]}-${score[1]}`];
     if (opt('--p1')) args.push('--p1', opt('--p1'));
     if (opt('--p2')) args.push('--p2', opt('--p2'));

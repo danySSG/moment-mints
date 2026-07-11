@@ -95,6 +95,7 @@ for (const line of readFileSync(join(MINT, 'mint-log.ndjson'), 'utf8').split('\n
     match: `${p1 ?? '?'} vs ${p2 ?? '?'}`, competition: fx.comp ?? m.ctx?.competition ?? '',
     score: detail.get(key)?.score ?? m.ctx?.score ?? '',
     action: e.action ?? null, ts: e.ts ?? null, lagMs, live,
+    legendary: Boolean(e.legendary),
     proofTx: proof?.txSig ?? null,
     proofExplorer: proof?.explorer ?? null,
     verified: Boolean(proof?.ok),

@@ -20,13 +20,14 @@ const supplyByTier = { legendary: 10, drama: 100, base: 1000 };
 
 const pool = moments.map(m => {
   const ev = EVENTS[m.type] ?? { label: m.type, tier: 'base' };
+  const tkey = m.legendary ? 'legendary' : ev.tier;
   const [a, b] = String(m.match || ' vs ').split(' vs ');
   return {
     id: m.asset,
     teams: [a, b].filter(Boolean),
     label: ev.label,
-    tier: ev.tier,
-    supply: supplyByTier[ev.tier] ?? 500,
+    tier: tkey,
+    supply: supplyByTier[tkey] ?? 500,
     image: m.image,                 // arweave.net (постоянный) после миграции
     match: m.match,
     score: m.score,
