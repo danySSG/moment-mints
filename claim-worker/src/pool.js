@@ -447,5 +447,165 @@ export default [
     "assetExplorer": "https://explorer.solana.com/address/4Jfxsv3BBSZshzhYRU3FugjRwNdxZRNM7ZCu55Dwi5GL?cluster=devnet",
     "proofExplorer": "https://explorer.solana.com/tx/39YWLFysR9bUzw2D1JY1F7TEHJzC48gGZGfVmk8HT2R2TmLiJ5EvG3vvxXaUYapCw9LTmyLKJG8DeXsvS1ggpJTX?cluster=devnet",
     "live": true
+  },
+  {
+    "id": "5C1wbBV63PiSLXhirQzb3HVHgaGCo75SgVxzRBaCR1vD",
+    "teams": [
+      "Norway",
+      "England"
+    ],
+    "label": "GOAL",
+    "tier": "base",
+    "supply": 1000,
+    "image": "https://devnet.irys.xyz/3hrif9L4Ha6VYV2PyQJZxw7WfnB37dnL6qPCWTNPBAcs",
+    "match": "Norway vs England",
+    "score": "1-0",
+    "assetExplorer": "https://explorer.solana.com/address/5C1wbBV63PiSLXhirQzb3HVHgaGCo75SgVxzRBaCR1vD?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/2c7HZab6bW4rvwLBb1sU6bJwWrjujF1pp16FPaNUJJABm3A3izrA6L6KMQxfY8QvrX828dCEVvzC4c9FAiwQdGBH?cluster=devnet",
+    "live": false
+  },
+  {
+    "id": "Dy3BkfQB6zG3YTZZH7QRUWUqtSLoYooSozmADrQoBYp2",
+    "teams": [
+      "Norway",
+      "England"
+    ],
+    "label": "GOAL",
+    "tier": "base",
+    "supply": 1000,
+    "image": "https://devnet.irys.xyz/6pQ2QFZmyrfGeJ2zL8kMbRDLnm1qdobHT3gmT8UCZwPv",
+    "match": "Norway vs England",
+    "score": "1-1",
+    "assetExplorer": "https://explorer.solana.com/address/Dy3BkfQB6zG3YTZZH7QRUWUqtSLoYooSozmADrQoBYp2?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/2py3qPbzhxguHvGe9atXxhctTxusnT9jgzTzeo28P5QNV6WAkSrbWYJbRf3ywbmJdfds8TfamcL4U1wcyXzvfAsQ?cluster=devnet",
+    "live": false
+  },
+  {
+    "id": "DB9XiXYCSTYC1wcWv2c4RA4eYeyGn2sLT71EJdaMs9uh",
+    "teams": [
+      "Norway",
+      "England"
+    ],
+    "label": "GOAL",
+    "tier": "base",
+    "supply": 1000,
+    "image": "https://devnet.irys.xyz/Difq1Zk4JKVdJHD8g7F4QrLRepK2Qh25kcjqSbuhoJTb",
+    "match": "Norway vs England",
+    "score": "2-1",
+    "assetExplorer": "https://explorer.solana.com/address/DB9XiXYCSTYC1wcWv2c4RA4eYeyGn2sLT71EJdaMs9uh?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/SFAQsHhkw2d4ukcXpU8iW3S98CqCqewTTLYZPdJ91ZiBfv9Dwx2cJcFeucFASpqDbFg2xk4j1Z9rBWXncoY3SUc?cluster=devnet",
+    "live": false
+  },
+  {
+    "id": "9TX8C83duLBu4GwNdRiBDiT2jCDgG3BDM94UXiQ2kzC2",
+    "teams": [
+      "Norway",
+      "England"
+    ],
+    "label": "VAR · GOAL DISALLOWED",
+    "tier": "drama",
+    "supply": 100,
+    "image": "https://devnet.irys.xyz/hyEXAEGYYNDLAEMYSdkfr1dQZK7433gRYwrpToCCQX9",
+    "match": "Norway vs England",
+    "score": "1-1",
+    "assetExplorer": "https://explorer.solana.com/address/9TX8C83duLBu4GwNdRiBDiT2jCDgG3BDM94UXiQ2kzC2?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/4KMQsqmv8QEntz9afMPjucmiaoiAnnxZbea6Zpjn7TnZq2yHKBRNYc7uMPLBTtreqXLSEVMRQDnu8yck4oDUQuJQ?cluster=devnet",
+    "live": false
+  },
+  {
+    "id": "9si7y8uUE3imdPHzRwEg6VRehZ8yx3B3o5FHJt5j5w2a",
+    "teams": [
+      "Norway",
+      "England"
+    ],
+    "label": "GOAL",
+    "tier": "base",
+    "supply": 1000,
+    "image": "https://devnet.irys.xyz/Eh7XF2q1Gt5Zf4JwjtboFrtPJPKDBZnFVHvmY7jHTaFL",
+    "match": "Norway vs England",
+    "score": "1-2",
+    "assetExplorer": "https://explorer.solana.com/address/9si7y8uUE3imdPHzRwEg6VRehZ8yx3B3o5FHJt5j5w2a?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/5gnH16xEcHV6YxnRUpyvXMdadFQZfJ3MQrGcatbGAuVs5Gadw4SrisLSEj1eFeQ5UrgBKWwtyNcByi9E4ouKCqkt?cluster=devnet",
+    "live": false
+  },
+  {
+    "id": "9ygq8UjD82jCNhQhRtjoAYxEEQqwWygsu2vvASWiCvMQ",
+    "teams": [
+      "Argentina",
+      "Switzerland"
+    ],
+    "label": "GOAL",
+    "tier": "base",
+    "supply": 1000,
+    "image": "https://devnet.irys.xyz/6qSzHVrXdZmkALEgiX24FFTgBbJfvmEdce5TYCz3vC98",
+    "match": "Argentina vs Switzerland",
+    "score": "1-0",
+    "assetExplorer": "https://explorer.solana.com/address/9ygq8UjD82jCNhQhRtjoAYxEEQqwWygsu2vvASWiCvMQ?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/ySN4KoKB7ToM8hBPnUVgVQQmt2rXGEYvEzHPBA3HAeug6UsEnJNsD2UpFEbLpcL4b5E3iM1v46NHMpsgcPwDbcH?cluster=devnet",
+    "live": false
+  },
+  {
+    "id": "8DXQWKc2eiGmu18LTjaFMXLCUWJn3rGBHbWvZSs2ELa9",
+    "teams": [
+      "Argentina",
+      "Switzerland"
+    ],
+    "label": "GOAL",
+    "tier": "base",
+    "supply": 1000,
+    "image": "https://devnet.irys.xyz/8EafBPGv5e9hC6DsSA9qyvwyd6cULRZnNgDEmA82Simp",
+    "match": "Argentina vs Switzerland",
+    "score": "1-1",
+    "assetExplorer": "https://explorer.solana.com/address/8DXQWKc2eiGmu18LTjaFMXLCUWJn3rGBHbWvZSs2ELa9?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/2G1qjJSim3UStkGAQaVHFvS37H7nA58b6vJkiyG3ZtwW6knDH7pXofdkbEKD65cDYFDVSAuSMvLdrzCPKBQvevH2?cluster=devnet",
+    "live": false
+  },
+  {
+    "id": "F7yosTWD1dey25NvaDgoQNcwUgyfwJtYNcP6vsptyHKQ",
+    "teams": [
+      "Argentina",
+      "Switzerland"
+    ],
+    "label": "RED CARD",
+    "tier": "drama",
+    "supply": 100,
+    "image": "https://devnet.irys.xyz/3qiKaFTtrtRnFzVqGtgWJJZyxjbPAxEuL3Av9or3BAwt",
+    "match": "Argentina vs Switzerland",
+    "score": "1-1",
+    "assetExplorer": "https://explorer.solana.com/address/F7yosTWD1dey25NvaDgoQNcwUgyfwJtYNcP6vsptyHKQ?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/3kjQLK4rpbx7ckGmgRxBp86jVWk9HUaxrbRi8SvaZ3PRt5vGaqGkEnAffvWoF5QByUWYgAiDh1YvUKnN45T1KYYU?cluster=devnet",
+    "live": false
+  },
+  {
+    "id": "5doMRvdmXHGSser6QMhSyJpoqViqN4FBwCDVowBbK2uk",
+    "teams": [
+      "Argentina",
+      "Switzerland"
+    ],
+    "label": "GOAL",
+    "tier": "base",
+    "supply": 1000,
+    "image": "https://devnet.irys.xyz/3RvTHZnjyZ7p9DgnQ3WW5FfpDFGHwzZ7vQj6PF7jNXFb",
+    "match": "Argentina vs Switzerland",
+    "score": "2-1",
+    "assetExplorer": "https://explorer.solana.com/address/5doMRvdmXHGSser6QMhSyJpoqViqN4FBwCDVowBbK2uk?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/B7KXWb95XUv7aBHew7GU5okoEauzCMEebzjaR1P3MFiPkdRttwu81Vpj36EEq1P1Jzj1oQFyneEqFG4bivB2T1r?cluster=devnet",
+    "live": false
+  },
+  {
+    "id": "2qdjU9vDv8JBenHSyS9omAKciqpdpqyAqng7Q4uMcZFZ",
+    "teams": [
+      "Argentina",
+      "Switzerland"
+    ],
+    "label": "GOAL",
+    "tier": "base",
+    "supply": 1000,
+    "image": "https://devnet.irys.xyz/4YZ1PXvCBRyyt1ADdPtCLCaHgpTTPcPUHYtXEoy22z2a",
+    "match": "Argentina vs Switzerland",
+    "score": "3-1",
+    "assetExplorer": "https://explorer.solana.com/address/2qdjU9vDv8JBenHSyS9omAKciqpdpqyAqng7Q4uMcZFZ?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/Rjxxvu7CxaW2fVadRi5RNBwV8uKBJDpAUVFnEdMUd7FetPDbrL3SvBTYupsUnLpSbXc6TYGgdMA3ZogCFdx8UYr?cluster=devnet",
+    "live": false
   }
 ];

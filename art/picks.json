@@ -63,5 +63,9 @@
     "art/picks/prod-belgium-goal-01.jpeg",
     "art/picks/pose-belgium-slide-01.jpeg",
     "art/picks/pose-belgium-sky-01.jpeg"
+  ],
+  "GOAL:France": [
+    "art/picks/prod-france-goal-01.jpeg",
+    "art/picks/prod-france-goal-02.jpeg"
   ]
 }
