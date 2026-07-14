@@ -878,5 +878,27 @@
     "proofTx": null,
     "proofExplorer": null,
     "verified": false
+  },
+  {
+    "asset": "4eJmkMbHz2YarXNYARczzS3dW21B3zHvaoaHvK2KNB8T",
+    "image": "https://devnet.irys.xyz/248c2egCXXQoicz54Xr7YK4Q4Ucn9Wxdn691Zf73owhX",
+    "metadata": "https://devnet.irys.xyz/Gkf9fr7UYMLXsbajQU7aJUUxqzAU5m99o8bVXdqZ1Gi5",
+    "assetExplorer": "https://explorer.solana.com/address/4eJmkMbHz2YarXNYARczzS3dW21B3zHvaoaHvK2KNB8T?cluster=devnet",
+    "type": "GOAL",
+    "fixtureId": "18237038",
+    "seq": 641,
+    "statKey": 2,
+    "team": "Spain",
+    "match": "France vs Spain",
+    "competition": "World Cup 2026",
+    "score": "0-3",
+    "action": "var_end",
+    "ts": 1784060573720,
+    "lagMs": 17724,
+    "live": true,
+    "legendary": false,
+    "proofTx": null,
+    "proofExplorer": null,
+    "verified": false
   }
 ]
