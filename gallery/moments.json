@@ -834,5 +834,27 @@
     "proofTx": "Rjxxvu7CxaW2fVadRi5RNBwV8uKBJDpAUVFnEdMUd7FetPDbrL3SvBTYupsUnLpSbXc6TYGgdMA3ZogCFdx8UYr",
     "proofExplorer": "https://explorer.solana.com/tx/Rjxxvu7CxaW2fVadRi5RNBwV8uKBJDpAUVFnEdMUd7FetPDbrL3SvBTYupsUnLpSbXc6TYGgdMA3ZogCFdx8UYr?cluster=devnet",
     "verified": true
+  },
+  {
+    "asset": "5pVSHrZ9GcoTWZdpi2paJpkBSL2qHAXQatXhvLAMMhj2",
+    "image": "https://devnet.irys.xyz/38fkP2hYYSs8b5Rt9pmCSwftvt21C1tN8gRZEiDP4jqo",
+    "metadata": "https://devnet.irys.xyz/3uV6HKx3xG7cH6HocVXgVzbq9ndvBCUjiCy2KkZ94U75",
+    "assetExplorer": "https://explorer.solana.com/address/5pVSHrZ9GcoTWZdpi2paJpkBSL2qHAXQatXhvLAMMhj2?cluster=devnet",
+    "type": "GOAL",
+    "fixtureId": "18237038",
+    "seq": 221,
+    "statKey": 2,
+    "team": "Spain",
+    "match": "France vs Spain",
+    "competition": "World Cup 2026",
+    "score": "0-1",
+    "action": "penalty_outcome",
+    "ts": 1784056962796,
+    "lagMs": 26856,
+    "live": true,
+    "legendary": false,
+    "proofTx": null,
+    "proofExplorer": null,
+    "verified": false
   }
 ]
