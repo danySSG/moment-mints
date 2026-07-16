@@ -77,13 +77,20 @@ for (const m of moments) {
   if (!matches.has(key)) matches.set(key, []);
   matches.get(key).push(m);
 }
+// Заметки о покрытии: почему в секции мало карточек. Мы минтим ТОЛЬКО моменты,
+// подтверждённые фидом в нашем окне захвата — ничего не дорисовываем задним числом.
+const COVERAGE_NOTES = {
+  '18175918': 'partial capture — day one of the pipeline, we joined this match mid-game',
+  '18198205': 'a one-goal match — its only goal, the 90&prime; winner',
+};
+
 const sections = [...matches.entries()]
   .sort((a, b) => (b[1][0].ts ?? 0) - (a[1][0].ts ?? 0))
   .map(([key, ms]) => {
     const [match, comp] = key.split('|');
     const last = ms[ms.length - 1];
     return `<section class="reveal">
-      <h2><span class="score">${esc(last.score)}</span> ${esc(match)} <span class="comp">${esc(comp)}</span></h2>
+      <h2><span class="score">${esc(last.score)}</span> ${esc(match)} <span class="comp">${esc(comp)}</span>${COVERAGE_NOTES[String(ms[0].fixtureId)] ? ` <span class="covnote">${COVERAGE_NOTES[String(ms[0].fixtureId)]}</span>` : ''}</h2>
       <div class="grid">${ms.map(card).join('\n')}</div>
     </section>`;
   }).join('\n');
@@ -221,6 +228,8 @@ const html = `<!doctype html>
   h2 { font: 700 24px "Space Grotesk", sans-serif; margin-bottom: 16px; display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
   h2 .score { color: var(--acc); }
   h2 .comp { color: var(--mut); font: 400 13.5px Inter; }
+  h2 .covnote { display:inline-block; margin-left:10px; padding:2px 9px; border:1px solid #6b5d3944;
+    border-radius:99px; color:#b09a5e; font: 400 11.5px Inter; vertical-align:middle; }
 
   .latest { background: linear-gradient(180deg, rgba(18,22,31,.9), rgba(18,22,31,.55)); border: 1px solid var(--line); border-radius: 18px; padding: 24px; }
   .live { display: inline-flex; align-items: center; gap: 8px; }
@@ -385,7 +394,7 @@ ${latest ? `<section class="latest reveal" id="latest">
 </section>
 ${mainnetSection}
 ${sections}
-<footer>Every stat on a card is provable: its fixture/seq/statKey address a Merkle leaf published daily
+<footer>Match sections show exactly the moments proven by the feed during our capture window — nothing is invented or back-filled without feed data. Every stat on a card is provable: its fixture/seq/statKey address a Merkle leaf published daily
 on-chain by the TxODDS oracle, and each card's on-chain attributes carry the real
 <code class="mono">validate_stat</code> transaction that verifies it against that root. Art: three "print era"
 tiers — rarity you can see from across the room. The full collection runs on Solana devnet (feed on the

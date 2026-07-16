@@ -76,6 +76,8 @@
   h2 { font: 700 24px "Space Grotesk", sans-serif; margin-bottom: 16px; display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
   h2 .score { color: var(--acc); }
   h2 .comp { color: var(--mut); font: 400 13.5px Inter; }
+  h2 .covnote { display:inline-block; margin-left:10px; padding:2px 9px; border:1px solid #6b5d3944;
+    border-radius:99px; color:#b09a5e; font: 400 11.5px Inter; vertical-align:middle; }
 
   .latest { background: linear-gradient(180deg, rgba(18,22,31,.9), rgba(18,22,31,.55)); border: 1px solid var(--line); border-radius: 18px; padding: 24px; }
   .live { display: inline-flex; align-items: center; gap: 8px; }
@@ -1254,7 +1256,7 @@
   </article></div>
     </section>
 <section class="reveal">
-      <h2><span class="score">0–1</span> Portugal vs Spain <span class="comp">World Cup 2026 · Round of 16</span></h2>
+      <h2><span class="score">0–1</span> Portugal vs Spain <span class="comp">World Cup 2026 · Round of 16</span> <span class="covnote">a one-goal match — its only goal, the 90&prime; winner</span></h2>
       <div class="grid">
   <article class="card t-base" data-tilt>
     <a class="imgwrap" href="https://explorer.solana.com/address/Cv2bqwj15wRZsVb9yoyjRkK8TXcStoWMzmxF8Au8fEyS?cluster=devnet" target="_blank" rel="noopener">
@@ -1599,7 +1601,7 @@
   </article></div>
     </section>
 <section class="reveal">
-      <h2><span class="score">1–0</span> Argentina vs Cape Verde <span class="comp">World Cup 2026 · Group stage</span></h2>
+      <h2><span class="score">1–0</span> Argentina vs Cape Verde <span class="comp">World Cup 2026 · Group stage</span> <span class="covnote">partial capture — day one of the pipeline, we joined this match mid-game</span></h2>
       <div class="grid">
   <article class="card t-base" data-tilt>
     <a class="imgwrap" href="https://explorer.solana.com/address/4fuar55aCMZgvxMZM1sboXcCwr6jLMuANwNtC69sbCzx?cluster=devnet" target="_blank" rel="noopener">
@@ -1629,7 +1631,7 @@
     </div>
   </article></div>
     </section>
-<footer>Every stat on a card is provable: its fixture/seq/statKey address a Merkle leaf published daily
+<footer>Match sections show exactly the moments proven by the feed during our capture window — nothing is invented or back-filled without feed data. Every stat on a card is provable: its fixture/seq/statKey address a Merkle leaf published daily
 on-chain by the TxODDS oracle, and each card's on-chain attributes carry the real
 <code class="mono">validate_stat</code> transaction that verifies it against that root. Art: three "print era"
 tiers — rarity you can see from across the room. The full collection runs on Solana devnet (feed on the
