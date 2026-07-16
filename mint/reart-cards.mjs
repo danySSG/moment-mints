@@ -106,7 +106,7 @@ for (const [fixtureId, idxs] of byFixture) {
     const minute = Math.round(Number(clockSec) / 60);
     const role = goalRole({ scoredBy: e.participant, before, after, minute });
     const archetype = pickArchetype(role, used);
-    if (r.artv === 2) continue;                               // уже переделана
+    if (r.artv === Number(process.env.ART_V ?? 2)) continue;  // уже на целевой версии
     plan.push({ i, r, archetype, role, minute });
   }
 }
@@ -151,7 +151,7 @@ for (const p of plan.slice(0, LIMIT)) {
     const asset = await fetchAsset(umi, publicKey(r.asset));
     await update(umi, { asset, name: asset.name, uri: metadataUri }).sendAndConfirm(umi);
 
-    rows[i] = { ...r, imageUri, metadataUri, archetype, role: p.role, minute: p.minute, artv: 2 };
+    rows[i] = { ...r, imageUri, metadataUri, archetype, role: p.role, minute: p.minute, artv: Number(process.env.ART_V ?? 2) };
     writeFileSync(LOG, rows.map(x => JSON.stringify(x)).join('\n') + '\n');
     done++;
     console.log(`  ✓ ${done}/${Math.min(plan.length, LIMIT)} ${team(r)} ${archetype} → ${r.asset.slice(0, 8)}…`);

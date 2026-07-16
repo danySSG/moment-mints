@@ -35,6 +35,13 @@ function resolveArt(event, team, ctx = {}) {
   const P = loadPicks();
   const type = event.legendary ? `${event.type}_LEGENDARY` : event.type;
 
+  // ПЕР-ГОЛ пик (уникализация задним числом): точный ключ "GOAL@fixture:seq" бьёт всё.
+  const own = P[`${event.type}@${event.fixtureId}:${event.seq}`];
+  if (own?.length) {
+    const f = join(ROOT, own[0]);
+    if (existsSync(f)) return f;
+  }
+
   if (ctx.archetype && !event.legendary) {
     const byArch = P[`${event.type}:${team}:${ctx.archetype}`] ?? P[`${event.type}:*:${ctx.archetype}`];
     if (byArch?.length) {
