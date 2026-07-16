@@ -42,7 +42,7 @@ export class MatchEventDetector {
   // update: результат normalizeUpdate(); возвращает массив событий (возможно пустой)
   ingest(update) {
     if (!update) return [];
-    const { fixtureId, seq, ts, phaseId, stats, action = null } = update;
+    const { fixtureId, seq, ts, phaseId, stats, action = null, clockSeconds = null } = update;
     const prev = this.fixtures.get(fixtureId);
 
     if (!prev) { // базлайн: запомнить, ничего не эмитить
@@ -75,7 +75,7 @@ export class MatchEventDetector {
       const step = dir === 'up' ? 1 : -1;
       for (let v = before + step; dir === 'up' ? v <= value : v >= value; v += step) {
         events.push({
-          type, fixtureId, seq, ts, action,
+          type, fixtureId, seq, ts, action, clockSeconds,
           participant: d.participant, period: d.period, periodName: d.periodName,
           statKey: key, from: v - step, to: v,
         });

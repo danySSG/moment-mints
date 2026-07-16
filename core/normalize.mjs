@@ -82,5 +82,10 @@ export function normalizeUpdate(payload) {
     // событийная метка фида: goal / yellow_card / var / action_discarded / kickoff /
     // game_finalised / … (живые данные 05.07). Детектор цепляет её к событиям.
     action: pick(payload, ACTION_FIELDS) ?? null,
+    // НАСТОЯЩИЕ часы матча (Clock.Seconds, накопительно, включая доп. время).
+    // Минуту НЕЛЬЗЯ считать как ts - StartTime: там перерыв, добавленное и поздний
+    // старт — на Argentina-Switzerland это давало 163' вместо реальных 120.7'.
+    clockSeconds: Number.isFinite(Number(payload?.Clock?.Seconds))
+      ? Number(payload.Clock.Seconds) : null,
   };
 }

@@ -21,7 +21,15 @@ const API = 'https://orchestration.civitai.com/v2/consumer';
 // дефолт: WAI-illustrious-SDXL v17.0 (любимая модель оператора, SFW-промптами — ок)
 const DEFAULT_MODEL = 'urn:air:sdxl:checkpoint:civitai:827184@2883731';
 // автор WAI: длинные негативы и груды quality-тегов = мыло; держим коротко
-const BASE_NEGATIVE = 'nsfw, nude, worst quality, bad hands, watermark, text, logo, emblem, brand';
+// Негатив — ВТОРАЯ линия обороны (первая — сама композиция: 5 из 7 архетипов прячут
+// или уменьшают грудь). Старый вариант протекал: в живой галерее оказались выдуманные
+// гербы — зелёный щит с «8» на Бельгии, щит + «8» + «19» на Аргентине. Это IP-риск,
+// а не вкусовщина, поэтому добиваем всё, чем SDXL любит метить футболку.
+// furry/animal ЖИВУТ ЗДЕСЬ, а не в планах: 16.07 при переписывании планов я их потерял —
+// и arch-spain-noon-roar-01 вышел волком-оборотнем в футболке. В базе их не потерять.
+const BASE_NEGATIVE = 'nsfw, nude, worst quality, bad hands, watermark, text, logo, emblem, brand, '
+  + 'shield, insignia, crest, badge, patch, sponsor, number, numeral, lettering, name on shirt, kanji, '
+  + 'furry, animal, monster, creature, werewolf, muzzle, fangs, snout';
 
 const planPath = process.argv[2] ?? join(DIR, 'plan.json');
 const plan = JSON.parse(readFileSync(planPath, 'utf8'));

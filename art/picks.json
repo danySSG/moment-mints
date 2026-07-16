@@ -67,5 +67,284 @@
   "GOAL:France": [
     "art/picks/prod-france-goal-01.jpeg",
     "art/picks/prod-france-goal-02.jpeg"
+  ],
+  "GOAL:Spain:noon-roar": [
+    "art/picks/arch-spain-noon-roar-03.jpeg"
+  ],
+  "GOAL:Spain:gold-collapse": [
+    "art/picks/arch-spain-gold-collapse-03.jpeg",
+    "art/picks/arch-spain-gold-collapse-04.jpeg"
+  ],
+  "GOAL:Spain:rain-slide": [
+    "art/picks/arch-spain-rain-slide-01.jpeg",
+    "art/picks/arch-spain-rain-slide-02.jpeg",
+    "art/picks/arch-spain-rain-slide-03.jpeg",
+    "art/picks/arch-spain-rain-slide-04.jpeg"
+  ],
+  "GOAL:Spain:night-strike": [
+    "art/picks/arch-spain-night-strike-01.jpeg",
+    "art/picks/arch-spain-night-strike-02.jpeg",
+    "art/picks/arch-spain-night-strike-03.jpeg",
+    "art/picks/arch-spain-night-strike-04.jpeg"
+  ],
+  "GOAL:Argentina:noon-roar": [
+    "art/picks/arch-argentina-noon-roar-01.jpeg",
+    "art/picks/arch-argentina-noon-roar-02.jpeg",
+    "art/picks/arch-argentina-noon-roar-03.jpeg"
+  ],
+  "GOAL:Argentina:gold-collapse": [
+    "art/picks/arch-argentina-gold-collapse-01.jpeg",
+    "art/picks/arch-argentina-gold-collapse-02.jpeg",
+    "art/picks/arch-argentina-gold-collapse-03.jpeg"
+  ],
+  "GOAL:Argentina:rain-slide": [
+    "art/picks/arch-argentina-rain-slide-01.jpeg",
+    "art/picks/arch-argentina-rain-slide-02.jpeg",
+    "art/picks/arch-argentina-rain-slide-03.jpeg"
+  ],
+  "GOAL:Argentina:night-strike": [
+    "art/picks/arch-argentina-night-strike-01.jpeg",
+    "art/picks/arch-argentina-night-strike-02.jpeg",
+    "art/picks/arch-argentina-night-strike-03.jpeg"
+  ],
+  "GOAL:Belgium:noon-roar": [
+    "art/picks/arch-belgium-noon-roar-01.jpeg",
+    "art/picks/arch-belgium-noon-roar-02.jpeg",
+    "art/picks/arch-belgium-noon-roar-03.jpeg"
+  ],
+  "GOAL:Belgium:gold-collapse": [
+    "art/picks/arch-belgium-gold-collapse-01.jpeg",
+    "art/picks/arch-belgium-gold-collapse-02.jpeg",
+    "art/picks/arch-belgium-gold-collapse-03.jpeg"
+  ],
+  "GOAL:Belgium:rain-slide": [
+    "art/picks/arch-belgium-rain-slide-01.jpeg",
+    "art/picks/arch-belgium-rain-slide-02.jpeg",
+    "art/picks/arch-belgium-rain-slide-03.jpeg"
+  ],
+  "GOAL:Belgium:night-strike": [
+    "art/picks/arch-belgium-night-strike-01.jpeg",
+    "art/picks/arch-belgium-night-strike-02.jpeg",
+    "art/picks/arch-belgium-night-strike-03.jpeg"
+  ],
+  "GOAL:Brazil:noon-roar": [
+    "art/picks/arch-brazil-noon-roar-01.jpeg",
+    "art/picks/arch-brazil-noon-roar-02.jpeg",
+    "art/picks/arch-brazil-noon-roar-03.jpeg"
+  ],
+  "GOAL:Brazil:gold-collapse": [
+    "art/picks/arch-brazil-gold-collapse-01.jpeg",
+    "art/picks/arch-brazil-gold-collapse-02.jpeg",
+    "art/picks/arch-brazil-gold-collapse-03.jpeg"
+  ],
+  "GOAL:Brazil:rain-slide": [
+    "art/picks/arch-brazil-rain-slide-01.jpeg",
+    "art/picks/arch-brazil-rain-slide-02.jpeg",
+    "art/picks/arch-brazil-rain-slide-03.jpeg"
+  ],
+  "GOAL:Brazil:night-strike": [
+    "art/picks/arch-brazil-night-strike-01.jpeg",
+    "art/picks/arch-brazil-night-strike-02.jpeg",
+    "art/picks/arch-brazil-night-strike-03.jpeg"
+  ],
+  "GOAL:Colombia:noon-roar": [
+    "art/picks/arch-colombia-noon-roar-01.jpeg",
+    "art/picks/arch-colombia-noon-roar-02.jpeg",
+    "art/picks/arch-colombia-noon-roar-03.jpeg"
+  ],
+  "GOAL:Colombia:gold-collapse": [
+    "art/picks/arch-colombia-gold-collapse-01.jpeg",
+    "art/picks/arch-colombia-gold-collapse-02.jpeg",
+    "art/picks/arch-colombia-gold-collapse-03.jpeg"
+  ],
+  "GOAL:Colombia:rain-slide": [
+    "art/picks/arch-colombia-rain-slide-01.jpeg",
+    "art/picks/arch-colombia-rain-slide-02.jpeg",
+    "art/picks/arch-colombia-rain-slide-03.jpeg"
+  ],
+  "GOAL:Colombia:night-strike": [
+    "art/picks/arch-colombia-night-strike-01.jpeg",
+    "art/picks/arch-colombia-night-strike-02.jpeg",
+    "art/picks/arch-colombia-night-strike-03.jpeg"
+  ],
+  "GOAL:Egypt:noon-roar": [
+    "art/picks/arch-egypt-noon-roar-01.jpeg",
+    "art/picks/arch-egypt-noon-roar-02.jpeg",
+    "art/picks/arch-egypt-noon-roar-03.jpeg"
+  ],
+  "GOAL:Egypt:gold-collapse": [
+    "art/picks/arch-egypt-gold-collapse-01.jpeg",
+    "art/picks/arch-egypt-gold-collapse-02.jpeg",
+    "art/picks/arch-egypt-gold-collapse-03.jpeg"
+  ],
+  "GOAL:Egypt:rain-slide": [
+    "art/picks/arch-egypt-rain-slide-01.jpeg",
+    "art/picks/arch-egypt-rain-slide-02.jpeg",
+    "art/picks/arch-egypt-rain-slide-03.jpeg"
+  ],
+  "GOAL:Egypt:night-strike": [
+    "art/picks/arch-egypt-night-strike-01.jpeg",
+    "art/picks/arch-egypt-night-strike-02.jpeg",
+    "art/picks/arch-egypt-night-strike-03.jpeg"
+  ],
+  "GOAL:England:noon-roar": [
+    "art/picks/arch-england-noon-roar-01.jpeg",
+    "art/picks/arch-england-noon-roar-02.jpeg",
+    "art/picks/arch-england-noon-roar-03.jpeg"
+  ],
+  "GOAL:England:gold-collapse": [
+    "art/picks/arch-england-gold-collapse-01.jpeg",
+    "art/picks/arch-england-gold-collapse-02.jpeg",
+    "art/picks/arch-england-gold-collapse-03.jpeg"
+  ],
+  "GOAL:England:rain-slide": [
+    "art/picks/arch-england-rain-slide-01.jpeg",
+    "art/picks/arch-england-rain-slide-02.jpeg",
+    "art/picks/arch-england-rain-slide-03.jpeg"
+  ],
+  "GOAL:England:night-strike": [
+    "art/picks/arch-england-night-strike-01.jpeg",
+    "art/picks/arch-england-night-strike-02.jpeg",
+    "art/picks/arch-england-night-strike-03.jpeg"
+  ],
+  "GOAL:France:noon-roar": [
+    "art/picks/arch-france-noon-roar-01.jpeg",
+    "art/picks/arch-france-noon-roar-02.jpeg",
+    "art/picks/arch-france-noon-roar-03.jpeg"
+  ],
+  "GOAL:France:gold-collapse": [
+    "art/picks/arch-france-gold-collapse-01.jpeg",
+    "art/picks/arch-france-gold-collapse-02.jpeg",
+    "art/picks/arch-france-gold-collapse-03.jpeg"
+  ],
+  "GOAL:France:rain-slide": [
+    "art/picks/arch-france-rain-slide-01.jpeg",
+    "art/picks/arch-france-rain-slide-02.jpeg",
+    "art/picks/arch-france-rain-slide-03.jpeg"
+  ],
+  "GOAL:France:night-strike": [
+    "art/picks/arch-france-night-strike-01.jpeg",
+    "art/picks/arch-france-night-strike-02.jpeg",
+    "art/picks/arch-france-night-strike-03.jpeg"
+  ],
+  "GOAL:Mexico:noon-roar": [
+    "art/picks/arch-mexico-noon-roar-01.jpeg",
+    "art/picks/arch-mexico-noon-roar-02.jpeg",
+    "art/picks/arch-mexico-noon-roar-03.jpeg"
+  ],
+  "GOAL:Mexico:gold-collapse": [
+    "art/picks/arch-mexico-gold-collapse-01.jpeg",
+    "art/picks/arch-mexico-gold-collapse-02.jpeg",
+    "art/picks/arch-mexico-gold-collapse-03.jpeg"
+  ],
+  "GOAL:Mexico:rain-slide": [
+    "art/picks/arch-mexico-rain-slide-01.jpeg",
+    "art/picks/arch-mexico-rain-slide-02.jpeg",
+    "art/picks/arch-mexico-rain-slide-03.jpeg"
+  ],
+  "GOAL:Mexico:night-strike": [
+    "art/picks/arch-mexico-night-strike-01.jpeg",
+    "art/picks/arch-mexico-night-strike-02.jpeg",
+    "art/picks/arch-mexico-night-strike-03.jpeg"
+  ],
+  "GOAL:Norway:noon-roar": [
+    "art/picks/arch-norway-noon-roar-01.jpeg",
+    "art/picks/arch-norway-noon-roar-02.jpeg",
+    "art/picks/arch-norway-noon-roar-03.jpeg"
+  ],
+  "GOAL:Norway:gold-collapse": [
+    "art/picks/arch-norway-gold-collapse-01.jpeg",
+    "art/picks/arch-norway-gold-collapse-02.jpeg",
+    "art/picks/arch-norway-gold-collapse-03.jpeg"
+  ],
+  "GOAL:Norway:rain-slide": [
+    "art/picks/arch-norway-rain-slide-01.jpeg",
+    "art/picks/arch-norway-rain-slide-02.jpeg",
+    "art/picks/arch-norway-rain-slide-03.jpeg"
+  ],
+  "GOAL:Norway:night-strike": [
+    "art/picks/arch-norway-night-strike-01.jpeg",
+    "art/picks/arch-norway-night-strike-02.jpeg",
+    "art/picks/arch-norway-night-strike-03.jpeg"
+  ],
+  "GOAL:Portugal:noon-roar": [
+    "art/picks/arch-portugal-noon-roar-01.jpeg",
+    "art/picks/arch-portugal-noon-roar-02.jpeg",
+    "art/picks/arch-portugal-noon-roar-03.jpeg"
+  ],
+  "GOAL:Portugal:gold-collapse": [
+    "art/picks/arch-portugal-gold-collapse-01.jpeg",
+    "art/picks/arch-portugal-gold-collapse-02.jpeg",
+    "art/picks/arch-portugal-gold-collapse-03.jpeg"
+  ],
+  "GOAL:Portugal:rain-slide": [
+    "art/picks/arch-portugal-rain-slide-01.jpeg",
+    "art/picks/arch-portugal-rain-slide-02.jpeg",
+    "art/picks/arch-portugal-rain-slide-03.jpeg"
+  ],
+  "GOAL:Portugal:night-strike": [
+    "art/picks/arch-portugal-night-strike-01.jpeg",
+    "art/picks/arch-portugal-night-strike-02.jpeg",
+    "art/picks/arch-portugal-night-strike-03.jpeg"
+  ],
+  "GOAL:Switzerland:noon-roar": [
+    "art/picks/arch-switzerland-noon-roar-01.jpeg",
+    "art/picks/arch-switzerland-noon-roar-02.jpeg",
+    "art/picks/arch-switzerland-noon-roar-03.jpeg"
+  ],
+  "GOAL:Switzerland:gold-collapse": [
+    "art/picks/arch-switzerland-gold-collapse-01.jpeg",
+    "art/picks/arch-switzerland-gold-collapse-02.jpeg",
+    "art/picks/arch-switzerland-gold-collapse-03.jpeg"
+  ],
+  "GOAL:Switzerland:rain-slide": [
+    "art/picks/arch-switzerland-rain-slide-01.jpeg",
+    "art/picks/arch-switzerland-rain-slide-02.jpeg",
+    "art/picks/arch-switzerland-rain-slide-03.jpeg"
+  ],
+  "GOAL:Switzerland:night-strike": [
+    "art/picks/arch-switzerland-night-strike-01.jpeg",
+    "art/picks/arch-switzerland-night-strike-02.jpeg",
+    "art/picks/arch-switzerland-night-strike-03.jpeg"
+  ],
+  "GOAL:USA:noon-roar": [
+    "art/picks/arch-usa-noon-roar-01.jpeg",
+    "art/picks/arch-usa-noon-roar-02.jpeg",
+    "art/picks/arch-usa-noon-roar-03.jpeg"
+  ],
+  "GOAL:USA:gold-collapse": [
+    "art/picks/arch-usa-gold-collapse-01.jpeg",
+    "art/picks/arch-usa-gold-collapse-02.jpeg",
+    "art/picks/arch-usa-gold-collapse-03.jpeg"
+  ],
+  "GOAL:USA:rain-slide": [
+    "art/picks/arch-usa-rain-slide-01.jpeg",
+    "art/picks/arch-usa-rain-slide-02.jpeg",
+    "art/picks/arch-usa-rain-slide-03.jpeg"
+  ],
+  "GOAL:USA:night-strike": [
+    "art/picks/arch-usa-night-strike-01.jpeg",
+    "art/picks/arch-usa-night-strike-02.jpeg",
+    "art/picks/arch-usa-night-strike-03.jpeg"
+  ],
+  "GOAL:Cape Verde:noon-roar": [
+    "art/picks/arch-capeverde-noon-roar-01.jpeg",
+    "art/picks/arch-capeverde-noon-roar-02.jpeg",
+    "art/picks/arch-capeverde-noon-roar-03.jpeg"
+  ],
+  "GOAL:Cape Verde:gold-collapse": [
+    "art/picks/arch-capeverde-gold-collapse-01.jpeg",
+    "art/picks/arch-capeverde-gold-collapse-02.jpeg",
+    "art/picks/arch-capeverde-gold-collapse-03.jpeg"
+  ],
+  "GOAL:Cape Verde:rain-slide": [
+    "art/picks/arch-capeverde-rain-slide-01.jpeg",
+    "art/picks/arch-capeverde-rain-slide-02.jpeg",
+    "art/picks/arch-capeverde-rain-slide-03.jpeg"
+  ],
+  "GOAL:Cape Verde:night-strike": [
+    "art/picks/arch-capeverde-night-strike-01.jpeg",
+    "art/picks/arch-capeverde-night-strike-02.jpeg",
+    "art/picks/arch-capeverde-night-strike-03.jpeg"
   ]
 }

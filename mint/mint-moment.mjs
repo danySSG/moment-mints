@@ -19,6 +19,7 @@ import { irysUploader } from '@metaplex-foundation/umi-uploader-irys';
 import { keypairIdentity, generateSigner, createGenericFile } from '@metaplex-foundation/umi';
 import { create } from '@metaplex-foundation/mpl-core';
 import { momentCardSvg, momentCardArt } from './card-svg.mjs';
+import { archetypeFor } from './archetype-for.mjs';
 
 const DIR = dirname(fileURLToPath(import.meta.url));
 const RPC = process.env.SOLANA_RPC ?? 'https://api.devnet.solana.com';
@@ -40,6 +41,12 @@ const ctx = {
   participant1: opt('--p1'), participant2: opt('--p2'),
   score: opt('--score'), competition: opt('--competition'),
 };
+// архетип по роли гола (art/archetypes.mjs); null → card-svg упадёт на старый путь
+const arch = archetypeFor(event, { score: ctx.score, kickoff: opt('--kickoff') });
+if (arch) {
+  ctx.archetype = arch.archetype;
+  console.error(`[mint] роль: ${arch.role} (${arch.minute}') → архетип: ${arch.archetype}`);
+}
 
 const umi = createUmi(RPC).use(irysUploader({ address: 'https://devnet.irys.xyz' }));
 const secret = Uint8Array.from(JSON.parse(readFileSync(join(DIR, '..', 'day1', 'wallet-devnet.json'), 'utf8')));
@@ -100,5 +107,9 @@ const result = {
   event, // целиком: type/fixtureId/seq/statKey/participant/from/to/action/ts
   ctx,
 };
-appendFileSync(join(DIR, 'mint-log.ndjson'), JSON.stringify({ ...result, txSig, at: new Date().toISOString() }) + '\n');
+// archetype/role в лог — по ним usedInFixture() узнает, что уже потрачено в матче
+appendFileSync(join(DIR, 'mint-log.ndjson'), JSON.stringify({
+  ...result, txSig, at: new Date().toISOString(),
+  ...(arch ? { archetype: arch.archetype, role: arch.role, minute: arch.minute } : {}),
+}) + '\n');
 console.log(JSON.stringify(result, null, 2));

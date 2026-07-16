@@ -47,6 +47,7 @@ async function refreshFixtures() {
     for (const f of await res.json()) {
       fixtures.set(String(f.FixtureId), {
         p1: f.Participant1, p2: f.Participant2, competition: f.Competition,
+        start: f.StartTime,   // нужен для минуты матча → роль гола → архетип арта
       });
     }
     log('фикстуры обновлены:', fixtures.size);
@@ -71,6 +72,7 @@ async function mint(e, score) {
   if (fx.p2) args.push('--p2', fx.p2);
   if (score) args.push('--score', score);
   if (fx.competition) args.push('--competition', `${fx.competition} 2026`);
+  if (fx.start) args.push('--kickoff', String(fx.start));
   try {
     const { stdout } = await run('node', args, { timeout: 120000 });
     minted++;

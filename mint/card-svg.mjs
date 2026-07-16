@@ -19,14 +19,34 @@ const TIER_BY_EVENT = {
 const LEGENDARY_TIER = { tier: 'UKIYO-E · LEGENDARY', accent: '#d9b64e' };
 
 let PICKS = null;
-function resolveArt(event, team) {
+function loadPicks() {
   if (PICKS === null) {
     const p = join(ROOT, 'art', 'picks.json');
     PICKS = existsSync(p) ? JSON.parse(readFileSync(p, 'utf8')) : {};
   }
+  return PICKS;
+}
+
+// Выбор арта. Приоритет — АРХЕТИП по роли гола (ctx.archetype, см. art/archetypes.mjs):
+// ключ `GOAL:<team>:<archetype>`, для безкомандных (net) — `GOAL:*:<archetype>`.
+// Фолбэк — старые ключи `TYPE:team` / `TYPE:*` с ротацией по номеру гола: на них
+// живут VAR/RED/LEGENDARY и команды, которым архетипы ещё не сгенерены.
+function resolveArt(event, team, ctx = {}) {
+  const P = loadPicks();
   const type = event.legendary ? `${event.type}_LEGENDARY` : event.type;
-  const paths = PICKS[`${type}:${team}`] ?? PICKS[`${type}:*`]
-    ?? (event.legendary ? PICKS[`${event.type}:${team}`] ?? PICKS[`${event.type}:*`] : undefined);
+
+  if (ctx.archetype && !event.legendary) {
+    const byArch = P[`${event.type}:${team}:${ctx.archetype}`] ?? P[`${event.type}:*:${ctx.archetype}`];
+    if (byArch?.length) {
+      // внутри архетипа варианты крутим по seq — одна и та же роль в разных матчах
+      // не должна давать пиксель-в-пиксель ту же карточку
+      const f = join(ROOT, byArch[event.seq % byArch.length]);
+      if (existsSync(f)) return f;
+    }
+  }
+
+  const paths = P[`${type}:${team}`] ?? P[`${type}:*`]
+    ?? (event.legendary ? P[`${event.type}:${team}`] ?? P[`${event.type}:*`] : undefined);
   if (!paths?.length) return null;
   // ротация по НОМЕРУ гола (event.to: 1-й гол команды → вариант 1, 2-й → 2, …) —
   // ротация по чётности seq дала три одинаковых карточки подряд (Бельгия 07.07)
@@ -38,7 +58,7 @@ function resolveArt(event, team) {
 // Карточка с арт-подложкой; возвращает null, если арта на событие нет.
 export function momentCardArt(event, ctx = {}) {
   const team = event.participant === 1 ? ctx.participant1 : ctx.participant2;
-  const artPath = resolveArt(event, team);
+  const artPath = resolveArt(event, team, ctx);
   if (!artPath) return null;
   const base = TIER_BY_EVENT[event.type] ?? TIER_BY_EVENT.GOAL;
   const t = event.legendary ? { ...base, ...LEGENDARY_TIER } : base;

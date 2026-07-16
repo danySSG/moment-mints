@@ -32,3 +32,5 @@ art/generate-log.ndjson
 day1/wallet-mainnet.json
 day1/.env.mainnet
 mint-log-mainnet.ndjson
+art/plan-arch-*.json
+art/plan-fix-*.json
