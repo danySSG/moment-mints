@@ -25,7 +25,7 @@ export const PALETTES = {
 export const POSES = {
   'night-strike': [
     { key: 'kick', body: 'side-on mid-kick, boot striking the ball, body arced, teeth bared, <JERSEY>, full figure' },
-    { key: 'scissor', body: 'overhead bicycle kick, body airborne upside down, kicking the ball, <JERSEY>, full figure, low angle' },
+    { key: 'scissor', body: 'acrobatic overhead volley, body inverted in mid-air, kicking the ball above himself, <JERSEY>, full figure, low angle' },
     { key: 'sprint', body: 'sprinting with the ball at his feet, leaning hard forward, <JERSEY>, full figure side view, motion blur' },
   ],
   'noon-roar': [
