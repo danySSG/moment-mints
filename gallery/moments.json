@@ -988,5 +988,27 @@
     "proofTx": "3d34H1mDjFnaow5tsFouspGxsmei95VJFs8XvBjaXPjisRPA3DDWyewMF13DJS4XHgfGr9e9Vq8CFGU3Uazj8qrS",
     "proofExplorer": "https://explorer.solana.com/tx/3d34H1mDjFnaow5tsFouspGxsmei95VJFs8XvBjaXPjisRPA3DDWyewMF13DJS4XHgfGr9e9Vq8CFGU3Uazj8qrS?cluster=devnet",
     "verified": true
+  },
+  {
+    "asset": "Expdikdjf1wJb2ksqy3sEt1ZiHRiyZzLW1w2TyZD8oBg",
+    "image": "https://devnet.irys.xyz/C8SSRX6WsBCm9bwDd2tqth2bDotMFfkJfPp3bvkCqTPy",
+    "metadata": "https://devnet.irys.xyz/AVVkfbv4ezvXhsHGAqfhPySJLLeSxmJvA1K7GdxSfoPq",
+    "assetExplorer": "https://explorer.solana.com/address/Expdikdjf1wJb2ksqy3sEt1ZiHRiyZzLW1w2TyZD8oBg?cluster=devnet",
+    "type": "GOAL",
+    "fixtureId": "18257865",
+    "seq": 52,
+    "statKey": 2,
+    "team": "England",
+    "match": "France vs England",
+    "competition": "World Cup 2026",
+    "score": "0-1",
+    "action": "goal",
+    "ts": 1784408630197,
+    "lagMs": 14899,
+    "live": true,
+    "legendary": false,
+    "proofTx": null,
+    "proofExplorer": null,
+    "verified": false
   }
 ]
