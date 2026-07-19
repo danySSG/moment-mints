@@ -1318,5 +1318,27 @@
     "proofTx": null,
     "proofExplorer": null,
     "verified": false
+  },
+  {
+    "asset": "C2Y6cMzZ99in45YEmNTfYZBRHVDdBneGa8w8CyRGk3Gx",
+    "image": "https://devnet.irys.xyz/6fdzWHtneihbxGgnfWqk52eWpb5LL12oqFUdtRPMoP2W",
+    "metadata": "https://devnet.irys.xyz/FJoPgWuyBDL1Z5E4gDof2Fa9EZ2WBSeVGz4Kq2r5a7QJ",
+    "assetExplorer": "https://explorer.solana.com/address/C2Y6cMzZ99in45YEmNTfYZBRHVDdBneGa8w8CyRGk3Gx?cluster=devnet",
+    "type": "GOAL_REVOKED",
+    "fixtureId": "18257739",
+    "seq": 1276,
+    "statKey": 1,
+    "team": "Spain",
+    "match": "Spain vs Argentina",
+    "competition": "World Cup 2026",
+    "score": "1-0",
+    "action": "corner",
+    "ts": 1784497887453,
+    "lagMs": 24582,
+    "live": true,
+    "legendary": true,
+    "proofTx": null,
+    "proofExplorer": null,
+    "verified": false
   }
 ]
