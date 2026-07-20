@@ -95,7 +95,7 @@ for (const [fixtureId, idxs] of byFixture) {
   for (const i of idxs) {
     const r = rows[i];
     const e = r.event ?? {};
-    if (e.type !== 'GOAL' || r.legendary) continue;          // VAR/RED/укиё-э — свой тир
+    if (e.type !== 'GOAL' || e.legendary) continue;          // VAR/RED/укиё-э — свой тир
     const clockSec = e.clockSeconds ?? clocks.get(Number(e.seq));
     if (!r.ctx?.score || !Number.isFinite(Number(clockSec))) continue; // нечем посчитать роль
     const after = String(r.ctx.score).split('-').map(Number);
@@ -108,6 +108,18 @@ for (const [fixtureId, idxs] of byFixture) {
     const archetype = pickArchetype(role, used);
     if (r.artv === Number(process.env.ART_V ?? 2)) continue;  // уже на целевой версии
     plan.push({ i, r, archetype, role, minute });
+  }
+}
+
+// события с точечным пиком (в т.ч. legendary/VAR/RED): переделка без смены тира
+{
+  const P = JSON.parse(readFileSync(join(DIR, '..', 'art', 'picks.json'), 'utf8'));
+  const planned = new Set(plan.map(p => p.i));
+  for (const [i, r] of rows.entries()) {
+    if (planned.has(i)) continue;
+    const e = r.event ?? {};
+    if (r.artv === Number(process.env.ART_V ?? 2)) continue;
+    if (P[`${e.type}@${e.fixtureId}:${e.seq}`]) plan.push({ i, r, archetype: null, role: r.role ?? '-', minute: r.minute ?? 0 });
   }
 }
 

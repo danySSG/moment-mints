@@ -1,0 +1,125 @@
+[
+  {
+    "slug": "nx-18257865-52",
+    "quantity": 3,
+    "negative": "extra fingers, fused fingers, claw hand, missing fingers, deformed hands, extra limbs, missing limb, confetti, gold, orange sky, sunset, warm light, bicycle, wheel",
+    "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player, side-on mid-kick, boot striking the ball, body arced, teeth bared, clean white jersey with navy blue trim, full figure, night match, hard white cross-light, silver rim light, black sky, wet turf reflections, ink speed lines",
+    "_w": "night-strike",
+    "_p": "kick",
+    "_t": "England"
+  },
+  {
+    "slug": "nx-18257865-251",
+    "quantity": 3,
+    "negative": "extra fingers, fused fingers, claw hand, missing fingers, deformed hands, extra limbs, missing limb, confetti, gold, orange sky, sunset, warm light, bicycle, wheel",
+    "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player, close-up, roaring in triumph, both fists clenched at his chest, clean white jersey with navy blue trim, low angle, bright midday, pale washed-out blue sky, clear even daylight, face fully lit, no confetti",
+    "_w": "noon-roar",
+    "_p": "roar",
+    "_t": "England"
+  },
+  {
+    "slug": "nx-18257865-456",
+    "quantity": 3,
+    "negative": "extra fingers, fused fingers, claw hand, missing fingers, deformed hands, extra limbs, missing limb, confetti, gold, orange sky, sunset, warm light, bicycle, wheel",
+    "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player, sliding on his knees, body low and horizontal, fists at his sides, soaked, head back shouting, clean white jersey with navy blue trim, low angle from grass level, grey overcast rain, heavy rain streaks, water spraying, desaturated grey green, cold white light",
+    "_w": "rain-slide",
+    "_p": "slide",
+    "_t": "England"
+  },
+  {
+    "slug": "nx-18257865-575",
+    "quantity": 3,
+    "negative": "extra fingers, fused fingers, claw hand, missing fingers, deformed hands, extra limbs, missing limb, confetti, gold, orange sky, sunset, warm light, bicycle, wheel",
+    "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player, acrobatic overhead volley, body inverted in mid-air, kicking the ball above himself, clean white jersey with navy blue trim, full figure, low angle, night match, hard white cross-light, silver rim light, black sky, wet turf reflections, ink speed lines",
+    "_w": "night-strike",
+    "_p": "scissor",
+    "_t": "England"
+  },
+  {
+    "slug": "nx-18257865-653",
+    "quantity": 3,
+    "negative": "extra fingers, fused fingers, claw hand, missing fingers, deformed hands, extra limbs, missing limb, confetti, gold, orange sky, sunset, warm light, bicycle, wheel",
+    "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player, standing in the downpour, head thrown back, eyes closed, fists clenched at his sides, soaked deep blue jersey with white and red trim clinging wet, grey overcast rain, heavy rain streaks, water spraying, desaturated grey green, cold white light",
+    "_w": "rain-slide",
+    "_p": "stand",
+    "_t": "France"
+  },
+  {
+    "slug": "nx-18257865-737",
+    "quantity": 3,
+    "negative": "extra fingers, fused fingers, claw hand, missing fingers, deformed hands, extra limbs, missing limb, confetti, gold, orange sky, sunset, warm light, bicycle, wheel",
+    "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player, dropped to both knees in the rain, punching the air with one fist, shouting, soaked deep blue jersey with white and red trim, grey overcast rain, heavy rain streaks, water spraying, desaturated grey green, cold white light",
+    "_w": "rain-slide",
+    "_p": "kneel",
+    "_t": "France"
+  },
+  {
+    "slug": "nx-18257865-896",
+    "quantity": 3,
+    "negative": "extra fingers, fused fingers, claw hand, missing fingers, deformed hands, extra limbs, missing limb, confetti, gold, orange sky, sunset, warm light, bicycle, wheel",
+    "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player, sliding on his knees, body low and horizontal, fists at his sides, soaked, head back shouting, deep blue jersey with white and red trim, low angle from grass level, grey overcast rain, heavy rain streaks, water spraying, desaturated grey green, cold white light",
+    "_w": "rain-slide",
+    "_p": "slide",
+    "_t": "France"
+  },
+  {
+    "slug": "nx-18257865-1061",
+    "quantity": 3,
+    "negative": "extra fingers, fused fingers, claw hand, missing fingers, deformed hands, extra limbs, missing limb, confetti, gold, orange sky, sunset, warm light, bicycle, wheel",
+    "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player, sprinting with the ball at his feet, leaning hard forward, clean white jersey with navy blue trim, full figure side view, motion blur, night match, hard white cross-light, silver rim light, black sky, wet turf reflections, ink speed lines",
+    "_w": "night-strike",
+    "_p": "sprint",
+    "_t": "England"
+  },
+  {
+    "slug": "nx-18257739-1060",
+    "quantity": 3,
+    "negative": "extra fingers, fused fingers, claw hand, deformed hands, photo, realistic, modern, confetti",
+    "prompt": "masterpiece, ukiyo-e style, woodblock print, thick outlines, flat traditional colors, male soccer player roaring in triumph, arms raised high, close-up upper body, red jersey with golden yellow trim, stylized great wave and rising sun behind, gold leaf background, red hanko stamp, dramatic diagonal composition"
+  },
+  {
+    "slug": "nx-18257739-1187",
+    "quantity": 3,
+    "negative": "extra fingers, fused fingers, claw hand, deformed hands, photo, realistic, modern, confetti",
+    "prompt": "masterpiece, ukiyo-e style, woodblock print, thick outlines, flat traditional colors, male soccer player kneeling on one knee, fist raised toward a huge red sun, red jersey with golden yellow trim, pine branches and gold leaves, gold leaf background, red hanko stamp, dramatic diagonal composition"
+  },
+  {
+    "slug": "nx-18257739-1261",
+    "quantity": 3,
+    "negative": "extra fingers, fused fingers, claw hand, deformed hands, photo, realistic, modern, confetti",
+    "prompt": "masterpiece, ukiyo-e style, woodblock print, thick outlines, flat traditional colors, male soccer player leaping with one fist punched to the sky, red jersey with golden yellow trim, great wave cresting behind him, gold leaf background, red hanko stamp, dramatic diagonal composition"
+  },
+  {
+    "slug": "nx-18257739-1064",
+    "quantity": 3,
+    "negative": "extra fingers, fused fingers, claw hand, deformed hands, photo, realistic, modern, confetti",
+    "prompt": "masterpiece, ukiyo-e style, woodblock print, thick outlines, flat traditional colors, male soccer player with both hands on his head in disbelief, head bowed, indigo and deep blue palette, storm clouds and lightning motifs, silver leaf background, red hanko stamp",
+    "_type": "GOAL_REVOKED"
+  },
+  {
+    "slug": "nx-18257739-1276",
+    "quantity": 3,
+    "negative": "extra fingers, fused fingers, claw hand, deformed hands, photo, realistic, modern, confetti",
+    "prompt": "masterpiece, ukiyo-e style, woodblock print, thick outlines, flat traditional colors, male soccer player kneeling, head bowed under stylized storm clouds, indigo and deep blue palette, rain lines and lightning motifs, silver leaf background, red hanko stamp",
+    "_type": "GOAL_REVOKED"
+  },
+  {
+    "slug": "nx-18257739-942",
+    "quantity": 3,
+    "negative": "extra fingers, fused fingers, claw hand, deformed hands, photo, realistic, modern, confetti",
+    "prompt": "masterpiece, ukiyo-e style, woodblock print, thick outlines, flat traditional colors, male soccer player walking away with head bowed, crimson sun overhead, falling red maple leaves, dark ink palette with red accents, gold leaf background, red hanko stamp, dramatic diagonal composition",
+    "_type": "RED_CARD"
+  },
+  {
+    "slug": "nx-18257865-1165",
+    "quantity": 3,
+    "negative": "extra fingers, fused fingers, claw hand, missing fingers, deformed hands, extra limbs, missing limb, confetti, gold, orange sky, sunset, warm light, bicycle, wheel",
+    "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player, standing in the downpour, head thrown back, eyes closed, fists clenched at his sides, soaked deep blue jersey with white and red trim clinging wet, grey overcast rain, heavy rain streaks, water spraying, desaturated grey green, cold white light"
+  },
+  {
+    "slug": "nx-18257865-1186",
+    "quantity": 3,
+    "negative": "extra fingers, fused fingers, claw hand, missing fingers, deformed hands, extra limbs, missing limb, confetti, gold, orange sky, sunset, warm light, bicycle, wheel",
+    "prompt": "masterpiece, retro artstyle, 1990s anime style, cel shading, bold ink outlines, film grain, vintage sports anime, 1boy, solo, human male soccer player, side-on mid-kick, boot striking the ball, body arced, teeth bared, clean white jersey with navy blue trim, full figure, night match, hard white cross-light, silver rim light, black sky, wet turf reflections, ink speed lines"
+  }
+]

@@ -28,7 +28,8 @@ const picks = JSON.parse(readFileSync(join(DIR, 'picks.json'), 'utf8'));
 let wired = 0;
 for (const [key, file] of Object.entries(upicks)) {
   copyFileSync(join(DIR, 'raw', file), join(DIR, 'picks', file));
-  picks[`GOAL@${key}`] = [`art/picks/${file}`];
+  const typed = key.includes('@') ? key : `GOAL@${key}`;
+  picks[typed] = [`art/picks/${file}`];
   wired++;
 }
 writeFileSync(join(DIR, 'picks.json'), JSON.stringify(picks, null, 2) + '\n');
