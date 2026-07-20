@@ -1315,9 +1315,9 @@
     "lagMs": 12745,
     "live": true,
     "legendary": true,
-    "proofTx": null,
-    "proofExplorer": null,
-    "verified": false
+    "proofTx": "4VQKCTxB64EXeAxSUXAM4sdgLfDSXYqHTuvHpESJebf1mrCwCrvcMhboeJUXSdirH2RGYH5SH6Rn7Sgx8vi5rqcB",
+    "proofExplorer": "https://explorer.solana.com/tx/4VQKCTxB64EXeAxSUXAM4sdgLfDSXYqHTuvHpESJebf1mrCwCrvcMhboeJUXSdirH2RGYH5SH6Rn7Sgx8vi5rqcB?cluster=devnet",
+    "verified": true
   },
   {
     "asset": "C2Y6cMzZ99in45YEmNTfYZBRHVDdBneGa8w8CyRGk3Gx",
@@ -1337,8 +1337,8 @@
     "lagMs": 24582,
     "live": true,
     "legendary": true,
-    "proofTx": null,
-    "proofExplorer": null,
-    "verified": false
+    "proofTx": "3HaTiXv6CnKVWbkkwJzCHtneGAsa2AV5Um4TNyVbqrfvkKwkBWXvxhu2TPLTGv8UeqxiGsbBUx22S6TVkibx3X1F",
+    "proofExplorer": "https://explorer.solana.com/tx/3HaTiXv6CnKVWbkkwJzCHtneGAsa2AV5Um4TNyVbqrfvkKwkBWXvxhu2TPLTGv8UeqxiGsbBUx22S6TVkibx3X1F?cluster=devnet",
+    "verified": true
   }
 ]

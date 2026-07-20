@@ -17,7 +17,7 @@ Built for the [TxODDS × Solana World Cup Hackathon](https://superteam.fun/earn/
   statKey` — the exact address of a Merkle leaf in TxLINE's daily on-chain roots —
   and links to a real `validate_stat` transaction in the TxLINE Solana program that
   verifies the anchored stat behind it. That proof-tx signature is bound directly
-  into every card's **on-chain Metaplex Core attributes** (38/38), so the binding
+  into every card's **on-chain Metaplex Core attributes** (61/61), so the binding
   lives on Solana, not in our database.
 - **The detector is the source of truth.** TxLINE has no discrete event feed — we
   diff whole-match stat counters between SSE updates (goals, cards), which makes
@@ -60,17 +60,17 @@ TxLINE SSE feed ──► core/       stat-diff event detector (zero deps, 12 te
 
 ## Status
 
-- [x] Feed activated (devnet, SL1), detector battle-tested on 9 real World Cup
+- [x] Feed activated (devnet, SL1), detector battle-tested on 13 real World Cup
       matches (incl. a real VAR goal reversal minted live in Argentina–Egypt)
-- [x] 38 moments minted, 38/38 proven on-chain — 15 of them minted **genuinely
-      live** during the match (4 matches), the rest reconstructed from the recorded
+- [x] 61 moments minted, 61/61 proven on-chain — 38 of them minted **genuinely
+      live** during the match (incl. the FINAL: a red card, two VAR reversals and the winning goal, all minted as ukiyo-e legendary gold while the match played), the rest reconstructed from the recorded
       feed and proven through the same `validate_stat` path
 - [x] Three-tier generative art shipped (WAI-illustrious-SDXL, human-curated),
       composited on the cards
-- [x] Real proof-tx signature bound into each card's on-chain Core attributes (38/38)
+- [x] Real proof-tx signature bound into each card's on-chain Core attributes (61/61)
 - [x] All card art + metadata migrated to permanent Arweave (off ephemeral devnet Irys);
       5-card hero set productionized on Solana mainnet
-- [x] Live vs replayed clearly tagged on every card (15 live / 23 replayed)
+- [x] Live vs replayed clearly tagged on every card (38 live / 23 replayed)
 - [x] Fan claim loop **live** — Cloudflare Worker (server-side Turnstile → Crossmint
       mint-and-deliver to an email custodial wallet, compressed editions) deployed at
       `https://moment-claim.danyfomin003.workers.dev` (`claim-worker/`); the live gallery does

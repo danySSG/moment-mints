@@ -98,7 +98,7 @@ ukiyo-e gold leaf (finals, hat-tricks). No real player likenesses; teams are exp
 through kit colors only.
 
 ### Demonstrability — it already ran, unattended, on real matches
-Fully autonomous on real World Cup matches: **38 moments minted across 9 matches, 38/38
+Fully autonomous on real World Cup matches: **61 moments minted across 13 matches, 61/61
 proven on-chain** *(counts as of filming the demo — the stack keeps running on live
 matches, so the gallery may show more by the time you read this; every new card goes
 through the same detect → mint → validate_stat path).* **15 of them were minted genuinely live, during the match** — across

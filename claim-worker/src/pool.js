@@ -25,7 +25,7 @@ export default [
     "label": "GOAL",
     "tier": "base",
     "supply": 1000,
-    "image": "https://arweave.net/QD_3PMV3QApsYLHJlvCavYNYRyI1cVdlfddbeHE-5Rk",
+    "image": "https://arweave.net/JAfy9rYDd_b6tIZ3w9ytf50syfzqEwKuQLMjroHCpdc",
     "match": "Brazil vs Norway",
     "score": "0–1",
     "assetExplorer": "https://explorer.solana.com/address/qdmsBUhmf6yL8PEfmsmEAVHCU5mw9RETAd4Wvp8oWtW?cluster=devnet",
@@ -105,7 +105,7 @@ export default [
     "label": "GOAL",
     "tier": "base",
     "supply": 1000,
-    "image": "https://arweave.net/bPVSM54IeyEiPz8Jv4eWda2QuIO2ABd3E2Cft_U9HpA",
+    "image": "https://arweave.net/p6CUEoKLvCLfEmRHwCOA-RbnSqRaJg5SFnR9FotYbPw",
     "match": "Mexico vs England",
     "score": "0–1",
     "assetExplorer": "https://explorer.solana.com/address/HUVVDAo7ziBMzfJGooMdb8wkk2ZwTE4WbKSwqqYHPzP7?cluster=devnet",
@@ -137,7 +137,7 @@ export default [
     "label": "GOAL",
     "tier": "base",
     "supply": 1000,
-    "image": "https://arweave.net/eFqVRj1FGlWn01YikXaLG77ARC2bi0NBcQtiV5Lb6XY",
+    "image": "https://arweave.net/5m3flLeSd9lJ7XCkqAS3vFK6Ocd8mVzHbiPLNhANFkI",
     "match": "Mexico vs England",
     "score": "1–2",
     "assetExplorer": "https://explorer.solana.com/address/huz4VgEb7cEqwJ8bf9E2er4eZ78BLP2r2MUXmfKfwzL?cluster=devnet",
@@ -217,7 +217,7 @@ export default [
     "label": "GOAL",
     "tier": "base",
     "supply": 1000,
-    "image": "https://arweave.net/UMC2mJU2-bAu18-qQx5pkUPxYRbp7d_VgSLG15thLQ4",
+    "image": "https://arweave.net/d0-i5z09gi_4xuE4ZX0oiRPOa-AnA1NhgQ0hk_g2MgU",
     "match": "USA vs Belgium",
     "score": "0–1",
     "assetExplorer": "https://explorer.solana.com/address/FXBsRTFgYa57wDcdoGjmQisABm3YFEsez55KqE2kERFN?cluster=devnet",
@@ -249,7 +249,7 @@ export default [
     "label": "GOAL",
     "tier": "base",
     "supply": 1000,
-    "image": "https://arweave.net/FZqEE7U8eV4ZrzOHsGYeRS_B32ezcWH0-gV3M6MKDFA",
+    "image": "https://arweave.net/JgaQjEIPlUzZhxvE6cTG5kS83yyb0V7YAo3SWE-L2ro",
     "match": "USA vs Belgium",
     "score": "1–2",
     "assetExplorer": "https://explorer.solana.com/address/9BnSVxPE8wdYhAzhkj2prz7rgtZHbUiv7G4p6tATwsTo?cluster=devnet",
@@ -265,7 +265,7 @@ export default [
     "label": "GOAL",
     "tier": "base",
     "supply": 1000,
-    "image": "https://arweave.net/xpi8lT9YbLRX4bToR6DbaW9VCCyrOWOXnFczuOE6mQo",
+    "image": "https://arweave.net/GzbDpcB6HovQ0BOYyH3SLqGCBTzV2yiVYZ3OlSXpwU0",
     "match": "USA vs Belgium",
     "score": "1–3",
     "assetExplorer": "https://explorer.solana.com/address/Gwn1UL8LuaxxqLYFd3PUVpx2e7gwmxVNxYwxkWeAjLPo?cluster=devnet",
@@ -281,7 +281,7 @@ export default [
     "label": "GOAL",
     "tier": "base",
     "supply": 1000,
-    "image": "https://arweave.net/J4jkLUZVPhTCyq6ymV-XdBbd1ahAIMiO1Npu9jIS3Dc",
+    "image": "https://arweave.net/ZjbsQTrHxB87k6K8UFQ0baND6fIFNJ6o2so6MMoaB8c",
     "match": "USA vs Belgium",
     "score": "1–4",
     "assetExplorer": "https://explorer.solana.com/address/5AxNeSbTrGGdr6wtStsH9bpp2H6d1hVPePhWWcUVSg7y?cluster=devnet",
@@ -313,7 +313,7 @@ export default [
     "label": "GOAL",
     "tier": "base",
     "supply": 1000,
-    "image": "https://arweave.net/MUhUGsNedxOdMM5MU-Vs1UZuDJhcxGo_YFEBiC5F9gA",
+    "image": "https://arweave.net/LcnMA7Aq2SS53ItthFFo0IQapjEccBWZLSxY4PbDM8I",
     "match": "Argentina vs Egypt",
     "score": "0–2",
     "assetExplorer": "https://explorer.solana.com/address/C2F4axZbTtcX3dsNwubeSksjJranxFLccSamXJW9545B?cluster=devnet",
@@ -377,7 +377,7 @@ export default [
     "label": "GOAL",
     "tier": "base",
     "supply": 1000,
-    "image": "https://arweave.net/pi08-tQroB0In-6KjV2MxouzW81lKUUMH_7izEMFl7I",
+    "image": "https://arweave.net/ixijJfYWmP05PbqyMF_fn9vcsJcHhbN3riCeBVQzTjg",
     "match": "Argentina vs Egypt",
     "score": "2–2",
     "assetExplorer": "https://explorer.solana.com/address/EF5SoomWzbQaKVSEP8P4qmutwXjGyiK8TRJbCHhropZn?cluster=devnet",
@@ -393,7 +393,7 @@ export default [
     "label": "GOAL",
     "tier": "base",
     "supply": 1000,
-    "image": "https://arweave.net/qDBhiouszSmflfhah3C5tnPCRPYkcmhJafBTr-c05Uo",
+    "image": "https://arweave.net/JCiNyDc4PJN3N0fdQ-EVW0tVSLBhZyjOr5nG6LRcBPU",
     "match": "Argentina vs Egypt",
     "score": "3–2",
     "assetExplorer": "https://explorer.solana.com/address/HLANEfwecX3VTtCaKyosVUXstkxUbMcfApinyYE3P1p4?cluster=devnet",
@@ -409,7 +409,7 @@ export default [
     "label": "GOAL",
     "tier": "base",
     "supply": 1000,
-    "image": "https://arweave.net/ZSiQVI620Oxq78T6vM1L5L-Qc0XQUr_mSEU7N1zn72s",
+    "image": "https://arweave.net/8Iws5t-PZKSUljc1JbNooFJHFO1AuUUajwfm-AxDC00",
     "match": "Spain vs Belgium",
     "score": "1-0",
     "assetExplorer": "https://explorer.solana.com/address/BDvQXouZyfqjHwTZTJ7eE4NgPkW3eupNcX5iRqBD5pJS?cluster=devnet",
@@ -425,7 +425,7 @@ export default [
     "label": "GOAL",
     "tier": "base",
     "supply": 1000,
-    "image": "https://arweave.net/3Da2fVrHvgBFe4ptWh3MJAN-wJ8Se-mQy6ZUmCOach4",
+    "image": "https://arweave.net/G0Nqe6-QQiyw91PX1WytgRYO20kMN9w46r5CWv1cg9Q",
     "match": "Spain vs Belgium",
     "score": "1-1",
     "assetExplorer": "https://explorer.solana.com/address/H4g52jqCUBcKVy1L4ahswLzbzYvASFzPK9eeu5NrvyVF?cluster=devnet",
@@ -489,7 +489,7 @@ export default [
     "label": "GOAL",
     "tier": "base",
     "supply": 1000,
-    "image": "https://arweave.net/ozrbb7juwqspeHKMkU1Rxt_hfUnPIA0rNKCbVMJJ1UQ",
+    "image": "https://arweave.net/FMio15GC-jB6WxmB_O6BXI1QY7ftSfRlouVtBs_Srt8",
     "match": "Norway vs England",
     "score": "2-1",
     "assetExplorer": "https://explorer.solana.com/address/DB9XiXYCSTYC1wcWv2c4RA4eYeyGn2sLT71EJdaMs9uh?cluster=devnet",
@@ -521,7 +521,7 @@ export default [
     "label": "GOAL",
     "tier": "base",
     "supply": 1000,
-    "image": "https://arweave.net/AMDGQRCUz-9WAYqO0Yk9Ly0qRJTRzWmpcAN4zuabJxs",
+    "image": "https://arweave.net/s1WJUtcM9YHwndyg8qNHWUmXrVqmZiQlSOOwgODPqBg",
     "match": "Norway vs England",
     "score": "1-2",
     "assetExplorer": "https://explorer.solana.com/address/9si7y8uUE3imdPHzRwEg6VRehZ8yx3B3o5FHJt5j5w2a?cluster=devnet",
@@ -553,7 +553,7 @@ export default [
     "label": "GOAL",
     "tier": "base",
     "supply": 1000,
-    "image": "https://arweave.net/UiEOMpZ1I1fwFHh2DdgLeCjKTDInIABurfdyRms9ckk",
+    "image": "https://arweave.net/iZ2s-mC2To-afYl_YpUI4OL9oEJH5SFUBdzHCVelR4I",
     "match": "Argentina vs Switzerland",
     "score": "1-1",
     "assetExplorer": "https://explorer.solana.com/address/8DXQWKc2eiGmu18LTjaFMXLCUWJn3rGBHbWvZSs2ELa9?cluster=devnet",
@@ -601,7 +601,7 @@ export default [
     "label": "GOAL",
     "tier": "base",
     "supply": 1000,
-    "image": "https://arweave.net/cIdA4UwCR-Q4gOwWXMmT0g-lOxSvpJqcpBdfun5eG0g",
+    "image": "https://arweave.net/Q2W72Vnrz7tbz-xLteqig_h4holF3jtWgCKHVVkDs6M",
     "match": "Argentina vs Switzerland",
     "score": "3-1",
     "assetExplorer": "https://explorer.solana.com/address/2qdjU9vDv8JBenHSyS9omAKciqpdpqyAqng7Q4uMcZFZ?cluster=devnet",
@@ -617,7 +617,7 @@ export default [
     "label": "GOAL",
     "tier": "base",
     "supply": 1000,
-    "image": "https://arweave.net/8OBkmyLhSVnnLUMBfZ_CNG86vGVCM2VVebUKbsSe5dU",
+    "image": "https://arweave.net/N5fDqFeFOJyAHC366wqaETl73UsY561Dl5SeHTTOkLE",
     "match": "France vs Spain",
     "score": "0-1",
     "assetExplorer": "https://explorer.solana.com/address/5pVSHrZ9GcoTWZdpi2paJpkBSL2qHAXQatXhvLAMMhj2?cluster=devnet",
@@ -681,7 +681,7 @@ export default [
     "label": "GOAL",
     "tier": "base",
     "supply": 1000,
-    "image": "https://arweave.net/MeIiU6enV6u_BHgHNaLwOXt5eaWy5jvj48C5tMpswAg",
+    "image": "https://arweave.net/3nXlq6vsgxaYMdBLOENhBy2WKQBwrchpLyjs2Bffcjw",
     "match": "England vs Argentina",
     "score": "1-0",
     "assetExplorer": "https://explorer.solana.com/address/B1unSjuf9Hx1RPBY3fto99eB5CPLDRqhvU6YH69pR2ck?cluster=devnet",
@@ -718,6 +718,262 @@ export default [
     "score": "1-2",
     "assetExplorer": "https://explorer.solana.com/address/4yTbVRJAMrcoP1VvgA9r1gZ7FkKD2wXdiGvU8dAcshwz?cluster=devnet",
     "proofExplorer": "https://explorer.solana.com/tx/3d34H1mDjFnaow5tsFouspGxsmei95VJFs8XvBjaXPjisRPA3DDWyewMF13DJS4XHgfGr9e9Vq8CFGU3Uazj8qrS?cluster=devnet",
+    "live": true
+  },
+  {
+    "id": "Expdikdjf1wJb2ksqy3sEt1ZiHRiyZzLW1w2TyZD8oBg",
+    "teams": [
+      "France",
+      "England"
+    ],
+    "label": "GOAL",
+    "tier": "base",
+    "supply": 1000,
+    "image": "https://devnet.irys.xyz/C8SSRX6WsBCm9bwDd2tqth2bDotMFfkJfPp3bvkCqTPy",
+    "match": "France vs England",
+    "score": "0-1",
+    "assetExplorer": "https://explorer.solana.com/address/Expdikdjf1wJb2ksqy3sEt1ZiHRiyZzLW1w2TyZD8oBg?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/sQCjCPpoEJNQL9YuMtG8fJom4uZTwZqckxJmedGQzKqAAwj9iuyebTaVpUWhz6R4GcKQiUtWy2Ci9isee6robPb?cluster=devnet",
+    "live": true
+  },
+  {
+    "id": "Mr3ETk9U7ZEf9wsrAbaFSQnPhmGxCMnabFffHvi2TdP",
+    "teams": [
+      "France",
+      "England"
+    ],
+    "label": "GOAL",
+    "tier": "base",
+    "supply": 1000,
+    "image": "https://devnet.irys.xyz/8QVTfmyuTmdnV3KVwFACRk3HPJwa1UYvSxZAJXwHpjmA",
+    "match": "France vs England",
+    "score": "0-2",
+    "assetExplorer": "https://explorer.solana.com/address/Mr3ETk9U7ZEf9wsrAbaFSQnPhmGxCMnabFffHvi2TdP?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/CgChk9Rd6RXuejNTsVPWm7EBdawQbdQymJohtTC1uWA79Q4yusVAWNSjSHXx2ssb4vNQbtGqHiRmJsE3ZWFKHTR?cluster=devnet",
+    "live": true
+  },
+  {
+    "id": "DNLwBN8CL5TR1duJueqKKVWPEPnTQB4NBxYQ4D7KirZ5",
+    "teams": [
+      "France",
+      "England"
+    ],
+    "label": "GOAL",
+    "tier": "base",
+    "supply": 1000,
+    "image": "https://devnet.irys.xyz/GD6mLgkcsWotMZh6xRrMwKfrHKSvjmQ9oaXZ7uSuMJYm",
+    "match": "France vs England",
+    "score": "0-3",
+    "assetExplorer": "https://explorer.solana.com/address/DNLwBN8CL5TR1duJueqKKVWPEPnTQB4NBxYQ4D7KirZ5?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/5jtqrPJ9vJqDMfQMdQaEMP5WYe29Ki8p6XeT3SLesiV4R51fCeHcWhZtGZyXKPNwnNwJ6PrxG6x5aYy4SqP9bHyA?cluster=devnet",
+    "live": true
+  },
+  {
+    "id": "FwMERbng1t1Dm7N63mzLQDXRMTPTQ38V9GUi9tpe26KA",
+    "teams": [
+      "France",
+      "England"
+    ],
+    "label": "GOAL",
+    "tier": "base",
+    "supply": 1000,
+    "image": "https://devnet.irys.xyz/CknKkY1L4p6ZF4rys4qjZkeUs32a4cLBAhhShY6bCuUg",
+    "match": "France vs England",
+    "score": "0-4",
+    "assetExplorer": "https://explorer.solana.com/address/FwMERbng1t1Dm7N63mzLQDXRMTPTQ38V9GUi9tpe26KA?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/2EniLm4i8CwnSgyexRG31LE3t4WXA8WC1FrSzk9mDija35QsicLYsbFqMv3NnvvjrscxfytCc1VoupHxHre3fwEA?cluster=devnet",
+    "live": true
+  },
+  {
+    "id": "AEYLrPEFr9mQtyoMhhfxgXHHZJmDmvjhqq5hT7muPGw4",
+    "teams": [
+      "France",
+      "England"
+    ],
+    "label": "GOAL",
+    "tier": "base",
+    "supply": 1000,
+    "image": "https://devnet.irys.xyz/7x3dKighYqHtTbbwjVB85ZuN97xBpXfk6cptPMwz4LFY",
+    "match": "France vs England",
+    "score": "1-4",
+    "assetExplorer": "https://explorer.solana.com/address/AEYLrPEFr9mQtyoMhhfxgXHHZJmDmvjhqq5hT7muPGw4?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/H6Kjfe8NfeYngY9gwM9xGsQdEXcQ8BBxjgcg9xWPaBYFjQ1UioeSSc23HnDFHQbycqcgvhWBWXmBqvXTAWRSyQm?cluster=devnet",
+    "live": true
+  },
+  {
+    "id": "GfAE2WdhQs1GBhHrVAamQua6qXE8Kkwd8ttu8hjjVhau",
+    "teams": [
+      "France",
+      "England"
+    ],
+    "label": "GOAL",
+    "tier": "base",
+    "supply": 1000,
+    "image": "https://devnet.irys.xyz/EFdMNFcghYiGihnKy95dZXc8mpRUtFxiwcLhrvgRSY1W",
+    "match": "France vs England",
+    "score": "2-4",
+    "assetExplorer": "https://explorer.solana.com/address/GfAE2WdhQs1GBhHrVAamQua6qXE8Kkwd8ttu8hjjVhau?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/2jHPGCCsn7v6WKkFWWYM2mS5KofT7Pb3chMMxPvw7qh4U8J8xb3saXqoDms2jUJSPeJfsBdZsHdFBnwNEgQaoxnw?cluster=devnet",
+    "live": true
+  },
+  {
+    "id": "4LtcSF7fYLo2t6ad8jJYwW2EymDahyfpHD47PZvBSmB4",
+    "teams": [
+      "France",
+      "England"
+    ],
+    "label": "GOAL",
+    "tier": "base",
+    "supply": 1000,
+    "image": "https://devnet.irys.xyz/3arvuGdHitbRxncvugo7PgP9re2HgfKnPiTSvPmQ4BZK",
+    "match": "France vs England",
+    "score": "3-4",
+    "assetExplorer": "https://explorer.solana.com/address/4LtcSF7fYLo2t6ad8jJYwW2EymDahyfpHD47PZvBSmB4?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/63vspB3QDPD5Z3mdGRqdEAKPuqmyXVieZYVV3ZNUN5968pwkfi8hW1HcJEWjW7kuttK6NH7DNSEwvAbVALmmjfRp?cluster=devnet",
+    "live": true
+  },
+  {
+    "id": "8kKmCoNqzHjDjiZ23fz1zTHkXw7Agi4wN4QrU6JZshc6",
+    "teams": [
+      "France",
+      "England"
+    ],
+    "label": "GOAL",
+    "tier": "base",
+    "supply": 1000,
+    "image": "https://devnet.irys.xyz/51pnRZ6UEuXUdBQ42eSE2Fwv6DK69v5JLqY2sRRwqu4h",
+    "match": "France vs England",
+    "score": "3-5",
+    "assetExplorer": "https://explorer.solana.com/address/8kKmCoNqzHjDjiZ23fz1zTHkXw7Agi4wN4QrU6JZshc6?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/4NaNZgN1hBGMJEx7tyPzBc2MaNRHJQaHu8HJ7n8nUMDC1GDW5DgbruV6AppsimfbVhKLECVshB2jixGBwvxWNgyX?cluster=devnet",
+    "live": true
+  },
+  {
+    "id": "Dh26g9yRzWVSov4f5vC7JCDSg73CGZXr3heW68HHg99z",
+    "teams": [
+      "France",
+      "England"
+    ],
+    "label": "GOAL",
+    "tier": "base",
+    "supply": 1000,
+    "image": "https://devnet.irys.xyz/8abwTsypGpMWmnZBp7ZEeiL7D4RxdCgQc3FME2uef61k",
+    "match": "France vs England",
+    "score": "4-5",
+    "assetExplorer": "https://explorer.solana.com/address/Dh26g9yRzWVSov4f5vC7JCDSg73CGZXr3heW68HHg99z?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/4YyUwnFK3ujT4v2K1GgG1eK1mteBMfUwHCK3RGwL2JrnoBMjZeGREpTK1ko5GH3Eqru4gHNbSEz7Lxf4qnmrfqRU?cluster=devnet",
+    "live": true
+  },
+  {
+    "id": "BGVKQ6VUJxsdcA1egESU1VNiyMgSA8gQzC53dhuK73Zm",
+    "teams": [
+      "France",
+      "England"
+    ],
+    "label": "GOAL",
+    "tier": "base",
+    "supply": 1000,
+    "image": "https://devnet.irys.xyz/ANGp4eJw4v4yW9i4To98Hwr55TZcyF5CyZsKNJt5pYYR",
+    "match": "France vs England",
+    "score": "4-6",
+    "assetExplorer": "https://explorer.solana.com/address/BGVKQ6VUJxsdcA1egESU1VNiyMgSA8gQzC53dhuK73Zm?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/54TcZGViHiYPdbbby4bXaq1M4vAuHY6gCQDh7UhtUPE4WxFQvxtqapUvWhvk3e8TfKUVB1GCWr64yP6MuRpaBXbU?cluster=devnet",
+    "live": true
+  },
+  {
+    "id": "DCrqTqCUey9ZwtDRAxyb4qaY37nrheNimELovSKELGUC",
+    "teams": [
+      "Spain",
+      "Argentina"
+    ],
+    "label": "RED CARD",
+    "tier": "legendary",
+    "supply": 10,
+    "image": "https://devnet.irys.xyz/6ZgGujUAiU18wcfMti8LHJ7pDgGqSHTguXG8dDTt6gDg",
+    "match": "Spain vs Argentina",
+    "score": "",
+    "assetExplorer": "https://explorer.solana.com/address/DCrqTqCUey9ZwtDRAxyb4qaY37nrheNimELovSKELGUC?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/4XTiJYFEXDhboF6ZPVA3yuzSRiVeUZT6eD6XPvxPGNxRxV28mKvhApT1nvXjcX2uToHNAkL3KiGTbbAQGuYKn24v?cluster=devnet",
+    "live": true
+  },
+  {
+    "id": "6oz9ciPGLuAJqsfXA7PRqex5Dvhg6pJpH9zJTf9jsckf",
+    "teams": [
+      "Spain",
+      "Argentina"
+    ],
+    "label": "GOAL",
+    "tier": "legendary",
+    "supply": 10,
+    "image": "https://devnet.irys.xyz/6iyCvEqpu6GWVTLg5zoFZBs8kB27w33fp6bcxFBxrH5C",
+    "match": "Spain vs Argentina",
+    "score": "1-0",
+    "assetExplorer": "https://explorer.solana.com/address/6oz9ciPGLuAJqsfXA7PRqex5Dvhg6pJpH9zJTf9jsckf?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/26JByhrVorVj2kmLd56QBKcapTsmnt529eYA2TePTTyEW4CMu3jSU2zNLkvCFW893FVkQRLqL7KXC3Nt52RzCDXB?cluster=devnet",
+    "live": true
+  },
+  {
+    "id": "9F9WXrwdkQccbCXugtcB27tuTT2Ck9neYyNXWZzANgs",
+    "teams": [
+      "Spain",
+      "Argentina"
+    ],
+    "label": "VAR · GOAL DISALLOWED",
+    "tier": "legendary",
+    "supply": 10,
+    "image": "https://devnet.irys.xyz/bEYj3gL8Nokt1Gzn2azYRmCTi2aHoBPtuo8B7KUAKY2",
+    "match": "Spain vs Argentina",
+    "score": "0-0",
+    "assetExplorer": "https://explorer.solana.com/address/9F9WXrwdkQccbCXugtcB27tuTT2Ck9neYyNXWZzANgs?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/4Mfj6LPmnLcq3fDQn1osAKbmsd6o1jCNDFVZVLdaC5PTR5keX43MDNDQhoTRZvR663xDfugRqJ18AW91RciuYX2e?cluster=devnet",
+    "live": true
+  },
+  {
+    "id": "3yJbfhfHMXoc5y2WELqvovk65Vft2GhVm5BiRfKZxwEJ",
+    "teams": [
+      "Spain",
+      "Argentina"
+    ],
+    "label": "GOAL",
+    "tier": "legendary",
+    "supply": 10,
+    "image": "https://devnet.irys.xyz/GjMe1wGVJuKcHo59sYFAoVWN9ZLSyhMCaTp61KdTbb2N",
+    "match": "Spain vs Argentina",
+    "score": "1-0",
+    "assetExplorer": "https://explorer.solana.com/address/3yJbfhfHMXoc5y2WELqvovk65Vft2GhVm5BiRfKZxwEJ?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/z8DqL4J8osZgvNtCt35De8P8FVM4VyMgVYyULNptjhcjUw6TjTKmYnPXDFXbGHddmeQBpE5un3coYBq9vma9ivw?cluster=devnet",
+    "live": true
+  },
+  {
+    "id": "HKCwFN9U5QgZ4t6hwhdAy3efYYdn2VcGavYzBA1P9k3R",
+    "teams": [
+      "Spain",
+      "Argentina"
+    ],
+    "label": "GOAL",
+    "tier": "legendary",
+    "supply": 10,
+    "image": "https://devnet.irys.xyz/3GauBuPe6cVTRBwx1opBGg859fERSELYpnzjcdafJ5d1",
+    "match": "Spain vs Argentina",
+    "score": "2-0",
+    "assetExplorer": "https://explorer.solana.com/address/HKCwFN9U5QgZ4t6hwhdAy3efYYdn2VcGavYzBA1P9k3R?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/4VQKCTxB64EXeAxSUXAM4sdgLfDSXYqHTuvHpESJebf1mrCwCrvcMhboeJUXSdirH2RGYH5SH6Rn7Sgx8vi5rqcB?cluster=devnet",
+    "live": true
+  },
+  {
+    "id": "C2Y6cMzZ99in45YEmNTfYZBRHVDdBneGa8w8CyRGk3Gx",
+    "teams": [
+      "Spain",
+      "Argentina"
+    ],
+    "label": "VAR · GOAL DISALLOWED",
+    "tier": "legendary",
+    "supply": 10,
+    "image": "https://devnet.irys.xyz/6fdzWHtneihbxGgnfWqk52eWpb5LL12oqFUdtRPMoP2W",
+    "match": "Spain vs Argentina",
+    "score": "1-0",
+    "assetExplorer": "https://explorer.solana.com/address/C2Y6cMzZ99in45YEmNTfYZBRHVDdBneGa8w8CyRGk3Gx?cluster=devnet",
+    "proofExplorer": "https://explorer.solana.com/tx/3HaTiXv6CnKVWbkkwJzCHtneGAsa2AV5Um4TNyVbqrfvkKwkBWXvxhu2TPLTGv8UeqxiGsbBUx22S6TVkibx3X1F?cluster=devnet",
     "live": true
   }
 ];
