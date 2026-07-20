@@ -364,10 +364,10 @@
     "art/picks/ax-18187298-64-05.jpeg"
   ],
   "GOAL@18187298:887": [
-    "art/picks/u-18187298-887-01.jpeg"
+    "art/picks/px-18187298-887-01.jpeg"
   ],
   "GOAL@18187298:996": [
-    "art/picks/u-18187298-996-03.jpeg"
+    "art/picks/px-18187298-996-02.jpeg"
   ],
   "GOAL@18187298:1074": [
     "art/picks/u-18187298-1074-01.jpeg"
@@ -415,7 +415,7 @@
     "art/picks/u-18202701-830-02.jpeg"
   ],
   "GOAL@18202701:876": [
-    "art/picks/ax-18202701-876-02.jpeg"
+    "art/picks/px-18202701-876-04.jpeg"
   ],
   "GOAL@18202701:965": [
     "art/picks/ax-18202701-965-04.jpeg"
@@ -448,7 +448,7 @@
     "art/picks/u-18222446-117-01.jpeg"
   ],
   "GOAL@18222446:660": [
-    "art/picks/ax-18222446-660-06.jpeg"
+    "art/picks/px-18222446-660-02.jpeg"
   ],
   "GOAL@18222446:1199": [
     "art/picks/u-18222446-1199-01.jpeg"
@@ -481,7 +481,7 @@
     "art/picks/nx-18257865-251-02.jpeg"
   ],
   "GOAL@18257865:896": [
-    "art/picks/nx-18257865-896-03.jpeg"
+    "art/picks/px-18257865-896-03.jpeg"
   ],
   "GOAL@18257865:1186": [
     "art/picks/nx-18257865-1186-01.jpeg"
@@ -521,5 +521,20 @@
   ],
   "GOAL@18257865:1165": [
     "art/picks/rx-18257865-1165-03.jpeg"
+  ],
+  "GOAL_REVOKED@18187298:86": [
+    "art/picks/px-18187298-86-03.jpeg"
+  ],
+  "GOAL_REVOKED@18213979:541": [
+    "art/picks/px-18213979-541-03.jpeg"
+  ],
+  "GOAL_REVOKED@18237038:682": [
+    "art/picks/px-18237038-682-04.jpeg"
+  ],
+  "RED_CARD@18192996:567": [
+    "art/picks/px-18192996-567-02.jpeg"
+  ],
+  "RED_CARD@18222446:687": [
+    "art/picks/px-18222446-687-02.jpeg"
   ]
 }
